@@ -32,7 +32,7 @@ title: Кратко о валидаторах в angularjs
 
 Так же нам потребуется вызывать функцию `$setValidity()`, передавая в неё наименование валидатора и результат проверки для дальнейшей обработки (например, отображения ошибок). 
 
-[**Jsfiddle demo**](https://jsfiddle.net/pnsdbzLr/1/):
+[**Jsfiddle demo**](https://jsfiddle.net/pnsdbzLr/1/){:target="_blank"}:
 
 ```javascript
 function numericDirective() {

@@ -116,6 +116,7 @@ img {
 }
 
 .date {
+  font-size: 11px;
   font-style: italic;
   color: $gray;
 }
@@ -268,12 +269,6 @@ nav {
   .read-more {
     text-transform: uppercase;
     font-size: 15px;
-  }
-  
-  .entry-meta {
-    font-size: 11px;
-    font-style: italic;
-    color: $gray;
   }
 }
 

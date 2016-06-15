@@ -46,8 +46,8 @@ app.controller('ProductCtrlAs', [function () {
 }]);
 ```
 
-```html
 {% raw %}
+```html
 <div ng-controller="ProductCtrlAs as ctrl">
     <ul>
         <li ng-repeat="product in ctrl.products">
@@ -55,8 +55,8 @@ app.controller('ProductCtrlAs', [function () {
         </li>
     </ul>
 </div>
-{% endraw %}
 ```
+{% endraw %}
 
 ```
 Apple
@@ -73,8 +73,8 @@ Coffee
 
 Общая область видимости `$scope`’ов вложенных контроллеров при пересечении наименований:
 
-```html
 {% raw %}
+```html
 <div ng-controller="TopCtrl">
     {{ title || 'undefined;' }}
 
@@ -86,8 +86,8 @@ Coffee
         </div>
     </div>
 </div>
-{% endraw %}
 ```
+{% endraw %}
 
 В том случае, когда одна из переменных не инициализирована, то на её замену ищется одноимённая из родительского `$scope` (`$parent`), что может приводить к следующему результату:
 
@@ -99,8 +99,8 @@ I am bottom ctrl!
 
 Таким образом, в коде появляется неоднозначность и сложность отслеживания источника данных. Для этого, мы можем переписать код представления с использованием синтаксиса «controller as», явно указывая какая переменная из какого `$scope` должна браться:
 
-```html
 {% raw %}
+```html
 <div ng-controller="TopCtrlAs as top">
     {{ top.title || 'undefined;' }}
 
@@ -112,8 +112,8 @@ I am bottom ctrl!
         </div>
     </div>
 </div>
-{% endraw %}
 ```
+{% endraw %}
 
 Как итог, переменная будет искаться исключительно в `$scope` связанного контроллера:
 

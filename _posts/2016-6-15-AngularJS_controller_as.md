@@ -23,7 +23,7 @@ app.controller('ProductCtrl', ['$scope', function ($scope) {
 <div ng-controller="ProductCtrl">
     <ul>
         <li ng-repeat="product in products">
-            &#123;&#123; product }}
+            {{ product }}
         </li>
     </ul>
 </div>

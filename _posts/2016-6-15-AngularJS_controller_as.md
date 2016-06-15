@@ -19,7 +19,7 @@ app.controller('ProductCtrl', ['$scope', function ($scope) {
 }]);
 ```
 
-```html
+```
 <div ng-controller="ProductCtrl">
     <ul>
         <li ng-repeat="product in products">

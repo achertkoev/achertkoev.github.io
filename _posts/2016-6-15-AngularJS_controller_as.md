@@ -19,8 +19,8 @@ app.controller('ProductCtrl', ['$scope', function ($scope) {
 }]);
 ```
 
-```html
 {% raw %}
+```html
 <div ng-controller="ProductCtrl">
     <ul>
         <li ng-repeat="product in products">
@@ -28,8 +28,8 @@ app.controller('ProductCtrl', ['$scope', function ($scope) {
         </li>
     </ul>
 </div>
-{% endraw %}
 ```
+{% endraw %}
 
 ```
 Apple

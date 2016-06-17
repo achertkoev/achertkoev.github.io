@@ -199,3 +199,7 @@ it('should throw an exception if a controller is called "hasOwnProperty"', funct
 ```
 
 Т.к. регистрация и выявление зарегистрированных ранее контроллеров происходит с помощью объекта `controllers`, то запрещено иметь наименование контроллера `hasOwnProperty`, дабы в последствии при выявлении `controllers[constructor]` не вернуть встроенную функцию языка (или не перегрузить её конструктором контроллера),- весьма предусмотрительно.
+
+См. также:
+
+1. [Digging into Angular’s “Controller as” syntax](https://toddmotto.com/digging-into-angulars-controller-as-syntax/)

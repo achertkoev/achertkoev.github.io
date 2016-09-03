@@ -26,7 +26,7 @@ var hash = url.substring(url.indexOf("#")+1);
 
 Таким образом, мы можем подсвечивать любые блоки на странице, на которые в url'e ведёт идентификатор якоря (а на странице элемент имеет соответствующий атрибут id).
 
-[**Jsfiddle demo**](https://fiddle.jshell.net/f6pqsv0d/1/show/#comment-2):
+[**Jsfiddle demo**](https://jsfiddle.net/f6pqsv0d/1/):
 
 ## Подсвечиваем все новые комментарии
 
@@ -38,6 +38,6 @@ var hash = url.substring(url.indexOf("#")+1);
 }
 ```
 
-[**Jsfiddle demo**](https://fiddle.jshell.net/f6pqsv0d/show/#comment-2):
+[**Jsfiddle demo**](https://jsfiddle.net/f6pqsv0d/):
 
 В качестве заключения: CSS призван помочь именно с поиском и оформлением элементов страницы и решить большую часть возникающих подобных задач, использование javascript'a менее приоритетно.

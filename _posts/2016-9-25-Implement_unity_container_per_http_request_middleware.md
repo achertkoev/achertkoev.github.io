@@ -250,6 +250,7 @@ public static void RegisterTypes(IUnityContainer container)
 ![unity-per-request-middleware-result](/images/post/unity-per-request-middleware-result.png){:class="img-responsive"}
 
 В изображении выше отображены GetHashCode’ы зависимостей в разрезе нескольких HTTP запросов, где:
+
 1. AlwaysTheSame - singleton объект в рамках приложения;
 2. SameInARequest - singleton объект в рамках запроса;
 3. AlwaysDifferent - новый экземпляр для каждого Resolve.

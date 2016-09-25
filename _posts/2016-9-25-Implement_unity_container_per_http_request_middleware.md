@@ -255,5 +255,4 @@ public static void RegisterTypes(IUnityContainer container)
 2. SameInARequest - singleton объект в рамках запроса;
 3. AlwaysDifferent - новый экземпляр для каждого Resolve.
 
-[**GitHub source codes**](https://github.com/FSou1/UnityPerRequestMiddleware):
-
+Исходники доступны на [**GitHub**](https://github.com/FSou1/UnityPerRequestMiddleware).

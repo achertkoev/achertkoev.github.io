@@ -128,8 +128,8 @@ public static IDependencyScope GetDependencyScope(this HttpRequestMessage reques
 Для нас это значит следующее: контейнер, который мы используем в наших Middleware’ах и в Web API не являются одними и теми же,- больше того, они находятся на одном уровне вложенности, где глобальный контейнер- их общий родитель, т.е.:
 
 1. Глобальный контейнер;
-1.1. Контейнер, созданный в UnityContainerPerRequestMiddleware;
-1.2. Контейнер, созданный в Web API.
+2. Контейнер, созданный в UnityContainerPerRequestMiddleware;
+3. Контейнер, созданный в Web API.
 
 Для Web API это выглядит вполне логичным в том случае, когда оно является единственным местом обработки запроса,- контейнер создается вначале и уничтожается в конце (это ровно то, чего мы стараемся добиться). 
 
@@ -182,47 +182,47 @@ WebApiConfig.Register(config);
 
 Таким образом, мы получаем следующий механизм работы с нашим единым контейнером:
 
-1. Начало обработки запроса;
+Начало обработки запроса;
 
-2. Создание дочернего контейнера от глобального;
+Создание дочернего контейнера от глобального;
 
 ```c#
 var childContainer = _container.CreateChildContainer();
 ```
 
-3. Присваивание контейнера в Owin context:
+Присваивание контейнера в Owin context:
 
 ```c#
 context.Set(HttpApplicationKey.OwinPerRequestUnityContainerKey, childContainer);
 ```
 
-4. Использование контейнера в других Middleware’ах;
+Использование контейнера в других Middleware’ах;
 
 ```c#
 var container = context.Get<IUnityContainer>(HttpApplicationKey.OwinPerRequestUnityContainerKey);
 ```
 
-5. Использование контейнера в Web API;
+Использование контейнера в Web API;
 
-5.1. Получение контроллера из Owin context:
+Получение контроллера из Owin context:
 
 ```c#
 var container = request.GetOwinContext().Get<IUnityContainer>(HttpApplicationKey.OwinPerRequestUnityContainerKey);
 ```
 
-5.2. Создание контроллера на основе этого контейнера:
+Создание контроллера на основе этого контейнера:
 
 ```c#
 var controller = (IHttpController)container.Resolve(controllerType);
 ```
 
-6. Уничтожение контейнера;
+Уничтожение контейнера;
 
 ```c#
 childContainer.Dispose();
 ```
 
-7. Завершение обработки запроса.
+Завершение обработки запроса.
 
 ## Результат
 
@@ -247,7 +247,7 @@ public static void RegisterTypes(IUnityContainer container)
 2. HierarchicalLifetimeManager - создание единственного экземпляра в рамках контейнера (где мы добились того, что контейнер единый в рамках HTTP запроса);
 3. TransientLifetimeManager - создание экземпляра при каждом обращении (Resolve).
 
-
+![unity-per-request-middleware-result](/images/post/unity-per-request-middleware-result.png){:class="img-responsive"}
 
 В изображении выше отображены GetHashCode’ы зависимостей в разрезе нескольких HTTP запросов, где:
 1. AlwaysTheSame - singleton объект в рамках приложения;

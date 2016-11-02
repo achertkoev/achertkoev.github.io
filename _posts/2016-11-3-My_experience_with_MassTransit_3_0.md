@@ -9,18 +9,22 @@ MassTransit это open source библиотека, разработанная 
 
 **Содержание**:
 
-- Команды и события
--- Команды
--- События
-- Контракты сообщений
-- Роутинг
--- Exchange
--- Формат сообщения
-- Консьюмеры (Consumer)
-- Конфигурация контейнера DI
-- Наблюдатели (Observer)
-- Новое в MassTransit 3.0
-- Заключение
+<ul>
+<li><a href="#command-event">Команды и события</a>
+<ul>
+<li><a href="#command">Команды</a></li>
+<li><a href="#event">События</a></li></ul></li>
+<li><a href="#contract">Контракты сообщений</a></li>
+<li><a href="#routing">Роутинг</a>
+<ul>
+<li><a href="#exchange">Exchange</a></li>
+<li><a href="#message-body">Формат сообщения</a></li></ul></li>
+<li><a href="#consumer">Консьюмеры (Consumer)</a></li>
+<li><a href="#di">Конфигурация контейнера DI</a></li>
+<li><a href="#observer">Наблюдатели (Observer)</a></li>
+<li><a href="#new-30">Новое в MassTransit 3.0</a></li>
+<li><a href="#ps">Заключение</a></li>
+</ul>
 
 ## Команды и события
 
@@ -418,4 +422,5 @@ public class ConsumeObserver : IConsumeObserver
 Исходные коды примеров доступны на [Github](https://github.com/FSou1/PlayWithMassTransit30).
 
 Используемые материалы:
+
 1. [Документация MassTransit](http://docs.masstransit-project.com/en/latest/overview/backstory.html).

@@ -9,18 +9,18 @@ MassTransit это open source библиотека, разработанная 
 
 Содержание:
 
-1. Команды и события
-1.1. Команды
-1.2. События
-2. Контракты сообщений
-3. Роутинг
-3.1. Exchange
-3.2. Формат сообщения
-4. Консьюмеры (Consumer)
-5. Конфигурация контейнера DI
-6. Наблюдатели (Observer)
-7. Новое в MassTransit 3.0
-8. Заключение
+- Команды и события
+--- Команды
+--- События
+- Контракты сообщений
+- Роутинг
+--- Exchange
+--- Формат сообщения
+- Консьюмеры (Consumer)
+- Конфигурация контейнера DI
+- Наблюдатели (Observer)
+- Новое в MassTransit 3.0
+- Заключение
 
 ## Команды и события
 
@@ -52,7 +52,7 @@ private static async Task SendSmsCommand(IBus busControl)
 
 Сигнализируют о случившемся событии, которое может быть интересно некоему набору подписчиков (паттерн Observer), которые на эти события реагируют, например: ConnectionEstimated, CallTerminated, SmsSent, CustomerNotified. 
 
-Работа с событиями осуществляется с помощью метода Publish (интерфейса IPublishEndpoint).
+Работа с событиями осуществляется с помощью метода Publish (интерфейса [IPublishEndpoint](https://github.com/MassTransit/MassTransit/blob/develop/src/MassTransit/ISendEndpoint.cs)).
 
 В терминологии заложено и основное различие этих типов сообщений — команда доставляется единственному исполнителю (дабы избежать дублирования выполнения):
 
@@ -74,9 +74,9 @@ private static async Task SendSmsCommand(IBus busControl)
 
 ```c#
 public interface ISendSms {
-	Guid CommandId { get; }
-	string PhoneNumber { get; }
-	string Message { get; }
+  Guid CommandId { get; }
+  string PhoneNumber { get; }
+  string Message { get; }
 }
 ```
 
@@ -84,8 +84,8 @@ public interface ISendSms {
 
 ```c#
 public interface ISmsSent {
-	Guid EventId { get; }
-	DateTime SentAtUtc { get; }	
+  Guid EventId { get; }
+  DateTime SentAtUtc { get; }	
 }
 ```
 
@@ -157,9 +157,9 @@ class SendSmsCommand : ISendSms<string>
 
 ```javascript
 "messageType": [
-    "urn:message:PlayWithMassTransit30.Extension:SendSmsCommand",
-    "urn:message:PlayWithMassTransit30.Contract.Command:ISendSms[[System:String]]",
-    "urn:message:PlayWithMassTransit30.Contract.Command:ICommand[[System:String]]"
+  "urn:message:PlayWithMassTransit30.Extension:SendSmsCommand",
+  "urn:message:PlayWithMassTransit30.Contract.Command:ISendSms[[System:String]]",
+  "urn:message:PlayWithMassTransit30.Contract.Command:ICommand[[System:String]]"
 ]
 ```
 
@@ -167,14 +167,14 @@ class SendSmsCommand : ISendSms<string>
 
 ```javascript
 "host": {
-    "machineName": "DESKTOP-SI9OHUR",
-    "processName": "PlayWithMassTransit30.vshost",
-    "processId": 1092,
-    "assembly": "PlayWithMassTransit30",
-    "assemblyVersion": "1.0.0.0",
-    "frameworkVersion": "4.0.30319.42000",
-    "massTransitVersion": "3.4.1.808",
-    "operatingSystemVersion": "Microsoft Windows NT 6.2.9200.0"
+  "machineName": "DESKTOP-SI9OHUR",
+  "processName": "PlayWithMassTransit30.vshost",
+  "processId": 1092,
+  "assembly": "PlayWithMassTransit30",
+  "assemblyVersion": "1.0.0.0",
+  "frameworkVersion": "4.0.30319.42000",
+  "massTransitVersion": "3.4.1.808",
+  "operatingSystemVersion": "Microsoft Windows NT 6.2.9200.0"
 }
 ```
 
@@ -182,9 +182,9 @@ class SendSmsCommand : ISendSms<string>
 
 ```javascript
 "message": {
-    "commandId": "7388f663-82dc-403a-8bf9-8952f2ff262e",
-    "phoneNumber": "89031112233",
-    "message": "Thank you for your reply"
+  "commandId": "7388f663-82dc-403a-8bf9-8952f2ff262e",
+  "phoneNumber": "89031112233",
+  "message": "Thank you for your reply"
 }
 ```
 

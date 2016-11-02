@@ -78,6 +78,8 @@ private static async Task SendSmsCommand(IBus busControl)
 
 Иными словами, при запущенных n-консьюмеров (от англ. consumer — потребитель, обработчик), обрабатывающих команду, после её публикации только один из них получит сообщение о ней, в то время как сообщение о событии получит каждый.
 
+<a name="contract"></a>
+
 ## Контракты сообщений
 
 Согласно документации MassTransit, при объявлении контрактов сообщений [рекомендуется](http://docs.masstransit-project.com/en/latest/usage/messages.html) прибегать к интерфейсам:
@@ -101,9 +103,13 @@ public interface ISmsSent {
 
 События отправляются с помощью метода Publish.
 
+<a name="routing"></a>
+
 ## Роутинг
 
 Как распределение сообщений по exchange, так и выбор консьюмеров (о них в этой статье будет рассказано чуть позже) для обработки базируются на runtime типах этих сообщений,- в наименовании используются namespace и имя типа, в случае с generic имя родительского типа и перечень аргументов.
+
+<a name="exchange"></a>
 
 ### Exchange
 
@@ -138,6 +144,8 @@ cfg.ReceiveEndpoint(host, e=> e.LoadFrom(container));
 То имена для последнего exchange и очереди формируются автоматически, а по завершению работы они будут удалены: 
 
 ![mt_without_queue_flow](/images/post/mt_without_queue_flow.png){:class="img-responsive"}
+
+<a name="message-body"></a>
 
 ### Формат сообщения
 
@@ -199,6 +207,8 @@ class SendSmsCommand : ISendSms<string>
 ```
 
 и иные служебные поля и заголовки.
+
+<a name="consumer"></a>
 
 ## Консьюмеры (Consumer)
 
@@ -323,6 +333,8 @@ class SmsSentEvent : ISmsSent
 
 На мой взгляд, данное решение вполне удачно позволяет отделить код бизнес-логики от деталей реализации межсистемного (компонентного) взаимодействия и инкапсулировать их в одном месте.
 
+<a name="di"></a>
+
 ## Конфигурация контейнера DI
 
 На данный момент MassTransit предоставляет возможность использовать следующие [популярные контейнеры](http://docs.masstransit-project.com/en/latest/usage/containers/index.html):
@@ -372,6 +384,8 @@ public static IBusControl GetConfiguredFactory(IUnityContainer container)
 
 В качестве срока жизни консьюмеров в контейнере [документация](http://docs.masstransit-project.com/en/latest/usage/containers/unity.html) предлагает использовать ContainerControlledLifetimeManager().
 
+<a name="observer"></a>
+
 ## Наблюдатели (Observer)
 
 Для мониторинга процесса обработки сообщений доступно подключение наблюдателей (Observer). Для этого MassTransit предоставляет следующий набор интерфейсов для обработчиков:
@@ -415,9 +429,13 @@ public class ConsumeObserver : IConsumeObserver
 
 ![mt_result](/images/post/mt_result.png){:class="img-responsive"}
 
+<a name="new-30"></a>
+
 ## Новое в MassTransit 3.0
 
 С изменениями, которые коснулись новой версии библиотеки, вы можете ознакомиться в 2-х обзорных статьях автора библиотеки Chris Patterson’а на страницах его блога: [MassTransit 3 API Changes](https://lostechies.com/chrispatterson/2015/02/24/masstransit-3-api-changes/) и [MassTransit v3 Update](https://lostechies.com/chrispatterson/2015/06/16/masstransit-v3-update/).
+
+<a name="ps"></a>
 
 ## Заключение
 

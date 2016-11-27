@@ -67,6 +67,7 @@ _Script_ - откуда брать содержимое скрипта (из scr
 _Script source_ - непосредственно сам скрипт.
 
 Я не буду приводить весь скрипт (он [доступен на github](https://github.com/FSou1/DeployWindowsServiceToRemoteServiceExample/blob/master/deploy_windows_service.ps1)), опишу лишь алгоритм:
+
 1. Инициализация переменных;
 2. Подключение к remote серверу;
 3. Поиск службы по имени на remote сервере с помощью Get-WmiObject (для этого предварительно может потребоваться [конфигурация WinRM](https://technet.microsoft.com/ru-ru/library/hh921475(v=ws.11).aspx) и использование [Get-Credential](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.security/get-credential), если TeamCity запущена не от пользователя, у которого есть доступ);

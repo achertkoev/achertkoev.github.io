@@ -21,23 +21,29 @@ _Command line parameters_ - [перечень параметров](https://msdn
 
 Непосредственно за deploy отвечают следующие из них:
 
-Указание о необходимости deploy после успешного build:
-```
-/p:DeployOnBuild=true1
+_Указание о необходимости deploy после успешного build:_
 ```
 
-Способ разворачивания:
+/p:DeployOnBuild=true2
+
 ```
+
+_Способ разворачивания:_
+
+```
+
 /p:DeployTarget=MSDeployPublish
+
 /p:AllowUntrustedCertificate=True
+
 ```
 
-Настройки Web Deploy после конфигурации:
+_Настройки Web Deploy после конфигурации:_
 /p:MsDeployServiceUrl=https://62.56.35.72:8172/MsDeploy.axd
 /p:Username=Deployuser
 /p:Password=Deployuserpassword
 
-Наименование IIS узла на remote сервере:
+_Наименование IIS узла на remote сервере:_
 /p:DeployIisAppPath=testapi.your-company-site.ru
 
 Если всё было выполнено корректно, то результат build log будет выглядеть следующим образом:
@@ -52,11 +58,11 @@ _Command line parameters_ - [перечень параметров](https://msdn
 
 ![mt command](/images/post/build_deploy_teamcity_service.png){:class="img-responsive"}
 
-Runner type - выбираем исполнение PowerShell скрипта
+_Runner type_ - выбираем исполнение PowerShell скрипта
 
-Script - откуда брать содержимое скрипта (из script source или отдельного файла)
+_Script_ - откуда брать содержимое скрипта (из script source или отдельного файла)
 
-Script source - непосредственно сам скрипт.
+_Script source_ - непосредственно сам скрипт.
 
 Я не буду приводить весь скрипт (он [доступен на github](https://github.com/FSou1/DeployWindowsServiceToRemoteServiceExample/blob/master/deploy_windows_service.ps1)), опишу лишь алгоритм:
 1. Инициализация переменных;

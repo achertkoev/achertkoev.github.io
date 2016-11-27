@@ -22,11 +22,15 @@ _Command line parameters_ - [перечень параметров](https://msdn
 Непосредственно за deploy отвечают следующие из них:
 
 Указание о необходимости deploy после успешного build:
-`/p:DeployOnBuild=true`
+```
+/p:DeployOnBuild=true
+```
 
 Способ разворачивания:
-`/p:DeployTarget=MSDeployPublish`
-`/p:AllowUntrustedCertificate=True`
+```
+/p:DeployTarget=MSDeployPublish
+/p:AllowUntrustedCertificate=True
+```
 
 Настройки Web Deploy после конфигурации:
 /p:MsDeployServiceUrl=https://62.56.35.72:8172/MsDeploy.axd

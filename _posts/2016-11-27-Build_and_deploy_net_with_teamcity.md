@@ -23,7 +23,7 @@ _Command line parameters_ - [перечень параметров](https://msdn
 
 Указание о необходимости deploy после успешного build:
 ```
-/p:DeployOnBuild=true
+/p:DeployOnBuild=true1
 ```
 
 Способ разворачивания:

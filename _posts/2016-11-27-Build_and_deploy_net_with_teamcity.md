@@ -15,18 +15,18 @@ title: Разворачиваем ASP.NET приложения и windows сер
 
 _Solution file path*_ - путь до разворачиваемого приложения из solution’a (в моём случае solution содержит несколько проектов и для deploy’a каждого используется свой собственный build step).
 
-Configuration - наименование конфигурации вашего проекта, например, для [трансформации конфигурационных файлов](https://msdn.microsoft.com/ru-ru/library/dd465318(v=vs.100).aspx), таких как web.config и app.settings.
+_Configuration_ - наименование конфигурации вашего проекта, например, для [трансформации конфигурационных файлов](https://msdn.microsoft.com/ru-ru/library/dd465318(v=vs.100).aspx), таких как web.config и app.settings.
 
-Command line parameters - [перечень параметров](https://msdn.microsoft.com/en-us/library/microsoft.teamfoundation.build.workflow.activities.msbuild(v=vs.120).aspx), которые будут использованы в качестве аргументов при запуске msbuild.exe (сам процесс build & deploy выполняется именно этим приложением).
+_Command line parameters_ - [перечень параметров](https://msdn.microsoft.com/en-us/library/microsoft.teamfoundation.build.workflow.activities.msbuild(v=vs.120).aspx), которые будут использованы в качестве аргументов при запуске msbuild.exe (сам процесс build & deploy выполняется именно этим приложением).
 
 Непосредственно за deploy отвечают следующие из них:
 
 Указание о необходимости deploy после успешного build:
-/p:DeployOnBuild=true
+`/p:DeployOnBuild=true`
 
 Способ разворачивания:
-/p:DeployTarget=MSDeployPublish
-/p:AllowUntrustedCertificate=True
+`/p:DeployTarget=MSDeployPublish`
+`/p:AllowUntrustedCertificate=True`
 
 Настройки Web Deploy после конфигурации:
 /p:MsDeployServiceUrl=https://62.56.35.72:8172/MsDeploy.axd

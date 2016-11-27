@@ -24,7 +24,7 @@ _Command line parameters_ - [перечень параметров](https://msdn
 _Указание о необходимости deploy после успешного build:_
 
 ```
-/p:DeployOnBuild=true2
+/p:DeployOnBuild=true
 ```
 
 _Способ разворачивания:_
@@ -35,12 +35,18 @@ _Способ разворачивания:_
 ```
 
 _Настройки Web Deploy после конфигурации:_
+
+```
 /p:MsDeployServiceUrl=https://62.56.35.72:8172/MsDeploy.axd
 /p:Username=Deployuser
 /p:Password=Deployuserpassword
+```
 
 _Наименование IIS узла на remote сервере:_
+
+```
 /p:DeployIisAppPath=testapi.your-company-site.ru
+```
 
 Если всё было выполнено корректно, то результат build log будет выглядеть следующим образом:
 

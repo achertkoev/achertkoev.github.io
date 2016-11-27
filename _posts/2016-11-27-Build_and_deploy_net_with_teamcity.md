@@ -22,20 +22,16 @@ _Command line parameters_ - [перечень параметров](https://msdn
 Непосредственно за deploy отвечают следующие из них:
 
 _Указание о необходимости deploy после успешного build:_
+
 ```
-
 /p:DeployOnBuild=true2
-
 ```
 
 _Способ разворачивания:_
 
 ```
-
 /p:DeployTarget=MSDeployPublish
-
 /p:AllowUntrustedCertificate=True
-
 ```
 
 _Настройки Web Deploy после конфигурации:_

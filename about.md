@@ -4,12 +4,21 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+I fell myself very attentive to details and KISS-oriented developer, prefer simple tools and learn principles instead of frameworks.
 
-### More Information
+My favourite client-side tool is AngularJS, previously had experience with jQuery, bootstrapJS, underscore e.t.c. For a long time i've practised the PSD to html & css markup (pixel perfect), freelance programming with JavaScript, developed Google Extensions.
 
-A place to include any other types of information that you'd like to include about yourself.
+During project developing my primary database is MSSQL, but i've supported a few projects with PostgreSQL. My favourite ORM is Dapper, previously had experience with LINQ to SQL, Entity Framework.
 
-### Contact me
+Depends on requirements, i create unit tests for critical code sections. As version control system i usually use git.
 
-[email@domain.com](mailto:email@domain.com)
+## Contact me 
+
+<div class="container">
+    <footer class="footer">
+        <a href="mailto:my.fsou1@gmail.com"><i class="svg-icon email"></i></a>
+        <a href="https://github.com/fsou1"><i class="svg-icon github"></i></a>
+        <a href="https://www.linkedin.com/in/maxim-zhukov-0648a8b5"><i class="svg-icon linkedin"></i></a>
+        <a href="http://stackoverflow.com/users/2524304/fsou1"><i class="svg-icon stackoverflow"></i></a>
+    </footer>
+</div>

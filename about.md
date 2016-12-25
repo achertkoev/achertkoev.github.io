@@ -14,11 +14,4 @@ Depends on requirements, i create unit tests for critical code sections. As vers
 
 ## Contact me 
 
-<div class="container">
-    <footer class="footer">
-        <a href="mailto:my.fsou1@gmail.com"><i class="svg-icon email"></i></a>
-        <a href="https://github.com/fsou1"><i class="svg-icon github"></i></a>
-        <a href="https://www.linkedin.com/in/maxim-zhukov-0648a8b5"><i class="svg-icon linkedin"></i></a>
-        <a href="http://stackoverflow.com/users/2524304/fsou1"><i class="svg-icon stackoverflow"></i></a>
-    </footer>
-</div>
+You can contact with me using services in the footer of this site.

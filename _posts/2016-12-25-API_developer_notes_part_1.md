@@ -71,3 +71,11 @@ Id(p => p.Id).GeneratedBy.GuidComb();
 [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 public Guid Id { get; set; }
 ```
+
+Используемые материалы:
+
+1. [The length of the string value exceeds the length configured in the mapping/parameter](http://stackoverflow.com/questions/12708171/the-length-of-the-string-value-exceeds-the-length-configured-in-the-mapping-para);
+2. [Expiration of refresh tokens Microsoft.Owin](http://stackoverflow.com/questions/41066253/expiration-of-refresh-tokens-microsoft-owin/41144221#41144221);
+3. [Katanaproject] (https://github.com/jchannon/katanaproject);
+4. [ASP.NET 2.0 - How to use app_offline.htm](http://stackoverflow.com/questions/1153449/asp-net-2-0-how-to-use-app-offline-htm);
+5. [SCOPE_IDENTITY() for GUIDs?](http://stackoverflow.com/questions/1509947/scope-identity-for-guids).

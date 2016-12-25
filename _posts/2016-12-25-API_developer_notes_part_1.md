@@ -19,9 +19,9 @@ title: Заметки ASP.NET Web API/Backend разработчика (част
 
 Время от времени бывает необходимо все запросы к приложению (ASP.NET приложения, которые хостятся с использованием IIS) перенаправлять на некую статическую страницу, например:
 
-1. на сайте ведутся работы;
-2. в данный момент сайт недоступен, попробуйте позже;
-3. или и вовсе страницу недоступности сайта по такому адресу (для симуляции экстренного выключения);
+1. На сайте ведутся работы;
+2. В данный момент сайт недоступен, попробуйте позже;
+3. Или и вовсе страницу недоступности сайта по такому адресу (для симуляции экстренного выключения).
 
 Самым простым и автоматизируемым решением на мой взгляд является размещение файла с именем app_offline.htm в корне приложения. В этом случае произойдёт следующее:
 
@@ -76,6 +76,6 @@ public Guid Id { get; set; }
 
 1. [The length of the string value exceeds the length configured in the mapping/parameter](http://stackoverflow.com/questions/12708171/the-length-of-the-string-value-exceeds-the-length-configured-in-the-mapping-para);
 2. [Expiration of refresh tokens Microsoft.Owin](http://stackoverflow.com/questions/41066253/expiration-of-refresh-tokens-microsoft-owin/41144221#41144221);
-3. [Katanaproject] (https://github.com/jchannon/katanaproject);
+3. [Katanaproject](https://github.com/jchannon/katanaproject);
 4. [ASP.NET 2.0 - How to use app_offline.htm](http://stackoverflow.com/questions/1153449/asp-net-2-0-how-to-use-app-offline-htm);
 5. [SCOPE_IDENTITY() for GUIDs?](http://stackoverflow.com/questions/1509947/scope-identity-for-guids).

@@ -136,7 +136,6 @@ class AsyncFibonachiCollection : IEnumerable<Task<int>> {
 
     IEnumerable<Task<int>> AsyncFibonachi(int count) {
         for (int i = 0, prevFib = 1, curFib = 1; i < count; i++) {
-            Task.Delay(500);
             yield return Task.FromResult(prevFib);
             int newFib = prevFib + curFib;
             prevFib = curFib;
@@ -153,17 +152,6 @@ public static IEnumerable<Task<int>> OddAsync(this IEnumerable<Task<int>> numeri
     foreach (var num in numerics) {
         var result = num.Result;
         var isOdd = result%2 == 0;
-        if (isOdd) {
-            yield return Task.FromResult(result);
-        }
-    }
-}
-
-public static IEnumerable<Task<int>> OddAsync(this IEnumerable<Task<int>> numerics, int calcDelayMs) {
-    foreach (var num in numerics) {
-        var result = num.Result;
-        var isOdd = Task.Delay(calcDelayMs).ContinueWith(task => Task.Run(() => result%2 == 0).Result).Result;
-
         if (isOdd) {
             yield return Task.FromResult(result);
         }

@@ -47,8 +47,109 @@ title: Десериализация нетипизированного JSON по
 2. Для email- `string`;
 3. Для идентификатора- `long`;
 
-# Решение с использованием JsonConverter
+# Решение с использованием CustomCreationConverter
 
+Одним из возможных способов решения может быть написание собственного `CustomCreationConverter` (наследник `JsonConverter`), который отвечает непосредственно за создание объекта на этапе десериализации, generic типом у которого будет указан интерфейс `IContact`. В этом случае на этапе десериализации мы получим контроль над выполнением и сможем реализовать создание экземпляра требуемого нам типа контакта основываясь на значении `type`.
 
+Делается это в 2 шага:
+
+## Модель
+
+Для строгой типизации была объявлена следующая модель, состаящая из:
+
+1. root объекта - `Resume`;
+2. интерфейса `IContact` на место которого будут подставляться конкретные реализации;
+3. реализации контактов: `EmailContact`, `PhoneContact`, `VkContact`;
+
+```c#
+public class Resume {
+    public IList<IContact> Contacts { get; set; }
+}
+
+public interface IContact {
+    string Type { get; set; }
+}
+
+public class EmailContact : IContact {
+    public string Type { get; set; }
+    public string Value { get; set; }
+}
+
+public class PhoneContact : IContact {
+    public string Type { get; set; }
+    public PhoneContactValue Value { get; set; }
+}
+
+public class VkContact : IContact {
+    public string Type { get; set; }
+    public int Value { get; set; }
+}
+
+public class PhoneContactValue {
+    public string Code { get; set; }
+    public string Number { get; set; }
+    public int CountryId { get; set; }
+}
+```
+
+## Реализация CustomCreationConverter
+
+Пример реализации указан далее:
+
+```c#
+public class ContactConverter : CustomCreationConverter<IContact> {
+    public override IContact Create(Type objectType) {
+        throw new NotImplementedException();
+    }
+
+    public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer) {
+        var jObject = JObject.Load(reader);
+
+        var target = CreateContact(jObject);
+
+        return target;
+    }
+
+    /// <summary>
+    /// Create concrete contact base on contactType value
+    /// </summary>
+    /// <param name="jObject"></param>
+    /// <returns></returns>
+    private IContact CreateContact(JObject jObject) {
+        var contactType = (string)jObject.Property("type");
+        var json = jObject.ToString();
+
+        switch (contactType) {
+            case "email": {
+                return DeserializeObject<EmailContact>(json);
+            }
+            case "cell": {
+                return DeserializeObject<PhoneContact>(json);
+            }
+            case "vk_id": {
+                return DeserializeObject<VkContact>(json);
+            }
+            default:
+                throw new NotSupportedException("Unexpected contactType: " + contactType);
+        }
+    }
+
+    private T DeserializeObject<T>(string json) => JsonConvert.DeserializeObject<T>(json);
+}
+```
+
+## Подключение 
+
+Теперь всё что осталось сделать, так это подключить реализованный ранее конвертер в настройках `JsonSerializer`:
+
+```c#
+var resume = JsonConvert.DeserializeObject<Resume>(response, new ContactConverter());
+```
+
+## Результат
+
+Как итог, получаем строготипизиронное представление конкретных контактов с удобной возможностью дальнейшего расширение (на случай появления новых типов контактов потребуется лишь объявить модель и добавить новое значение `type` в оператор `switch`).
+
+![mt event](/images/post/deserialize_json_multiple.png){:class="img-responsive"}
 
 Исходники доступны на [GitHubGist src](https://gist.github.com/FSou1/daeff50471419de025f7dab9c744df1c).

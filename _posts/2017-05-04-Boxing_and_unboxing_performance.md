@@ -78,7 +78,11 @@ public class BoxingUnboxingBenchmark {
 
 ![boxing_and_unboxing_performance](/images/post/boxing_and_unboxing_performance.png){:class="img-responsive"}
 
+![boxing_and_unboxing_performance_second](/images/post/boxing_and_unboxing_performance_second.png){:class="img-responsive"}
+
 Сразу оговорюсь, что не могу быть твёрдо уверен в отсутствии оптимизаций компилятором итогового кода, однако, судя по IL коду, каждая из функций содержит проверяемую операцию в единственном числе.
+
+Измерения проводились на нескольких машинах с разным кол-вом `LoopCount`, однако, скорость распаковки из раза в раз превосходила упаковку в 3-6 раз. 
 
 Пример IL кода для упаковки `int`:
 

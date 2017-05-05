@@ -3,9 +3,9 @@ layout: post
 title: Простой способ сделать mock HttpContext для UnitTest-ов
 ---
 
-На днях реализовывал `PerHttpRequestLifeTimeManager` для своего небольшого [IoC-контейнера](https://github.com/FSou1/FsContainer) и поэтому хочу поделиться простым способом использовать HttpContext в покрытии тестами
+На днях реализовывал `PerHttpRequestLifeTimeManager` для своего небольшого [IoC-контейнера](https://github.com/FSou1/FsContainer) и поэтому хочу поделиться простым способом использовать HttpContext в покрытии тестами.
 
-Как уже наверняка стало понятно из заголовка, в основе реализации содержится экземпляр класса `HttpContext`, в статическом поле `HttpContext.Current` которого и содержится контекст текущего HTTP запроса. Для его эмуляции достаточно следующих строк кода:
+Как уже наверняка стало понятно из заголовка, в основе реализации содержится экземпляр класса `HttpContext` в статическом поле `HttpContext.Current` которого и содержится контекст текущего HTTP запроса. Для его эмуляции достаточно следующих строк кода:
 
 ```c#
 HttpContext.Current = new HttpContext(
@@ -32,7 +32,7 @@ HttpContext.Current.User = new GenericPrincipal(
 );
 ```
 
-Решение выше не является моим и было найдено на просторах [stackoverflow](http://stackoverflow.com/questions/4379450/mock-httpcontext-current-in-test-init-method), однако, оказалось как никогда кстати и сильно мне помогло в моей задаче:
+Решение выше не является моим и было найдено на просторах [stackoverflow](http://stackoverflow.com/questions/4379450/mock-httpcontext-current-in-test-init-method), однако, оказалось как никогда кстати:
 
 [TLDR: Github](https://github.com/FSou1/FsContainer/blob/master/Fs.Container.Web.Test/PerHttpRequestLifetimeManagerTest.cs)
 

@@ -99,7 +99,34 @@ nuget pack MyProject.csproj -properties Configuration=Release
 
 ## 1.2.3
 
-Добавление кеширования функции активатора, которая компилируется используя Expression
+Ещё одной оптимизацией стало кеширования функции активатора, которая компилируется используя Expression:
+
+```c#
+private readonly IDictionary<Type, Func<object[], object>> _activatorCache =
+    new ConcurrentDictionary<Type, Func<object[], object>>();
+```
+
+Универсальная функция принимает в качестве аргументов `ConstructorInfo` и массив аргументов `ParameterInfo[]`, а в качестве результата возвращает строготипизированную lambda:
+
+```c#
+private Func<object[], object> GetActivator(ConstructorInfo ctor, ParameterInfo[] parameters) {
+    var p = Expression.Parameter(typeof(object[]), "args");
+    var args = new Expression[parameters.Length];
+
+    for (var i = 0; i < parameters.Length; i++)
+    {
+        var a = Expression.ArrayAccess(p, Expression.Constant(i));
+        args[i] = Expression.Convert(a, parameters[i].ParameterType);
+    }
+
+    var b = Expression.New(ctor, args);
+    var l = Expression.Lambda<Func<object[], object>>(b, p);
+
+    return l.Compile();
+}
+```
+
+Соглашусь, что логичным продолжением этого решения должно стать компилирование всей функции Resolve, а не только Activator, но даже в текущей реализации это привнесло 10% ускорение, тем самым позволив занять уверенное 5-е место:
 
  |         Method |         Mean |       Error |      StdDev | Scaled | ScaledSD |  Gen 0 |  Gen 1 |  Gen 2 | Allocated |
  |--------------- |-------------:|------------:|------------:|-------:|---------:|-------:|-------:|-------:|----------:|

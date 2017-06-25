@@ -139,6 +139,36 @@ private Func<object[], object> GetActivator(ConstructorInfo ctor, ParameterInfo[
  |   StructureMap |  1,944.35 ns |   1.8665 ns |   1.7459 ns | 146.85 |     0.76 | 0.6294 |      - |      - |    1978 B |
  |        Ninject | 13,139.70 ns | 260.8754 ns | 508.8174 ns | 992.43 |    38.35 | 1.7857 | 0.4425 | 0.0004 |    5682 B |
 
+# 1.2.4
+
+Уже после публикации статьи [@turbanoff](https://github.com/turbanoff) заметил, что в случае с `ConcurrentDictionary` производительность метода `GetOrAdd` выше, чем у ContainsKey/Add, за что ему отдельное спасибо. Результаты замеров представлены ниже:
+
+До:
+
+```cs
+if (!_activatorCache.ContainsKey(concrete)) {
+    _activatorCache[concrete] = GetActivator(ctor, parameters);
+}
+```
+
+ |           Method |       Mean |      Error |    StdDev |     Median |  Gen 0 | Allocated |
+ |----------------- |-----------:|-----------:|----------:|-----------:|-------:|----------:|
+ | ResolveSingleton |   299.0 ns |   7.239 ns |  19.45 ns |   295.7 ns | 0.1268 |     199 B |
+ | ResolveTransient |   686.3 ns |  32.333 ns |  86.30 ns |   668.7 ns | 0.2079 |     327 B |
+ |  ResolveCombined | 1,487.4 ns | 101.057 ns | 273.21 ns | 1,388.7 ns | 0.4673 |     734 B |
+
+После:
+
+```cs
+var activator = _activatorCache.GetOrAdd(concrete, x => GetActivator(ctor, parameters));
+```
+
+ |           Method |       Mean |     Error |    StdDev |  Gen 0 | Allocated |
+ |----------------- |-----------:|----------:|----------:|-------:|----------:|
+ | ResolveSingleton |   266.6 ns |  4.955 ns |  4.393 ns | 0.1268 |     199 B |
+ | ResolveTransient |   512.0 ns | 16.974 ns | 16.671 ns | 0.3252 |     511 B |
+ |  ResolveCombined | 1,119.2 ns | 18.218 ns | 15.213 ns | 0.6943 |    1101 B |
+
 ## P.S.
 
 В качестве эксперимента я решил произвести замеры времени создания объектов используя разные конструкции. Сам проект доступен на [Github](https://github.com/FSou1/NetBenchmarking), а результаты вы можете видеть ниже. Для полноты картины не хватает только способа активации посредством генерации IL инструкций максимально приближенных к методу Direct- именно этот способ используют контейнеры из топ 4, что и позволяет им добиваться таких впечатляющих результатов.

@@ -6,11 +6,11 @@ permalink: /about/
 
 You can contact with me using services in the footer of this site.
 
-1. [http://epam.com/](EPAM Systems), 6/2017 - Present: Senior .NET Developer
-2. [https://doktornarabote.ru/](DoktorAtWork), 9/2016 - 6/2017: Senior .NET Developer at [telemedicine project](http://telemedicine.doktornarabote.ru/)
-3. [https://europlan.ru/](Europlan), 9/2013 - 9/2016: Full stack Developer
-4. [http://www.atminst.ru/](the State Air Navigation Research Institute), 10/2008 - 8/2012: .NET Software Developer
-5. [https://www.upwork.com/o/profiles/users/_~01d0b9aa6cc56b8f51/](Upwork profile)
+1. [EPAM Systems](http://epam.com/), 6/2017 - Present: Senior .NET Developer
+2. [DoktorAtWork](https://doktornarabote.ru/), 9/2016 - 6/2017: Senior .NET Developer at [telemedicine](http://telemedicine.doktornarabote.ru/) project
+3. [Europlan](https://europlan.ru/), 9/2013 - 9/2016: Full stack Developer
+4. [the State Air Navigation Research Institute](http://www.atminst.ru/), 10/2008 - 8/2012: .NET Software Developer
+5. [Upwork profile](https://www.upwork.com/o/profiles/users/_~01d0b9aa6cc56b8f51/)
 
 ## Summary 
 
@@ -36,9 +36,9 @@ Bachelor’s Degree in Information Technology, Moscow State Technical University
 
 ## Posts and Articles
 
-1. [https://www.codeproject.com/Articles/1190556/General-Object-Initiating-Function-by-the-Example](General Object Initiating Function by the Example of $injector.instantiate Implementation in angularjs)
-2. [https://habrahabr.ru/post/331584/](Ru: История оптимизации одного IoC контейнера)
-3. [https://habrahabr.ru/post/330214/](Ru: Универсальная функция создания объектов на примере реализации $injector.instantiate в angularjs)
-4. [https://habrahabr.ru/post/328052/](Ru: Boxing и unboxing — что быстрее?)
-5. [https://habrahabr.ru/post/314080/](Ru: Опыт использования MassTransit 3.0)
-6. [https://habrahabr.ru/post/311256/](Ru: Использование единого IoC Container'a в рамках HTTP-запроса между Web API и OWIN Middleware)
+1. [General Object Initiating Function by the Example of $injector.instantiate Implementation in angularjs](https://www.codeproject.com/Articles/1190556/General-Object-Initiating-Function-by-the-Example)
+2. [Ru: История оптимизации одного IoC контейнера](https://habrahabr.ru/post/331584/)
+3. [Ru: Универсальная функция создания объектов на примере реализации $injector.instantiate в angularjs](https://habrahabr.ru/post/330214/)
+4. [Ru: Boxing и unboxing — что быстрее?](https://habrahabr.ru/post/328052/)
+5. [Ru: Опыт использования MassTransit 3.0](https://habrahabr.ru/post/314080/)
+6. [Ru: Использование единого IoC Container'a в рамках HTTP-запроса между Web API и OWIN Middleware](https://habrahabr.ru/post/311256/)

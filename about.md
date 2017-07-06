@@ -39,11 +39,12 @@ You can contact with me using services in the footer of this site.
 ## Posts and Articles
 
 1. [En: General Object Initiating Function by the Example of $injector.instantiate Implementation in angularjs](https://www.codeproject.com/Articles/1190556/General-Object-Initiating-Function-by-the-Example)
-2. [Ru: История оптимизации одного IoC контейнера](https://habrahabr.ru/post/331584/)
-3. [Ru: Универсальная функция создания объектов на примере реализации $injector.instantiate в angularjs](https://habrahabr.ru/post/330214/)
-4. [Ru: Boxing и unboxing — что быстрее?](https://habrahabr.ru/post/328052/)
-5. [Ru: Опыт использования MassTransit 3.0](https://habrahabr.ru/post/314080/)
-6. [Ru: Использование единого IoC Container'a в рамках HTTP-запроса между Web API и OWIN Middleware](https://habrahabr.ru/post/311256/)
+2. [En: Single IoC Container in the HTTP-request: Web API vs. OWIN Middleware](http://codingsight.com/using-single-ioc-container-http-request-web-api-vs-owin-middleware/)
+3. [Ru: История оптимизации одного IoC контейнера](https://habrahabr.ru/post/331584/)
+4. [Ru: Универсальная функция создания объектов на примере реализации $injector.instantiate в angularjs](https://habrahabr.ru/post/330214/)
+5. [Ru: Boxing и unboxing — что быстрее?](https://habrahabr.ru/post/328052/)
+6. [Ru: Опыт использования MassTransit 3.0](https://habrahabr.ru/post/314080/)
+7. [Ru: Использование единого IoC Container'a в рамках HTTP-запроса между Web API и OWIN Middleware](https://habrahabr.ru/post/311256/)
 
 ## Education
 

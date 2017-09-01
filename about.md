@@ -45,6 +45,7 @@ You can contact with me using services in the footer of this site.
 5. [Ru: Boxing и unboxing — что быстрее?](https://habrahabr.ru/post/328052/)
 6. [Ru: Опыт использования MassTransit 3.0](https://habrahabr.ru/post/314080/)
 7. [Ru: Использование единого IoC Container'a в рамках HTTP-запроса между Web API и OWIN Middleware](https://habrahabr.ru/post/311256/)
+8. [Ru: Azure Monitor: возможности и ограничения](https://habrahabr.ru/post/336922/)
 
 ## Education
 

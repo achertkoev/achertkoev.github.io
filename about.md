@@ -35,6 +35,7 @@ You can contact with me using services in the footer of this site.
 ## Projects
 
 1. [FsContainer](https://github.com/FSou1/FsContainer), - open source IoC container
+2. [FsMapper](https://github.com/FSou1/FsMapper), - open source mapper
 
 ## Posts and Articles
 

@@ -68,7 +68,7 @@ Frequency=2143473 Hz, Resolution=466.5326 ns, Timer=TSC
 .NET Core SDK=2.0.0
   [Host]     : .NET Core 2.0.0 (Framework 4.6.00001.0), 64bit RyuJIT
   DefaultJob : .NET Core 2.0.0 (Framework 4.6.00001.0), 64bit RyuJIT
-
+```
 
 ```
  |                      Method |       Mean |     Error |    StdDev |     Median |
@@ -78,6 +78,7 @@ Frequency=2143473 Hz, Resolution=466.5326 ns, Timer=TSC
  |       ConstructorInfoInvoke | 164.445 ns | 3.3355 ns | 4.3371 ns | 164.016 ns |
  |    DynamicMethodILGenerator |   5.859 ns | 0.2455 ns | 0.3015 ns |   5.819 ns |
  |                     NewCtor |   6.989 ns | 0.2615 ns | 0.5741 ns |   6.756 ns |
+```
 
 Несмотря на то, что использовать `ConstructorInfo.Invoke` и `Activator.CreateInstance` довольно легко, в данном списке с большим отрывом они являются явными аутсайдерами ввиду того, что в деталях своих реализаций они используют `RuntimeType` и `System.Reflection`. Это вполне приемлимо в повседневных задачах, но совершенно неуместно в рамках наших требований, где создание экземпляра типа является наиболее узким bottle neck'ом с точки зрения performance.
 
@@ -115,7 +116,7 @@ Frequency=2143473 Hz, Resolution=466.5326 ns, Timer=TSC
 .NET Core SDK=2.0.0
   [Host]     : .NET Core 2.0.0 (Framework 4.6.00001.0), 64bit RyuJIT
   DefaultJob : .NET Core 2.0.0 (Framework 4.6.00001.0), 64bit RyuJIT
-
+```
 
 ```
  |              Method |      Mean |     Error |    StdDev |
@@ -124,6 +125,7 @@ Frequency=2143473 Hz, Resolution=466.5326 ns, Timer=TSC
  | DictionaryTypeTuple |  49.35 ns | 0.6235 ns | 0.5832 ns |
  |      HashtableTuple | 103.07 ns | 2.6081 ns | 2.4397 ns |
  |  HashtableTypeTuple |  71.51 ns | 0.8679 ns | 0.7694 ns |
+```
 
 Принимая это во внимание, можно сделать следующие заключения:
 

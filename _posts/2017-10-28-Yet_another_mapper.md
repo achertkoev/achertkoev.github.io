@@ -155,7 +155,7 @@ Frequency=2143473 Hz, Resolution=466.5326 ns, Timer=TSC
 .NET Core SDK=2.0.0
   [Host]     : .NET Core 2.0.0 (Framework 4.6.00001.0), 64bit RyuJIT
   DefaultJob : .NET Core 2.0.0 (Framework 4.6.00001.0), 64bit RyuJIT
-
+```
 
 ```
  |                 Method |       Mean |     Error |    StdDev |
@@ -166,6 +166,7 @@ Frequency=2143473 Hz, Resolution=466.5326 ns, Timer=TSC
  |       MapsterBenchmark |  90.949 ns | 1.6393 ns | 1.4532 ns |
  |   AgileMapperBenchmark | 218.021 ns | 3.0921 ns | 2.7410 ns |
  |    CtorMapperBenchmark |   7.806 ns | 0.2472 ns | 0.2312 ns |
+```
 
 Исходный код проекта доступен на github: [https://github.com/FSou1/FsMapper](https://github.com/FSou1/FsMapper).
 

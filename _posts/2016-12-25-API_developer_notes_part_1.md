@@ -36,7 +36,7 @@ tags: ASP.NET OWIN IIS MSSQL NHibernate
 
 К сожалению (или к счастью) NHibernate по умолчанию не умеет работать с некоторыми типами MS SQL (будь-то datetime2 или nvarchar(max)). В этом случае придётся на соответствующем поле вызвать `CustomType` и `CustomSqlType`, где явно указать, какому типу в базе данных соответствует данное поле:
 
-```c#
+```csharp
 Map(x => x.Description).CustomType("StringClob").CustomSqlType("nvarchar(max)");
 ```
 
@@ -59,7 +59,7 @@ CREATE TABLE dbo.GuidTest (
 
 В случае с NHibernate эту функцию можно задать с использованием маппинга `Id`:
 
-```c#
+```csharp
 Id(p => p.Id).GeneratedBy.GuidComb();
 ```
 
@@ -67,7 +67,7 @@ Id(p => p.Id).GeneratedBy.GuidComb();
 
 В случае с Entity Framework:
 
-```c#
+```csharp
 [Key]
 [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 public Guid Id { get; set; }

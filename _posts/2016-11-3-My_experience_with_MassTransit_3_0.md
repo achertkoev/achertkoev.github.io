@@ -42,7 +42,7 @@ EstimateConnection, SendSms, NotifyCustomerOrderProcessed.
 
 Работа с командами осуществляется с помощью метода Send (интерфейса ISendEndpoint) и указания получателя endpoint (очереди):
 
-```c#
+```csharp
 private static async Task SendSmsCommand(IBus busControl)
 {
    var command = new SendSmsCommand
@@ -85,7 +85,7 @@ private static async Task SendSmsCommand(IBus busControl)
 
 Согласно документации MassTransit, при объявлении контрактов сообщений [рекомендуется](http://docs.masstransit-project.com/en/latest/usage/messages.html) прибегать к интерфейсам:
 
-```c#
+```csharp
 public interface ISendSms {
   Guid CommandId { get; }
   string PhoneNumber { get; }
@@ -95,7 +95,7 @@ public interface ISendSms {
 
 Как упоминалось ранее, отправка команд должна осуществляться исключительно с помощью метода Send (интерфейса IBus) и указания адресата (endpoint).
 
-```c#
+```csharp
 public interface ISmsSent {
   Guid EventId { get; }
   DateTime SentAtUtc { get; }	
@@ -124,7 +124,7 @@ public interface ISmsSent {
 
 В том случае, если конфигурируя receive endpoint мы указываем наименование очереди:
 
-```c#
+```csharp
 cfg.ReceiveEndpoint(host, "play_with_masstransit_queue", e => e.LoadFrom(container));
 ```
 
@@ -138,7 +138,7 @@ cfg.ReceiveEndpoint(host, "play_with_masstransit_queue", e => e.LoadFrom(contain
 
 Если же конфигурация осуществляется без указания очереди:
 
-```c#
+```csharp
 cfg.ReceiveEndpoint(host, e=> e.LoadFrom(container));
 ```
 
@@ -152,7 +152,7 @@ cfg.ReceiveEndpoint(host, e=> e.LoadFrom(container));
 
 Говоря о формате сообщения, хотелось бы подробнее остановиться на наименовании (или messageType). За его формирование (заголовков urn:message:) ответственна функция [GetUrnForType(Type type)](https://github.com/MassTransit/MassTransit/blob/b488f08beed692e0a9acaa6a45fb022a7ce457bc/src/MassTransit/MessageUrn.cs#L85). Для примера я добавил для команды ISendSms наследование от ICommand и generic тип:
 
-```c#
+```csharp
 public interface ICommand<T>
 {
 }
@@ -217,7 +217,7 @@ class SendSmsCommand : ISendSms<string>
 
 Пример консьюмера, обрабатывающего команду ISendSms и публикующего событие ISmsSent:
 
-```c#
+```csharp
 public class SendSmsConsumer : IConsumer<ISendSms<string>>
 {
    public SendSmsConsumer(IBusControl busControl)
@@ -247,7 +247,7 @@ public class SendSmsConsumer : IConsumer<ISendSms<string>>
 
 Код отправки сообщений я вынес в отдельный Extension класс над IBusControl, там же находится и имплементация самих сообщений:
 
-```c#
+```csharp
 public static class BusExtensions
 {
    /// <summary>
@@ -348,7 +348,7 @@ class SmsSentEvent : ISmsSent
 
 В случае с UnityContainer потребуется установить nuget package MassTransit.Unity, после чего станет доступен метод расширения LoadFrom:
 
-```c#
+```csharp
 public static class UnityExtensions
 {
     public static void LoadFrom(this IReceiveEndpointConfigurator configurator, IUnityContainer container);
@@ -357,7 +357,7 @@ public static class UnityExtensions
 
 Пример использования выглядит следующим образом:
 
-```c#
+```csharp
 public static IBusControl GetConfiguredFactory(IUnityContainer container)
 {
    if (container == null)
@@ -401,7 +401,7 @@ public static IBusControl GetConfiguredFactory(IUnityContainer container)
 
 В качестве примера далее представлена реализация ConsumeObserver:
 
-```c#
+```csharp
 public class ConsumeObserver : IConsumeObserver
 {
    public Task PreConsume<T>(ConsumeContext<T> context) where T : class

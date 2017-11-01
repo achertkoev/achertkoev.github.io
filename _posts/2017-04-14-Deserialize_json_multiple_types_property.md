@@ -62,7 +62,7 @@ tags: .NET C# JSON
 2. интерфейса `IContact` на место которого будут подставляться конкретные реализации;
 3. реализации контактов: `EmailContact`, `PhoneContact`, `VkContact`;
 
-```c#
+```csharp
 public class Resume {
     public IList<IContact> Contacts { get; set; }
 }
@@ -97,7 +97,7 @@ public class PhoneContactValue {
 
 Пример реализации указан далее:
 
-```c#
+```csharp
 public class ContactConverter : CustomCreationConverter<IContact> {
     public override IContact Create(Type objectType) {
         throw new NotImplementedException();
@@ -143,7 +143,7 @@ public class ContactConverter : CustomCreationConverter<IContact> {
 
 Теперь всё что осталось сделать, так это подключить реализованный ранее конвертер в настройках `JsonSerializer`:
 
-```c#
+```csharp
 var resume = JsonConvert.DeserializeObject<Resume>(response, new ContactConverter());
 ```
 

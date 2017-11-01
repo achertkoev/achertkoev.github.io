@@ -61,7 +61,7 @@ public void WhenMappingExist_Then_Map()
 
 В C# нам доступно не так много способов создать и проинициализировать экземпляр типа в runtime и чем выше уровень абстракции того или иного метода, тем менее оптимальным с точки зрения времени выполнения он является. Ранее я уже сталкивался с подобным выбором в другом своём небольшом проекте под названием [FsContainer](https://github.com/FSou1/FsContainer) и потому следующие результаты не стали для меня удивительными.
 
-``` ini
+``` 
 
 BenchmarkDotNet=v0.10.9, OS=Windows 8.1 (6.3.9600)
 Processor=Intel Core i5-5200U CPU 2.20GHz (Broadwell), ProcessorCount=4
@@ -109,7 +109,7 @@ return Expression.Lambda<Func<TSource, TDest>>(body, orig).Compile();
 
 Для кеширования скомпилированного делегата, который в дальнейшем будет использоваться для выполнения маппинга, я выбирал между `Dictionary` и `Hashtable`. Забегая вперёд, хотелось бы отметить, что ключевые роли играют не только тип коллекции, но и тип ключа, по которому будет осуществляться выборка. Для проверки этого утверждения был написан отдельный benchmark и получены следующие результаты:
 
-``` ini
+``` 
 
 BenchmarkDotNet=v0.10.9, OS=Windows 8.1 (6.3.9600)
 Processor=Intel Core i5-5200U CPU 2.20GHz (Broadwell), ProcessorCount=4
@@ -137,7 +137,7 @@ Frequency=2143473 Hz, Resolution=466.5326 ns, Timer=TSC
 
 Внутренняя реализация метода `Map` должна быть предельно проста и оптимизирована ввиду того, что именно этот метод будет вызываться в 99.9% случаев. Поэтому всё, что нам необходимо сделать, это максимально быстро найти ссылку на скомпилированный ранее `Delegate` в кеше и вернуть результат его выполнения:
 
-```c#
+```csharp
 public TDest Map<TSource, TDest>(TSource source)
 {
     var key = new TypeTuple(typeof(TSource), typeof(TDest));
@@ -150,7 +150,7 @@ public TDest Map<TSource, TDest>(TSource source)
 
 В качестве результатов хотелось бы привести итоги финальных замеров существующих (и находящихся в актуальном состоянии) на данный момент мапперов:
 
-``` ini
+``` 
 
 BenchmarkDotNet=v0.10.9, OS=Windows 8.1 (6.3.9600)
 Processor=Intel Core i5-5200U CPU 2.20GHz (Broadwell), ProcessorCount=4

@@ -18,7 +18,7 @@ tags: .NET NHibernate JSON
 
 Одним из способов научить NHibernate взаимодействовать с данными в требуемом нам формате является реализация собственного типа, в котором и будут реализованы операции распознования (десериализации) и подготовки к записи (сериализации). Для этого потребуется унаследовать наш тип от интерфейса [IUserType](https://github.com/nhibernate/nhibernate-core/blob/b08e2b9a94b75fed21a455daaef320cb0df105a3/src/NHibernate/UserTypes/IUserType.cs) и реализовать необходимые методы:
 
-```c#
+```csharp
 public class JsonMappableType<T> : IUserType where T : class
 {
     public new bool Equals(object x, object y)
@@ -110,7 +110,7 @@ public class JsonMappableType<T> : IUserType where T : class
 
 Пример использования:
 
-```c#
+```csharp
 public class Scenario {
     public virtual ISet<Call> Calls { get; set; }
 }
@@ -124,7 +124,7 @@ public class ScenarioMap : ClassMap<Scenario> {
 
 Для полноты картины, на всякий случай, приведу содержимое класса `Call`:
 
-```c#
+```csharp
 public class Call
 {
     public virtual long Id { get; set; }
@@ -144,7 +144,7 @@ public class Call
 
 В связи с этим я настоятельно рекомендую вам использовать агрегаты для всех данных, которые вы захотите хранить в ненормализованном виде. В случае со звонками это может выглядеть следующим образом:
 
-```c#
+```csharp
 public class Scenario
 {
     public virtual ScenarioData Data { get; set; }

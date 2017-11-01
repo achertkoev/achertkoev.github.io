@@ -8,7 +8,7 @@ tags: .NET TDD
 
 Как уже наверняка стало понятно из заголовка, в основе реализации содержится экземпляр класса `HttpContext` в статическом поле `HttpContext.Current` которого и содержится контекст текущего HTTP запроса. Для его эмуляции достаточно следующих строк кода:
 
-```c#
+```csharp
 HttpContext.Current = new HttpContext(
     new HttpRequest("", "http://any-uri.org", ""),
     new HttpResponse(new StringWriter())
@@ -17,7 +17,7 @@ HttpContext.Current = new HttpContext(
 
 Если требуется воспроизвести контекст с авторизованным пользователем, то можем добавить Principal:
 
-```c#
+```csharp
 HttpContext.Current.User = new GenericPrincipal(
     new GenericIdentity("username"),
     new string[0]
@@ -26,7 +26,7 @@ HttpContext.Current.User = new GenericPrincipal(
 
 Вариант с пользователем после log out:
 
-```c#
+```csharp
 HttpContext.Current.User = new GenericPrincipal(
     new GenericIdentity(String.Empty),
     new string[0]
@@ -39,7 +39,7 @@ HttpContext.Current.User = new GenericPrincipal(
 
 В первом методе, т.к. используется один и тот же HttpContext, возвращаются одинаковые экземпляры зависимости, а во втором, напротив - различные.
 
-```c#
+```csharp
 [TestClass]
 public class PerHttpRequestLifetimeManagerTest
 {

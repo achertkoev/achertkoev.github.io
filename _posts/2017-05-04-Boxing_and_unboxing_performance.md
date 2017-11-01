@@ -28,7 +28,7 @@ tags: .NET IL performance
 
 Для проверки этого утверждения я набросал 4 небольшие функции: 2 для boxing и 2 для unboxing типов `int` и `struct`.
 
-```c#
+```csharp
 public class BoxingUnboxingBenchmark {
     private long LoopCount = 1000000;
 
@@ -93,7 +93,7 @@ public class BoxingUnboxingBenchmark {
 
 Пример IL кода для упаковки `int`:
 
-```c#
+```csharp
 .method public hidebysig instance object 
         BoxingInt() cil managed
 {
@@ -128,7 +128,7 @@ public class BoxingUnboxingBenchmark {
 
 Пример IL кода для распаковки `struct`:
 
-```c#
+```csharp
 .method public hidebysig instance valuetype ConsoleApp1.ExampleStruct 
         UnBoxingStruct() cil managed
 {

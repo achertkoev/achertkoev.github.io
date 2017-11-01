@@ -8,7 +8,7 @@ tags: .NET Middleware
 
 Owin middleware:
 
-```c#
+```csharp
 public class UptimeMonitoringMiddleware
 {
     public UptimeMonitoringMiddleware(
@@ -47,7 +47,7 @@ public static class UptimeMiddlewareExtension
 
 Константа:
 
-```c#
+```csharp
 public static class HttpPropertyKeys
 {
     public static readonly string UptimeMiddlewarePath = "/uptime";

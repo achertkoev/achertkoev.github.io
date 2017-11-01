@@ -25,7 +25,7 @@ tags: ASP.NET IoC OWIN
 
 Для этого нам достаточно сконфигурировать контейнер, зарегистрировать его в Web API (посредством DependencyResolver):
 
-```c#
+```csharp
 // Configure our parent container
 var container = UnityConfig.GetConfiguredContainer();
             
@@ -39,7 +39,7 @@ WebApiConfig.Register(config);
 
 написать собственный Middleware, который будет создавать дочерний контейнер:
 
-```c#
+```csharp
 public class UnityContainerPerRequestMiddleware : OwinMiddleware
 {
     public UnityContainerPerRequestMiddleware(OwinMiddleware next, IUnityContainer container) : base(next)
@@ -69,7 +69,7 @@ public class UnityContainerPerRequestMiddleware : OwinMiddleware
 
 и использовать его в других Middleware’ах (в моей реализации я сохраняю контейнер в глобальном OwinContext с помощью context.Set, который передаётся в каждый следующий middleware и получаю его с помощью context.Get):
 
-```c#
+```csharp
 public class CustomMiddleware : OwinMiddleware
 {
     public CustomMiddleware(OwinMiddleware next) : base(next)
@@ -104,13 +104,13 @@ Middleware Web API внутри себя имеет свой собственн�
 
 За создание контроллера отвечает следующая строка в DefaultHttpControllerActivator:
 
-```c#
+```csharp
 IHttpController instance = (IHttpController)request.GetDependencyScope().GetService(controllerType);
 ```
 
 Основное содержимое метода GetDependencyScope:
 
-```c#
+```csharp
 public static IDependencyScope GetDependencyScope(this HttpRequestMessage request) {
     // …
 
@@ -140,7 +140,7 @@ public static IDependencyScope GetDependencyScope(this HttpRequestMessage reques
 
 Для решения выше поставленной проблемы мы можем реализовать собственный IHttpControllerActivator, в методе Create которого будем получать созданный ранее контейнер и уже в рамках него Resolve’ить зависимости:
 
-```c#
+```csharp
 public class ControllerActivator : IHttpControllerActivator
 {
     public IHttpController Create(
@@ -169,7 +169,7 @@ public class ControllerActivator : IHttpControllerActivator
 
 Для того, чтобы использовать его в Web API всё что нам остаётся, это заменить стандартный HttpControllerActivator в конфигурации:
 
-```c#
+```csharp
 var config = new HttpConfiguration {
     DependencyResolver = new UnityDependencyResolver(container)
 };
@@ -187,19 +187,19 @@ WebApiConfig.Register(config);
 
 Создание дочернего контейнера от глобального;
 
-```c#
+```csharp
 var childContainer = _container.CreateChildContainer();
 ```
 
 Присваивание контейнера в Owin context:
 
-```c#
+```csharp
 context.Set(HttpApplicationKey.OwinPerRequestUnityContainerKey, childContainer);
 ```
 
 Использование контейнера в других Middleware’ах;
 
-```c#
+```csharp
 var container = context.Get<IUnityContainer>(HttpApplicationKey.OwinPerRequestUnityContainerKey);
 ```
 
@@ -207,19 +207,19 @@ var container = context.Get<IUnityContainer>(HttpApplicationKey.OwinPerRequestUn
 
 Получение контроллера из Owin context:
 
-```c#
+```csharp
 var container = request.GetOwinContext().Get<IUnityContainer>(HttpApplicationKey.OwinPerRequestUnityContainerKey);
 ```
 
 Создание контроллера на основе этого контейнера:
 
-```c#
+```csharp
 var controller = (IHttpController)container.Resolve(controllerType);
 ```
 
 Уничтожение контейнера;
 
-```c#
+```csharp
 childContainer.Dispose();
 ```
 
@@ -229,7 +229,7 @@ childContainer.Dispose();
 
 Конфигурируем зависимости в соответствии с требуемыми нам их жизненными циклами:
 
-```c#
+```csharp
 public static void RegisterTypes(IUnityContainer container)
 {
     // ContainerControlledLifetimeManager - singleton's lifetime

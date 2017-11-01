@@ -8,7 +8,7 @@ tags: ASP.NET Core IIS
 
 Если прямо сейчас создать новый Web Application в Visual Studio 17 (15.3) для платформы ASP.NET Core 2.0, то в файле Program.cs можно будет увидеть следующее:
 
-```c#
+```csharp
 public class Program
 {
     public static void Main(string[] args)

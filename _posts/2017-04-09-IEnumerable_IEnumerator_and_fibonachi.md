@@ -8,7 +8,7 @@ tags: .NET C#
 
 Итак, следуя терминологии Джозефа Албахари (C# 6.0 in a nutshell),- *перечеслитель*, это объект, который реализует один из интерфейсов:
 
-```c#
+```csharp
 System.Collections.IEnumerator
 System.Collections.Generic.IEnumerator<T>
 ```
@@ -27,7 +27,7 @@ System.Collections.Generic.IEnumerator<T>
 
 Как мы уже выяснили ранее, чтобы иметь возможность итерироваться по объекту нам нужно соблюсти одно из 2-х условий **перечислимого объекта**, например, реализовать `IEnumerable<T>`:
 
-```c#
+```csharp
 class FibonachiCollection : IEnumerable<int> {
     private readonly int _count;
 
@@ -58,7 +58,7 @@ class FibonachiCollection : IEnumerable<int> {
 
 Этого класса достаточно, чтобы уже начать его использовать следующим образом:
 
-```c#
+```csharp
 foreach (var i in new FibonachiCollection(20)) {
     Console.WriteLine(i);
 }
@@ -66,7 +66,7 @@ foreach (var i in new FibonachiCollection(20)) {
 
 Сама же эта конструкция будет преобразована в следующий вид:
 
-```c#
+```csharp
 var enumerator = new FibonachiCollection(20).GetEnumerator();
 
 /* Depends on exists of IDisposable implementation */
@@ -83,7 +83,7 @@ using (enumerator) {
 
 Для решения задачи по ограничению итоговой коллекции исключительно чётными числами, я предпочитаю использовать extension метод (отличный пример кода, который может быть переиспользован в дальнейшем):
 
-```c#
+```csharp
 static class EnumerableExtensions {
     public static IEnumerable<int> Odd(this IEnumerable<int> numerics) {
         foreach (var num in numerics) {
@@ -98,7 +98,7 @@ static class EnumerableExtensions {
 
 Как итог:
 
-```c#
+```csharp
 foreach (var i in new FibonachiCollection(20).Odd()) {
     Console.WriteLine(i);
 }
@@ -108,7 +108,7 @@ foreach (var i in new FibonachiCollection(20).Odd()) {
 
 В качестве факультатива всем читателям предлагаю реализовать (и поделиться в комментариях для сравнения) своей реализацией **итерируемого объекта**, вычисляющего значения асинхронно:
 
-```c#
+```csharp
 foreach (var i in new AsyncFibonachiCollection(20).OddAsync()) {
     Console.WriteLine(await i);
 }
@@ -119,7 +119,7 @@ foreach (var i in new AsyncFibonachiCollection(20).OddAsync()) {
 
 Коллекция:
 
-```c#
+```csharp
 class AsyncFibonachiCollection : IEnumerable<Task<int>> {
     private readonly int _count;
 
@@ -148,7 +148,7 @@ class AsyncFibonachiCollection : IEnumerable<Task<int>> {
 
 Методы:
 
-```c#
+```csharp
 public static IEnumerable<Task<int>> OddAsync(this IEnumerable<Task<int>> numerics) {
     foreach (var num in numerics) {
         var result = num.Result;

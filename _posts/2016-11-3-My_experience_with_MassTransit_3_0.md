@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Опыт использования MassTransit 3.0
+tags: .NET C# MassTransit RabbitMQ
 ---
 
 MassTransit это open source библиотека, разработанная на языке C# для .NET платформы, упрощающая работу с шиной данных, которая используется при построении распределенных приложений и реализации SOA (service oriented architecture).

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Конструкция «controller as» в AngularJS
+tags: AngularJS JavaScript
 ---
 
 Сегодня хочу поделиться информацией о конструкции «controller as» в AngularJS, для чего его понадобилось добавлять и разобрать внутренее устройство его работы.

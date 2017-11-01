@@ -1,6 +1,7 @@
 ---
 layout: post
 title: История оптимизации одного IoC контейнера
+tags: .NET C# IoC performance
 ---
 
 В этой заметке мне хотелось бы поделиться информацией о небольшом, но, на мой взгляд, весьма и весьма полезном [проекте](https://github.com/stebet/DependencyInjectorBenchmarks), в котором [Stefán Jökull Sigurðarson](https://github.com/stebet) добавляет все известные ему IoC контейнеры, которые мигрировали на .NET Core, и с использованием [BenchmarkDotNet](https://github.com/dotnet/BenchmarkDotNet) проводит замеры instance resolving performance. Не упустил возможности поучавствовать в этом соревновании и я со своим маленьким проектом [FsContainer](https://github.com/FSou1/FsContainer).

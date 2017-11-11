@@ -21,7 +21,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   to development in details: .NET, C#, JavaScript, MSSQL, Design,
   performance and so on.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://fsou1.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 permalink: /:title/
 
 twitter_username: my_fsou1

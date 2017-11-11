@@ -2,7 +2,6 @@
 layout: post
 title: Пишем свой маппер для .NET Standard 2.0 
 tags: .NET C# performance
-comments: true
 ---
 
 В сегодняшней заметке я хотел бы поведать вам о коротком приключении по написанию своего маппера для .NET Standard 2.0. Ссылка на github и результаты benchmark'ов прилагаются.

@@ -10,7 +10,7 @@ Some time ago I decided to sort out internal details of .NET Core CLR and today 
 
 Microsoft took care of developers who are interested in development of their products. The repository documentation is not only very detailed and well-designed but also keeps up to date and contains lots of how-to information. 
 
-Depending on the developer's OS it contains particular build instructions and requirements ([this one] is(https://github.com/dotnet/coreclr/blob/master/Documentation/building/windows-instructions.md) for Windows for example). As you could notice there are IDE and necessary component requirements, secondary packages and environment setup which should be performed for a successful building. 
+Depending on the developer's OS it contains particular build instructions and requirements ([this one](https://github.com/dotnet/coreclr/blob/master/Documentation/building/windows-instructions.md) is for Windows for example). As you could notice there are IDE and necessary component requirements, secondary packages and environment setup which should be performed for a successful building. 
 
 The building process itself is pretty straightforward and contains the only one step: execute `build.cmd` with optional arguments. Detailed [debugging instructions](https://github.com/dotnet/coreclr/blob/master/Documentation/building/debugging-instructions.md) on a different OS could also be found on a separate page.
 

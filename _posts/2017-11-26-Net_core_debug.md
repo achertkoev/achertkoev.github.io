@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Debugging .NET Core CLR afterwords 
+title: Debugging .NET Core CLR afterword
 tags: .NET Core
 ---
 
@@ -10,7 +10,7 @@ Some time ago I decided to sort out internal details of .NET Core CLR and today 
 
 Microsoft took care of developers who are interested in development of their products. The repository documentation is not only very detailed and well-designed but also keeps up to date and contains lots of how-to information. 
 
-Depending on the developer's OS it contains a particular build instructions and requirements ([this one] is(https://github.com/dotnet/coreclr/blob/master/Documentation/building/windows-instructions.md) for Windows for example). As you could notice there are IDE and necessary component requirements, secondary packages and environment setup which should be performed for a successful building. 
+Depending on the developer's OS it contains particular build instructions and requirements ([this one] is(https://github.com/dotnet/coreclr/blob/master/Documentation/building/windows-instructions.md) for Windows for example). As you could notice there are IDE and necessary component requirements, secondary packages and environment setup which should be performed for a successful building. 
 
 The building process itself is pretty straightforward and contains the only one step: execute `build.cmd` with optional arguments. Detailed [debugging instructions](https://github.com/dotnet/coreclr/blob/master/Documentation/building/debugging-instructions.md) on a different OS could also be found on a separate page.
 
@@ -34,7 +34,7 @@ The left part contains C++ code which is used for the application domain setup. 
 
 As I've already mentioned before the root cause of this opportunity is the same memory layout (probably, it's better to say 'exactly the same mapping between the type design and the memory structure regardless programming language'). In reality we allocate the same size of memory and every property or method has the same offset in both languages. Why shouldn't it be possible to make such kind of calls? It's quite real and obvious.
 
-## C# access modifiers does not affect availability from outside
+## C# access modifiers do not affect availability from outside
 
 Once again an attentive reader was able to figure out the confirmation of this thesis with the previous image. Haven't you noticed it yet? Ok, I'm going to clarify a little bit:
 
@@ -55,10 +55,10 @@ The signature of this method contains the access modifier `private` but it's not
 
 Last but not least I'd like to share today: contributing to microsoft repository is pretty easy, straightforward and really exciting. If you have any suggestions, issues or questions feel free to create a new issue with an explanation in details and be sure that a competent feedback will be posted very soon. 
 
-In my case I found that an implementation of a several methods was missed and @jkotas suggested me to be a responsible for this improvement. Honestly it's a pretty simple improvement and my contribution wasn't too important, but I can't describe how exciting it was.
+In my case I found that an implementation of a several methods was missed and @jkotas suggested me to be responsible for this improvement. Honestly it's a pretty simple improvement and my contribution wasn't too important, but I can't describe how exciting it was.
 
 ![coreclr_oss](/images/post/coreclr_oss.png)
 
-Finally I'd like to recommend an awesome video- [Adam Sitnik — My awesome journey with Open Source](https://www.youtube.com/watch?v=2HSPKyAyuik) for everyone who haven't seen it before. In this video Adam shares his experience and give a lot of useful advice and recommendations for people who have been planning to start contributing but still do not know how to do it.
+Finally I'd like to recommend an awesome video- [Adam Sitnik — My awesome journey with Open Source](https://www.youtube.com/watch?v=2HSPKyAyuik) for everyone who hasn't seen it before. In this video Adam shares his experience and gives a lot of useful advice and recommendations for people who have been planning to start contributing but still do not know how to do it.
 
 Thanks everyone for reading and feel free to comment.

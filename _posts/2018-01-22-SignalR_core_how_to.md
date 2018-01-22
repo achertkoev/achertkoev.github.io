@@ -76,3 +76,71 @@ Fow now your backend part of the application is fully configured and could be us
 
 ## Sample implementation
 
+I'd like to implement a pretty straightforward stock currencies display. This display should contains information about a set of currencies (let it be 5 pairs) and has an ability to update it in real-time (twice per second) for every connected user simultaneously.
+
+The sample contains three main parts:
+- Broadcaster as a component, which should fetch or listen an information about currency updates;
+- Notifier as a component, which should notify all active connections with up-to-date data;
+- Display table as a currency information view;
+
+I've implemented a broadcaster with the usage of `IHostedService`. It's pretty usefull interface with a great benefit like hosting your component as an ASP.NET Core background worker:
+
+```c#
+public class CurrencyListenerService : IHostedService, IDisposable
+{
+    //..
+
+    public async Task StartAsync(CancellationToken cts)
+    {
+        while (!cts.IsCancellationRequested)
+        {
+            var currencies = await FetchCurrencyUpdates();
+
+            await Broadcast(currencies);
+
+            await Task.Delay(_delay, cts);
+        }
+    }
+
+    private Task<Dictionary<string, double>> FetchCurrencyUpdates()
+    {
+        var data = new Dictionary<string, double>
+        {
+            {"EUR", 80 + _rnd.NextDouble()},
+            {"USD", 57 + _rnd.NextDouble()},
+            {"BYN", 28 + _rnd.NextDouble()}
+        };
+
+        return Task.FromResult(data);
+    }
+
+    //..
+}
+```
+
+The broadcaster part of this service have to be implemented with the usage of `HubLifetimeManager<THub>`. Based on generic type `THub` this class contains an information about all active connections of a particular hub and has an opportunity to notify them throught a function call, which is declared at frontend:
+
+```c#
+private async Task Broadcast(Dictionary<string, double> data)
+{
+    await _hubManager.InvokeAllAsync("currenciesUpdated", 
+        new object[] { data });
+}
+```
+
+To host this service we need to register it at `IServiceCollection` like this:
+
+```c#
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddSingleton<IHostedService, CurrencyListenerService>();
+
+    //..
+}
+```
+
+As I've already mentioned before we need to declare a function at frontend, which could be called from a backend side for a notifier purposes (let it be `currenciesUpdated` function).
+
+ 
+
+

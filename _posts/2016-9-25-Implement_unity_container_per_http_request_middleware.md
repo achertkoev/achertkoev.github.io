@@ -10,7 +10,7 @@ tags: ASP.NET IoC OWIN
 
 Проекты Web API 2 конфигурируются с помощью OWIN интерфейса IAppBuilder, который призван помочь построить pipeline обработки входящего запроса.
 
-![owin pipeline](/images/post/owin-pipeline.png){:class="img-responsive"}
+![owin pipeline](/images/post/owin-pipeline.png)
 
 На изображении выше виден жизненный цикл запроса,- он проходит по всем компонентам цепочки, затем попадает в Web API (что также является отдельным компонентом) и возвращается обратно, формируя или декорируя ответ от сервера.
 
@@ -248,7 +248,7 @@ public static void RegisterTypes(IUnityContainer container)
 2. HierarchicalLifetimeManager - создание единственного экземпляра в рамках контейнера (где мы добились того, что контейнер единый в рамках HTTP запроса);
 3. TransientLifetimeManager - создание экземпляра при каждом обращении (Resolve).
 
-![unity-per-request-middleware-result](/images/post/unity-per-request-middleware-result.png){:class="img-responsive"}
+![unity-per-request-middleware-result](/images/post/unity-per-request-middleware-result.png)
 
 В изображении выше отображены GetHashCode’ы зависимостей в разрезе нескольких HTTP запросов, где:
 

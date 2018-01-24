@@ -10,12 +10,12 @@ tags: MSSQL
 
 ## Выдать права на вкладке Login / Server Roles
 
-![instantiate function](/images/post/login_failed_1.png){:class="img-responsive"}
+![instantiate function](/images/post/login_failed_1.png)
 
 ## Выдать права на подключение на вкладке Login / Securables
 
-![instantiate function](/images/post/login_failed_2.png){:class="img-responsive"}
+![instantiate function](/images/post/login_failed_2.png)
 
 ## Разрешить смешанный вид аутентификации на вкладке Server / Security
 
-![instantiate function](/images/post/login_failed_3.png){:class="img-responsive"}
+![instantiate function](/images/post/login_failed_3.png)

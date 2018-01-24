@@ -15,7 +15,7 @@ tags: .NET C#
 
 **Начиная с C# 7.1** так же доступно использование `async` keyword и возвращаемые значения типов `Task` и `Task<int>`. Для успешной компиляции необходимо используя Visual Studio 15.3 редакции в `Project properties > Build > Advanced > Language version` выставить значение `C# 7.1`:
 
-![chsarp_71_ep](/images/post/chsarp_71_ep.gif){:class="img-responsive"}
+![chsarp_71_ep](/images/post/chsarp_71_ep.gif)
 
 Выбор необходимой сигнатуры обуславливается необходимостью возвращать результат выполнения нашего приложения и конфигурации посредством передаваемых аргументов.
 

@@ -151,6 +151,6 @@ var resume = JsonConvert.DeserializeObject<Resume>(response, new ContactConverte
 
 В результате получаем строготипизиронное представление конкретных контактов с удобной возможностью дальнейшего расширение (на случай появления новых типов контактов потребуется лишь объявить модель и добавить новое значение `type` в оператор `switch`).
 
-![mt event](/images/post/deserialize_json_multiple.png){:class="img-responsive"}
+![mt event](/images/post/deserialize_json_multiple.png)
 
 Исходники доступны на [GitHubGist src](https://gist.github.com/FSou1/daeff50471419de025f7dab9c744df1c).

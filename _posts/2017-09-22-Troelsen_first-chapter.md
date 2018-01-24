@@ -55,15 +55,15 @@ BCL (Base Class Library) - библиотека, которая содержит
 
 Независимо от выбранного ЯП в случае с .NET результатом компиляции всегда являются .NET binaries, хоть и совпадающие по расширению с unmanaged Windows binaries (*.dll или *.exe), однако не имеющие с ними во внутренней структуре ничего общего. Говоря о .NET binaries, они не содержат platform-specific инструкций, напротив platform-agnostic IL.
 
-![msil of main method](/images/post/main_msil.png){:class="img-responsive"}
+![msil of main method](/images/post/main_msil.png)
 
 Объекты, содержащие MSIL код называют assembly. Именно они, аналогично java byte code используются в .NET runtime для компиляции в platform-specific инструкции используя JIT (Just in time) компилятор. Кроме исполняемого кода, в assembly так же находятся и метаданные, описывающие каждый объявленный тип и их члены.
 
-![metadata](/images/post/metadata.png){:class="img-responsive"}
+![metadata](/images/post/metadata.png)
 
 Наконец, кроме MSIL инструкций и описания всех используемых типов assembly так же содержат метаданные описывающие их самих, называемые манифестом. Так, манифест содержит в себе текущий номер сборки (версию), culture information (используемая для локализации) и список всех используемых (reference) assembly, которые требуются для корректного исполнения оной в .NET runtime.
 
-![manifest](/images/post/manifest.png){:class="img-responsive"}
+![manifest](/images/post/manifest.png)
 
 ## JIT и компиляция MSIL в platform-specific инструкции
 
@@ -87,7 +87,7 @@ BCL (Base Class Library) - библиотека, которая содержит
 
 Далее представлен high-level процесс компиляции, трансляции и запуска .NET приложения:
 
-![net runtime](/images/post/net_runtime.png){:class="img-responsive"}
+![net runtime](/images/post/net_runtime.png)
 
 Используемая литература:
 

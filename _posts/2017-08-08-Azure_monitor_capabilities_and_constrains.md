@@ -18,7 +18,7 @@ tags: Azure Cloud
 
 Представленное ниже изображение характерно для вычисляемых (исполняемых) ресурсов и отличается от невычисляемых лишь наличием Application Logs and metrics.
 
-![monitor capabilities](/images/post/monitoring_azure_resources-compute_v6.png){:class="img-responsive"}
+![monitor capabilities](/images/post/monitoring_azure_resources-compute_v6.png)
 
 ### Activity log
 
@@ -35,7 +35,7 @@ tags: Azure Cloud
 - Добавления правил оповещения;
 - Анализа в PowerBI;
 
-![metrics and events](/images/post/activity_log_overview_v3.png){:class="img-responsive"}
+![metrics and events](/images/post/activity_log_overview_v3.png)
 
 ### Metrics and Events
 
@@ -43,13 +43,13 @@ tags: Azure Cloud
 
 Если мы хотим предпринять действие основанное на значении метрики, то в этом нам поможет система оповещения и реагирования, в арсенале которой присутствует возможность отправлять email уведомления, вызывать webhook или запускать logic app (с помощью request trigger).
 
-![metrics and events](/images/post/metrics_overview_v4.png){:class="img-responsive"}
+![metrics and events](/images/post/metrics_overview_v4.png)
 
 ### Log search
 
 Благодаря log search и специализированному языку запросов доступна возможность выполнять query/filter/aggregate применимо к логам и метрикам, а также визуализировать итоговые результаты в требуемом виде (table, list, bar).
 
-![log search](/images/post/oms-search-select.png){:class="img-responsive"}
+![log search](/images/post/oms-search-select.png)
 
 ### Autoscale
 
@@ -58,7 +58,7 @@ tags: Azure Cloud
 - На основании значения метрики- например, увеличить количество запущенных экземпляров того или иного ресурса в случае превышения использования % CPU или загрузки ОЗУ;
 - На основании расписания- например, если нагрузка в выходные дни снижается, то можно уменьшать и количество экземпляров до необходимого минимума;
 
-![autoscale overview](/images/post/autoscale_overview_v4.png){:class="img-responsive"}
+![autoscale overview](/images/post/autoscale_overview_v4.png)
 
 ### Azure Service Health
 
@@ -66,7 +66,7 @@ tags: Azure Cloud
 
 Также появляется возможность заблаговременно подготовиться к плановому обслуживанию Azure.
 
-![azure service health](/images/post/azure-service-health-overview-7.png){:class="img-responsive"}
+![azure service health](/images/post/azure-service-health-overview-7.png)
 
 ## Ограничения
 

@@ -12,7 +12,7 @@ tags: ASP.NET TeamCity CI/CD
 
 Далее, добавляем новый Build step в TeamCity со следующими настройками (о них далее):
 
-![mt command](/images/post/build_deploy_teamcity_solution.png){:class="img-responsive"}
+![mt command](/images/post/build_deploy_teamcity_solution.png)
 
 _Solution file path*_ - путь до разворачиваемого приложения из solution’a (в моём случае solution содержит несколько проектов и для deploy’a каждого используется свой собственный build step).
 
@@ -51,7 +51,7 @@ _Наименование IIS узла на remote сервере:_
 
 Если всё было выполнено корректно, то результат build log будет выглядеть следующим образом:
 
-![mt command](/images/post/build_deploy_solution_service_output.png){:class="img-responsive"}
+![mt command](/images/post/build_deploy_solution_service_output.png)
 
 ## Разворачиваем windows сервисы
 
@@ -59,7 +59,7 @@ _Наименование IIS узла на remote сервере:_
 
 Для начала добавляем новый Build step в TeamCity со следующими настройками (о них далее):
 
-![mt command](/images/post/build_deploy_teamcity_service.png){:class="img-responsive"}
+![mt command](/images/post/build_deploy_teamcity_service.png)
 
 _Runner type_ - выбираем исполнение PowerShell скрипта
 

@@ -20,7 +20,7 @@ Or a nuget package manager:
 
 After that we have to tell to our application that we are going to use recently added SignalR package. First of all, we need to update *Startup.cs*'s `ConfigureServices` method like this:
 
-```c#
+```csharp
 public void ConfigureServices(IServiceCollection services)
 {
     services.AddSignalR();
@@ -30,7 +30,7 @@ public void ConfigureServices(IServiceCollection services)
 
 Let's take a look on internal details of `AddSignalR`. It's just an extension method over `IServiceCollection` interface and is used for a default signalr services registration:
 
-```c#
+```csharp
 services.Configure<HubOptions>(configure);
 services.AddSockets();
 services.AddSingleton(typeof (HubLifetimeManager<>), typeof (DefaultHubLifetimeManager<>));
@@ -44,7 +44,7 @@ services.AddAuthorization();
 
 Then we have to declare a new class which is derived from the `Hub` one. At this sample the only purpose is to handle a particular endpoint requests, but it also could contains a logic, which should be accessable from a frontend (or fired due to `OnConnected` and `OnDisconnected` events). I've named it as `CurrencyHub` and left empty:
 
-```c#
+```csharp
 public class CurrencyHub : Hub
 {
 
@@ -53,7 +53,7 @@ public class CurrencyHub : Hub
 
 The last but not least we need to update the method `Configure` with the `UseSignalR` method call:
 
-```c#
+```csharp
 public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 {
     // ..   
@@ -76,16 +76,16 @@ Fow now your backend part of the application is fully configured and could be us
 
 ## Sample implementation
 
-I'd like to implement a pretty straightforward stock currencies display. This display should contains information about a set of currencies (let it be 5 pairs) and has an ability to update it in real-time (twice per second) for every connected user simultaneously.
+I'd like to implement a pretty straightforward stock currencies display. This display should contains information about a set of currencies and has an ability to update it in real-time (once per second) for every connected user simultaneously.
 
 The sample contains three main parts:
 - Broadcaster as a component, which should fetch or listen an information about currency updates;
 - Notifier as a component, which should notify all active connections with up-to-date data;
 - Display table as a currency information view;
 
-I've implemented a broadcaster with the usage of `IHostedService`. It's pretty usefull interface with a great benefit like hosting your component as an ASP.NET Core background worker:
+I've implemented a broadcaster with the usage of `IHostedService` ([https://blogs.msdn.microsoft.com/cesardelatorre/2017/11/18/implementing-background-tasks-in-microservices-with-ihostedservice-and-the-backgroundservice-class-net-core-2-x/](read more)). It's pretty usefull interface with a great benefit like hosting your component as an ASP.NET Core background worker:
 
-```c#
+```csharp
 public class CurrencyListenerService : IHostedService, IDisposable
 {
     //..
@@ -106,9 +106,9 @@ public class CurrencyListenerService : IHostedService, IDisposable
     {
         var data = new Dictionary<string, double>
         {
-            {"EUR", 80 + _rnd.NextDouble()},
-            {"USD", 57 + _rnd.NextDouble()},
-            {"BYN", 28 + _rnd.NextDouble()}
+            {"EUR", Get(69) }, {"USD", Get(56) }, {"GBR", Get(79) },
+            {"INR", Get(1) }, {"CAD", Get(45) }, {"MAD", Get(6) },
+            {"AUD", Get(45) }, {"TRY", Get(15) }, {"AZN", Get(33) },
         };
 
         return Task.FromResult(data);
@@ -120,7 +120,7 @@ public class CurrencyListenerService : IHostedService, IDisposable
 
 The broadcaster part of this service have to be implemented with the usage of `HubLifetimeManager<THub>`. Based on generic type `THub` this class contains an information about all active connections of a particular hub and has an opportunity to notify them throught a function call, which is declared at frontend:
 
-```c#
+```csharp
 private async Task Broadcast(Dictionary<string, double> data)
 {
     await _hubManager.InvokeAllAsync("currenciesUpdated", 
@@ -130,7 +130,7 @@ private async Task Broadcast(Dictionary<string, double> data)
 
 To host this service we need to register it at `IServiceCollection` like this:
 
-```c#
+```csharp
 public void ConfigureServices(IServiceCollection services)
 {
     services.AddSingleton<IHostedService, CurrencyListenerService>();
@@ -141,6 +141,111 @@ public void ConfigureServices(IServiceCollection services)
 
 As I've already mentioned before we need to declare a function at frontend, which could be called from a backend side for a notifier purposes (let it be `currenciesUpdated` function).
 
- 
+Recently i've taken a look at [Vue.js](https://vuejs.org/) and found it pretty nice and straightforward. Bellow you could see several parts of code with the usage of this library:
 
+```javascript
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            currencies: null,
+            changes: {}
+        },
+        methods: {
+            hubConnect: function() {
+                var connection = new signalR.HubConnection('/currency');
+
+                connection.on('currenciesUpdated',
+                    function(data) {
+                        this.currencies = data;
+                    }.bind(this));
+
+                connection.onclose(e => {
+                    if (e) {
+                        console.log('Connection closed with error: ' + e, 'red');
+                    } else {
+                        console.log('Disconnected', 'green');
+                    }
+                });
+
+                connection.start();
+            }
+        },
+        watch: {
+            currencies: function (newVal, oldVal) {
+                if (!newVal || !oldVal) return;
+                for (var key in newVal) {
+                    if (newVal.hasOwnProperty(key)) {
+                        this.changes[key] = newVal[key] > oldVal[key];
+                    }
+                }
+            }
+        },
+        mounted: function() {
+            this.hubConnect();
+        }
+    });
+</script>
+```
+
+And a layout:
+
+```html
+<table class="table table-bordered table-striped" v-if="currencies">
+    <tr>
+        <th></th>
+        <th v-for="(value, key) in currencies">{{ key.toUpperCase() }}</th>
+    </tr>
+
+    <tr>
+        <th>
+            <img src="http://www.xe.com/themes/xe/images/flags/rub.png" /> RUB
+        </th>
+        <td v-for="(value, key) in currencies"
+            v-bind:class="{ 'up': changes[key], 'down': !changes[key] }">
+            {{ value }}
+        </td>
+    </tr>
+</table>
+```
+
+Looks really nice, isn't it?
+
+It doesn't really matter which frontend framework you are going to use. The only thing is **really important** is do not forget to append a reference to signalr library, because otherwise a console output won't let you got to sleep for a while:
+
+```html
+<script src="~/lib/signalr-client-1.0.0-alpha2-final.min.js"></script>
+```
+
+For now it's still in alpha (and more than 158 issues is still open), but npm module is already available: ([@aspnet/signalr-client](https://www.npmjs.com/package/@aspnet/signalr-client)):
+
+>
+> **Usage**:
+> 
+> To use the client in a browser, copy *.js files from the dist/browser folder to your script folder include on your page using the *script* tag.
+>
+> **Example**:
+> ```javascript
+> let connection = new signalR.HubConnection('/chat');
+>  
+> connection.on('send', data => {
+>   console.log(data);
+> });
+> 
+> connection.start()
+>     .then(() => connection.invoke('send', 'Hello'));
+> ```
+>
+
+And finally here is a demo of the result:
+
+![chsarp_71_ep](/images/post/currency-signalr-result.gif)
+
+Thanks for reading, I really hope you found it usefull and feel free to comment!
+
+Summary:
+
+1. [Github repository](https://github.com/FSou1/CoreSignalR.Sample);
+2. [Announcing SignalR (alpha) for ASP.NET Core 2.0](https://blogs.msdn.microsoft.com/webdev/2017/09/14/announcing-signalr-for-asp-net-core-2-0/);
+2. [Implementing background tasks in .NET Core 2.x webapps or microservices with IHostedService and the BackgroundService class](https://blogs.msdn.microsoft.com/cesardelatorre/2017/11/18/implementing-background-tasks-in-microservices-with-ihostedservice-and-the-backgroundservice-class-net-core-2-x/);
 

@@ -67,13 +67,13 @@ private static async Task SendSmsCommand(IBus busControl)
 
 В терминологии заложено и основное различие этих типов сообщений — команда доставляется единственному исполнителю (дабы избежать дублирования выполнения):
 
-![mt command](/images/post/mt_command.png){:class="img-responsive"}
+![mt command](/images/post/mt_command.png)
 
 Изображение из статьи [MassTransit Send vs. Publish](https://www.maldworth.com/2015/10/27/masstransit-send-vs-publish/)
 
 В то время как событие ориентировано на оповещение n-подписчиков, каждый из которых реагирует на случившееся событие по-своему.
 
-![mt event](/images/post/mt_event.png){:class="img-responsive"}
+![mt event](/images/post/mt_event.png)
 
 Изображение из статьи [MassTransit Send vs. Publish](https://www.maldworth.com/2015/10/27/masstransit-send-vs-publish/)
 
@@ -120,7 +120,7 @@ public interface ISmsSent {
 
 На изображении можно увидеть созданные в рамках моего сценария exchange:
 
-![mt exchange](/images/post/mt_exchange.png){:class="img-responsive"}
+![mt exchange](/images/post/mt_exchange.png)
 
 В том случае, если конфигурируя receive endpoint мы указываем наименование очереди:
 
@@ -130,11 +130,11 @@ cfg.ReceiveEndpoint(host, "play_with_masstransit_queue", e => e.LoadFrom(contain
 
 то в привязках exchange сообщений можно будет увидеть следующую картину:
 
-![mt_config_queue](/images/post/mt_config_queue.png){:class="img-responsive"}
+![mt_config_queue](/images/post/mt_config_queue.png)
 
 Итоговый путь сообщения, тип которого имплементирует ISmsEvent, будет иметь следующий вид: 
 
-![mt_queue_flow](/images/post/mt_queue_flow.png){:class="img-responsive"}
+![mt_queue_flow](/images/post/mt_queue_flow.png)
 
 Если же конфигурация осуществляется без указания очереди:
 
@@ -144,7 +144,7 @@ cfg.ReceiveEndpoint(host, e=> e.LoadFrom(container));
 
 То имена для последнего exchange и очереди формируются автоматически, а по завершению работы они будут удалены: 
 
-![mt_without_queue_flow](/images/post/mt_without_queue_flow.png){:class="img-responsive"}
+![mt_without_queue_flow](/images/post/mt_without_queue_flow.png)
 
 <a name="message-body"></a>
 
@@ -428,7 +428,7 @@ public class ConsumeObserver : IConsumeObserver
 
 Итоговый pipeline получения команды на отправку смс сообщения, её обработки и публикации события о её успешном выполнении выглядит следующим образом:
 
-![mt_result](/images/post/mt_result.png){:class="img-responsive"}
+![mt_result](/images/post/mt_result.png)
 
 <a name="new-30"></a>
 

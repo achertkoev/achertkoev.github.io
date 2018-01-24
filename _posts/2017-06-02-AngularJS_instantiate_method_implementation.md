@@ -7,7 +7,7 @@ tags: AngularJS JavaScript
 Задумывались ли вы когда-нибудь, как создаются экземпляры используемых вами типов angularJS? Контроллеры, фабрики, сервисы, декораторы, значения- буквально каждый из них в конце концов передаётся на исполнение в функцию [instantiate](https://github.com/angular/angular.js/blob/master/src/auto/injector.js#L906) класса $injector, где их поджидает довольно занимательная конструкция, о которой сегодня и хотелось бы поговорить.
 
 
-![instantiate function](/images/post/instantiate-method-top.png){:class="img-responsive"}
+![instantiate function](/images/post/instantiate-method-top.png)
 
 А именно, речь пойдёт о следующей строке:
 
@@ -90,7 +90,7 @@ console.log( Create(Human, 'Person') );
 
 Здесь начинается, пожалуй, самая сложная часть, т.к. нам предстоит используя apply установить контекстом для функции bind наш конструктор (аналогично `ctorFunc.bind`), а в качестве аргументов для функции bind (не забывая о том, что первым аргументом является устанавливаемый контекст) передать смещенный на одну позицию вправо массив параметров конструктора, используя `ctorArgs.unshift(null)`.
 
-![instantiate function](/images/post/instantiate_function.png){:class="img-responsive"}
+![instantiate function](/images/post/instantiate_function.png)
 
 Функция bind недоступна в контексте выполнения Create, т.к. им является объект window, зато доступна посредством прототипа функции `Function.prototype`.
 

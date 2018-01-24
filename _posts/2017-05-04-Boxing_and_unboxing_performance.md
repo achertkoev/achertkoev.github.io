@@ -83,9 +83,9 @@ public class BoxingUnboxingBenchmark {
 
 Для замера производительности была использована библиотека [BenchmarkDotNet](https://github.com/dotnet/BenchmarkDotNet) в режиме `Release`. Далее представлен результат измерений:
 
-![boxing_and_unboxing_performance](/images/post/boxing_and_unboxing_performance.png){:class="img-responsive"}
+![boxing_and_unboxing_performance](/images/post/boxing_and_unboxing_performance.png)
 
-![boxing_and_unboxing_performance_second](/images/post/boxing_and_unboxing_performance_second.png){:class="img-responsive"}
+![boxing_and_unboxing_performance_second](/images/post/boxing_and_unboxing_performance_second.png)
 
 Сразу оговорюсь, что не могу быть твёрдо уверен в отсутствии оптимизаций компилятором итогового кода, однако, судя по IL коду, каждая из функций содержит проверяемую операцию в единственном числе.
 

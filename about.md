@@ -13,35 +13,33 @@ You can contact with me using services in the footer of this site.
 
 ### [EPAM Systems](http://epam.com/) - Lead Software Engineer (6/2017 - Present)
 
-An automated e-billing solution developed primary for law firms to automate their billing cycles.
+I am working on an automated high-load e-billing solution developed primary for law firms to automate their billing cycles.
 
-Technologies: ASP.NET Web API, Azure Cloud-Native Apps, Azure Service Bus, Azure Service Fabric;
-Database: Azure Storage Services, SQL Azure, Azure Cosmos DB;
-Tools: TFS, Application Insights, API Management, Swagger;
+**Technologies**: ASP.NET Web API, Azure Cloud-Native Apps, Azure Service Bus, Azure Service Fabric, Azure Storage Services, SQL Azure, Azure Cosmos DB, Application Insights, API Management, Swagger;
 
 ### [DoktorAtWork](https://doktornarabote.ru/) - Lead .NET Developer (9/2016 - 6/2017)
 
-[Telemedicine](http://telemedicine.doktornarabote.ru/) project.
+I was working on developing [Telemedicine](http://telemedicine.doktornarabote.ru/) project.
 
-- Main (providing access to partners, provision of services for assisting communication with doctors from the social network, calculating costs of services rendered and remuneration of doctors, transactions between correspondent accounts);
-- Affiliate (providing access to patients, i.e. the company`s mobile application users, interaction with the main platform using a developed library).
+- Main API (providing access to partners, provision of services for assisting communication with doctors from the social network, calculating costs of services rendered and remuneration of doctors, transactions between correspondent accounts);
+- Affiliate API (providing access to patients, i.e. the company`s mobile application users, interaction with the main platform using a developed library).
 
-Technologies: ASP.NET Web API, Quartz.NET, Topshelf, RabbitMQ, MSSQL, NHibernate, TeamCity, Swagger
+**Technologies**: ASP.NET Web API, Quartz.NET, Topshelf, RabbitMQ, MSSQL, NHibernate, TeamCity, Swagger
 
 ### [Europlan](https://europlan.ru/) - Full Stack Developer (9/2013 - 9/2016)
 
-Developing and supporting company's business processes automation software:
+I was working on developing and supporting company's business processes automation software:
 - Problem assets department
 - Bank customer service department
 - Department of affiliate programs
 
-Technologies: .NET, ASP.NET MVC, SignalR, RabbitMQ, MSSQL, Dapper, EntityFramework, AngularJS
+**Technologies**: .NET, ASP.NET MVC, SignalR, RabbitMQ, MSSQL, Dapper, EntityFramework, AngularJS
 
 ### [the State Air Navigation Research Institute](http://www.atminst.ru/) - .NET Software Developer (10/2008 - 8/2012)
 
-Developed automated information system for accounting, security analysis and certification airport's radio navigational devices in national registry.
+I was working on developing automated information system for accounting, security analysis and certification airport's radio navigational devices in national registry.
 
-Technologies: ASP.NET WebForms, MSSQL, jQuery
+**Technologies**: ASP.NET WebForms, MSSQL, jQuery
 
 ## Summary 
 

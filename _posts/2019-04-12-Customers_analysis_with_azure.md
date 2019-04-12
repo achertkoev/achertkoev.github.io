@@ -54,7 +54,7 @@ Now that all the requirements are defined, I believe we can dig into details of 
 
 ![customer-analysis-with-azure](/images/post/customer-analysis-with-azure.png)
 
-Once a customer came through a security gate, a camera shoots him and uploads the photo to an FTP server. The request will be routed by [Azure Trafic Manager](https://docs.microsoft.com/en-us/azure/traffic-manager/traffic-manager-overview) to a relevant FTP server based on a region. The service provides DNS-based traffic load balancing and enables us to distribute traffic optimally to services across global Azure regions, while providing high availability and responsiveness. 
+Once a customer came through a security gate, a camera shoots him and uploads the photo to an FTP server. The request will be routed by [Azure Traffic Manager](https://docs.microsoft.com/en-us/azure/traffic-manager/traffic-manager-overview) to a relevant FTP server based on a region. The service provides DNS-based traffic load balancing and enables us to distribute traffic optimally to services across global Azure regions, while providing high availability and responsiveness. 
 
 Since Azure Blob Storage doesn't support the ftp protocol, we have to configure it on our own. To do that we need to deploy a load-balanced, high availability FTP Server with Azure Files ([read more](http://fabriccontroller.net/deploying-a-load-balanced-high-available-ftp-server-with-azure-files/)). 
 
@@ -75,7 +75,7 @@ I believe the rest of the design isn't surprising. Once face information has bee
 
 ## Summary
 
-Is it the only valid design for the provided requirements? Definitely not. Microsoft and Azure provides a huge number of first-class services, with the choice of often depending on many factors, such as quality attributes, constraints, running costs, trade-offs, and production readiness. When making the choice, experience is definetely not the last factor.
+Is it the only valid design for the provided requirements? Definitely not. Microsoft and Azure provides a huge number of first-class services, with the choice of often depending on many factors, such as quality attributes, constraints, running costs, trade-offs, and production readiness. When making the choice, experience is definitely not the last factor.
 
 > We are all products of our experience and it influences architecture and architectural decisions.
 

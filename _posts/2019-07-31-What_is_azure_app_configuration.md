@@ -14,15 +14,15 @@ This service is intended to help developers manage their application and feature
 
 Usually, creating scalable and robust cloud-based applications is not an easy task:
 
-![azure-app-configuration](/images/post/1-assets-why-use-app-configuration.png)
+![azure-app-configuration](/images/post/1-assets-why-use-app-configuration.png){: .center-image }
 
 Especially considering, that applications often run on multiple virtual machines or even in multiple regions:
 
-![azure-app-configuration](/images/post/2-assets-why-use-app-configuration.png)
+![azure-app-configuration](/images/post/2-assets-why-use-app-configuration.png){: .center-image }
 
 And one of the well-proven practice in this case, is to separate configuration from code: 
 
-![azure-app-configuration](/images/post/3-assets-why-use-app-configuration.png)
+![azure-app-configuration](/images/post/3-assets-why-use-app-configuration.png){: .center-image }
 
 🔥 And that's what App Configuration does best - centrally manages application settings.
 

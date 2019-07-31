@@ -6,7 +6,7 @@ tags: .NET Azure Architecture
 
 Hey guys! Today, I'd like to tell you about a new azure service called Azure App Configuration. 
 
-<iframe width="560" height="315" src="https://youtu.be/vxyc_IOZnGA" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src=""https://www.youtube.com/embed/vxyc_IOZnGA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 This service is intended to help developers manage their application and feature settings. It was announced in April 2019 and still in public preview mode. However, the documentation, samples and APIs are already available for use.
 

@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: Maxim Zhukov's blog
 author: Maxim Zhukov
-email: my.fsou1@gmail.com
+email: maxim.zhukov.dev@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   I am glad to welcome you on my personal blog which is devoted
   to development in details: .NET, C#, JavaScript, MSSQL, Design,
@@ -24,7 +24,6 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://fsou1.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 permalink: /:title/
 
-twitter_username: my_fsou1
 github_username:  fsou1
 
 paginate: 10

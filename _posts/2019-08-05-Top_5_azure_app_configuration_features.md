@@ -72,7 +72,7 @@ Looks extremely convenient, isn't it?
 And the feature number 4 is keys labeling.
 
 What if we wanna have different configuration values for a production instance of our application. For example, we'd like to turn on encryption of our database connection. Actually, it's not a big deal:
-* We're just adding a new value with the label `Production`;
+* We're just adding a new value with the label `Production`:
 
 ![azure-app-configuration](/images/post/top_5_az_config_image_2.png){: .center-image }
 
@@ -169,7 +169,7 @@ So we:
 * Open the tab events;
 * Click create subscription;
 * Type a subscription name;
-* Review the event types we'd like to be published
+* Review the event types we'd like to be published;
 * And specify the endpoint type (currently, there are available five different channels for communication). 
 
 I'm gonna to choose Event Hubs.

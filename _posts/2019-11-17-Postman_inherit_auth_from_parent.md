@@ -1,17 +1,17 @@
 ---
 layout: post
-title: How to use single auth method for every request in collection
+title: How to use single auth method for every request in a Postman collection
 tags: Postman
 ---
 
-If you are just like me tired of messing with authorization header for every request in collection then you're welcome for a very helpful solution.
+If you are just like me tired of messing with authorization header for every request in a collection then you're welcome for a very helpful solution.
 
 ## Solution 
 
 All you have to do is:
 - Click edit on a collection;
 - Navigate to 'authorization' tab;
-- Choose and setup an authorization type, that will be used for every request in this collection;
+- Choose and set up an authorization type, that will be used for every request in this collection;
 
 ![postman-collection-authorization-tab](/images/post/postman-collection-authorization-tab.png){: .center-image }
 

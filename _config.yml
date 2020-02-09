@@ -24,12 +24,17 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://fsou1.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 permalink: /:title/
 
-github_username:  fsou1
+minima:
+  social_links:
+    twitter: maximzhukov_dev
+    github: fsou1
+
+# github_username:  fsou1
 
 paginate: 10
 paginate_path: /page:num/
 
-  
+
 # Build settings
 markdown: kramdown
 theme: minima

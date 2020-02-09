@@ -29,8 +29,6 @@ github_username:  fsou1
 paginate: 10
 paginate_path: /page:num/
 
-disqus:
-  shortname: fsou1
   
 # Build settings
 markdown: kramdown

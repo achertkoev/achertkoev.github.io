@@ -6,6 +6,9 @@ tags: TypeScript
 
 This post is a collection of the available TypeScript types, examples of their usual use, and JavaScript outputs.
 
+**Update history**:
+* 13 Feb 2020 - Added `void` type (thx to [AngularBeginner](https://www.reddit.com/r/typescript/comments/f33on2/just_blogged_typescript_types_cheat_sheet/fhgvczq?utm_source=share&utm_medium=web2x));
+
 # Boolean
 
 Nothing special, just `true` and `false`:

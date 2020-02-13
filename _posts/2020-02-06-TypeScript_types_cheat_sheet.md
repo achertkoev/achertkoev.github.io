@@ -295,6 +295,28 @@ function search(term)
 }
 ```
 
+# Void
+
+Void type is used to declare functions that don't return any meaningful value (besides `undefined` and `null` (if `--strictNullChecks` is disabled)). Anyway, you can even declare void variables:
+
+**TypeScript**:
+```
+function log(): void {
+    return undefined;
+}
+const l: void = 1; // Error: Type '1' is not assignable to type 'void'
+const ll: void = log(); // undefined
+```
+
+**JavaScript**:
+```
+function log() {
+    return undefined;
+}
+const l = 1; // Error: Type '1' is not assignable to type 'void'
+const ll = log(); // undefined
+```
+
 # Never
 
 The last piece in puzzle is the type `never`. It could be used as the return type of a function that always throws an exception or never returns a value.

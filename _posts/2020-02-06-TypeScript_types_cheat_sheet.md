@@ -6,6 +6,10 @@ tags: TypeScript
 
 This post is a collection of the available TypeScript types, examples of their usual use, and JavaScript outputs.
 
+**Update history**:
+* 13 Feb 2020 - Added `void` type (thx to [AngularBeginner](https://www.reddit.com/r/typescript/comments/f33on2/just_blogged_typescript_types_cheat_sheet/fhgvczq?utm_source=share&utm_medium=web2x));
+* 13 Feb 2020 - Added `unknown` type (thx to [andra_nl](https://www.reddit.com/r/typescript/comments/f33on2/just_blogged_typescript_types_cheat_sheet/fhgsax6?utm_source=share&utm_medium=web2x));
+
 # Boolean
 
 Nothing special, just `true` and `false`:
@@ -277,6 +281,43 @@ let notSureList: any[] = [1, 'free', true]
 let notSureList = [1, 'free', true];
 ```
 
+# Unknown
+
+The unknown type is very similar to `any` but much less permissive. On the one hand `unknown` variables can hold any values (e.g. `true`, `[]`, `Math.random`, `undefined`, `new Error()`). On the other hand TypeScript won't let you to access type specific properties and operations without explicit and prior type checking:
+
+**TypeScript**:
+```
+// unknown
+function format(value: unknown): any {
+    // return value.trim();    // Error
+    if (typeof value === 'string') {
+        return value.trim();    // OK
+    }
+
+    // return value.length; // Error
+    if (value instanceof Array) {
+        return value.length;    // OK
+    }
+}
+```
+
+**JavaScript**:
+```
+function format(value) {
+    // return value.trim();    // Error
+    if (typeof value === 'string') {
+        return value.trim(); // OK
+    }
+    
+    // return value.length; // Error
+    if (value instanceof Array) {
+        return value.length; // OK
+    }
+}
+```
+
+> Both `typeof` and `instanceof` operators are valid for type checking
+
 # Null & undefined
 
 Null and undefined are separate types in TypeScript. They're not extremely useful on their own, but still can assist you as a part of union type declarations:
@@ -293,6 +334,28 @@ function search(term: string | null | undefined)
 function search(term) 
 {
 }
+```
+
+# Void
+
+Void type is used to declare functions that don't return any meaningful value (besides `undefined` and `null` (if `--strictNullChecks` is disabled)). Anyway, you can even declare void variables:
+
+**TypeScript**:
+```
+function log(): void {
+    return undefined;
+}
+const l: void = 1; // Error: Type '1' is not assignable to type 'void'
+const ll: void = log(); // undefined
+```
+
+**JavaScript**:
+```
+function log() {
+    return undefined;
+}
+const l = 1; // Error: Type '1' is not assignable to type 'void'
+const ll = log(); // undefined
 ```
 
 # Never
@@ -332,3 +395,4 @@ Reference:
 3. [Enums in TypeScript](https://www.tutorialsteacher.com/typescript/typescript-enum);
 4. [Boolean in TypeScript](https://www.tutorialsteacher.com/typescript/typescript-boolean);
 5. [Boolean in Javascript and TypeScript](https://fettblog.eu/boolean-in-javascript-and-typescript/);
+6. [The unknown Type in TypeScript](https://mariusschulz.com/blog/the-unknown-type-in-typescript);

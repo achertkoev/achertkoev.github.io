@@ -386,7 +386,7 @@ The profile component template uses the `*appUser` and the `*appUserRole` struct
 
 The profile component may not contain a single property. 
 
-But the property `Role` is used within the template and helps to avoid [magic strings](https://en.wikipedia.org/wiki/Magic_string). Otherwise the admin value should be presented as a string (`*appUserRole="[ 'Admin' ]"`) or a number (`*appUserRole="[ 1 ]"`).
+NOTE: The property `Role` is used within the template and helps to avoid [magic strings](https://en.wikipedia.org/wiki/Magic_string). Otherwise the admin value should be presented as a string (`*appUserRole="[ 'Admin' ]"`) or a number (`*appUserRole="[ 1 ]"`).
 
 ```
 import { Component, OnInit } from '@angular/core';
@@ -405,6 +405,13 @@ export class ProfileComponent {
 
 <a name="authservice"></a>
 ### Auth service
+
+The authentication service is used to manage the user information (the private `user` property).
+
+It's specifically made as simple as possible to address the demo needs:
+* The `login(role: Role)` method sets a user with a specific role
+* The `isAuthorized()` and the `hasRole(role: Role)` methods encapsulate the authorization logic
+* The `logout()` methods resets a user
 
 ```
 import { Injectable } from '@angular/core';

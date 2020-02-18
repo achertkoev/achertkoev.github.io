@@ -76,6 +76,8 @@ Bellow are the main project files that contain the application logic:
 
 ### Admin routing module
 
+The module contains admin routes and mapped components. The module itself is [lazy loaded](https://angular.io/guide/lazy-loading-ngmodules) and managed as a part of the <a href="#app-routing-module">AppRoutingModule</a> (by passing the <a href="#auth-guard">AuthGuard</a> to the `canActivate` and the `canLoad` properties).
+
 ```
 import { Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -87,6 +89,8 @@ export const routes: Routes = [
 <a href="#projectstructure">Back to top</a>
 
 ### Admin module
+
+The admin module is the root module for admin workspace and declares the list of available components and routes.
 
 ```
 import { NgModule } from '@angular/core';
@@ -109,6 +113,12 @@ export class AdminModule { }
 <a href="#projectstructure">Back to top</a>
 
 ### App component template
+
+The app component template is the root component template of the application. It contains the main nav bar which changes based on the user. 
+
+The profile and the logout links are only visible for authorized users (by using the `isAuthorized` getter). The dashboard link is only displayed for admins (by using the `isAdmin` getter). The login link is only accesible by anonymous users.
+
+The router-outlet directive acts as a placeholder that the app (Angular) dynamically fills based on the current url (router state). [Read more](https://angular.io/guide/router).
 
 ```
 <header class="navbar navbar-expand navbar-dark bg-dark">
@@ -163,6 +173,8 @@ export class AdminModule { }
 <a href="#projectstructure">Back to top</a>
 
 ### App component
+
+The app component is the root component of the application. It contains the `isAuthorized` and the `isAdmin` getters which are called inside the template. The `logout` method is used to sign out the currently authorized user and redirect him to the login page.
 
 ```
 import { Component, OnInit } from '@angular/core';
@@ -409,6 +421,7 @@ export class AuthService {
 ```
 <a href="#projectstructure">Back to top</a>
 
+<a name="auth-guard"></a>
 ### Auth guard
 
 ```
@@ -456,6 +469,7 @@ export class AuthGuard implements CanActivate, CanLoad {
 ```
 <a href="#projectstructure">Back to top</a>
 
+<a name="app-routing-module"></a>
 ### App routing module
 
 ```

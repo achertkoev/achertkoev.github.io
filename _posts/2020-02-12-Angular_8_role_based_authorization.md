@@ -25,7 +25,7 @@ Here is the result:
 3. Install all required npm packages by running `npm install` from the command line in the project root folder (where the package.json is located).
 4. Start the application by running `npm start` from the command line in the project root folder, this will build the application and automatically launch it in the browser on the URL http://localhost:4200.
 
-NOTE: You can also run the app directly using the Angular CLI command ng serve --open. To do this first install the Angular CLI globally on your system with the command npm install -g @angular/cli.
+NOTE: You can also run the app directly using the Angular CLI command `ng serve --open`. To do this first install the Angular CLI globally on your system with the command `npm install -g @angular/cli`.
 
 > Thanks to Jason Watmore for the guide above
 

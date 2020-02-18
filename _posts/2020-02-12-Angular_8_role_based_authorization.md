@@ -6,7 +6,7 @@ tags: Angular8 TypeScript
 
 In this post I'd like to show you an example of how you can implement role based authorization / access control front end using Angular 8.
 
-The code is available on GitHub at https://github.com/FSou1/angular-8-role-based-authorization-sample.
+The code is available on GitHub at [https://github.com/FSou1/angular-8-role-based-authorization-sample](https://github.com/FSou1/angular-8-role-based-authorization-sample).
 
 Demo in action:
 
@@ -16,12 +16,12 @@ Here is the result:
 
 <iframe width="740" height="530" src="https://stackblitz.com/edit/angular-8-role-based-authorization-sample?embed=1&file=src/app/services/auth.service.ts" frameborder="0" class="center-image"></iframe>
 
-(See on StackBlitz at https://stackblitz.com/edit/angular-8-role-based-authorization-sample)
+(See on StackBlitz at [https://stackblitz.com/edit/angular-8-role-based-authorization-sample](https://stackblitz.com/edit/angular-8-role-based-authorization-sample))
 
 ## How to run the app locally
 
-1. Install NodeJS and NPM from https://nodejs.org.
-2. Download or clone the tutorial project source code from https://github.com/FSou1/angular-8-role-based-authorization-sample
+1. Install NodeJS and NPM from [https://nodejs.org](https://nodejs.org).
+2. Download or clone the tutorial project source code from [https://github.com/FSou1/angular-8-role-based-authorization-sample](https://github.com/FSou1/angular-8-role-based-authorization-sample)
 3. Install all required npm packages by running `npm install` from the command line in the project root folder (where the package.json is located).
 4. Start the application by running `npm start` from the command line in the project root folder, this will build the application and automatically launch it in the browser on the URL http://localhost:4200.
 

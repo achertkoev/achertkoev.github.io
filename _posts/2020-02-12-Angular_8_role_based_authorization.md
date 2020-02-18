@@ -187,13 +187,8 @@ import { AuthService } from '../services/auth.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-  Role = Role;
-
+export class AppComponent {
   constructor(private router: Router, private authService: AuthService) { }
-
-  ngOnInit() {
-  }
 
   get isAuthorized() {
     return this.authService.isAuthorized();
@@ -296,7 +291,7 @@ export class UserDirective implements OnInit {
 
 ### Login component template
 
-The login component template contains two buttons: login as user or as admin.
+The login component template contains two buttons: login as user or as admin. It sets a user and redirects to the '/' url when a button is clicked.
 
 ```
 <div class="alert alert-success" role="alert">
@@ -337,10 +332,6 @@ export class LoginComponent implements OnInit {
   login(role: Role) {
     this.authService.login(role);
     this.router.navigate(['/']);
-  }
-
-  logout() {
-    this.authService.logout();
   }
 }
 ```

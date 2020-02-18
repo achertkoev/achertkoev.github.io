@@ -365,6 +365,8 @@ export class User {
 <a name="profile-template"></a>
 ### Profile component template
 
+The profile component template uses the `*appUser` and the `*appUserRole` structural directives to control access to specific blocks.
+
 ```
 <div class="alert alert-success" role="alert">
   Profile component!
@@ -382,6 +384,10 @@ export class User {
 
 ### Profile component
 
+The profile component may not contain a single property. 
+
+But the property `Role` is used within the template and helps to avoid [magic strings](https://en.wikipedia.org/wiki/Magic_string). Otherwise the admin value should be presented as a string (`*appUserRole="[ 'Admin' ]"`) or a number (`*appUserRole="[ 1 ]"`).
+
 ```
 import { Component, OnInit } from '@angular/core';
 import { Role } from '../models/role';
@@ -391,13 +397,8 @@ import { Role } from '../models/role';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent {
   Role = Role;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
 }
 ```
 <a href="#projectstructure">Back to top</a>
@@ -423,7 +424,7 @@ export class AuthService {
     }
 
     login(role: Role) {
-      this.user = { Role: role };
+      this.user = { role: role };
     }
 
     logout() {

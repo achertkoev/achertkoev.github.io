@@ -94,7 +94,6 @@ The admin module is the root module for admin workspace and declares the list of
 
 ```
 import { NgModule } from '@angular/core';
-
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouterModule } from '@angular/router';
 import { routes } from './admin-routing.module';
@@ -321,13 +320,10 @@ import { AuthService } from '../services/auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   Role = Role;
 
   constructor(private router: Router, private authService: AuthService) { }
-
-  ngOnInit() {
-  }
 
   login(role: Role) {
     this.authService.login(role);

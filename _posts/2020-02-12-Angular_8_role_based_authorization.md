@@ -296,6 +296,8 @@ export class UserDirective implements OnInit {
 
 ### Login component template
 
+The login component template contains two buttons: login as user or as admin.
+
 ```
 <div class="alert alert-success" role="alert">
   Login component!

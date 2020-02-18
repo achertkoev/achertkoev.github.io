@@ -211,7 +211,18 @@ export class AppComponent implements OnInit {
 ```
 <a href="#projectstructure">Back to top</a>
 
+<a name="user-role-directive"></a>
 ### User role directive
+
+The user role directive is a structural directive that conditionally includes a template if:
+* A user is authorized
+* A user has at least one of the allowed roles
+
+Allowed roles are passed by using the `appUserRole` setter, for example: `*appUserRole="[ Role.Admin ]"`.
+
+A good thing is that the directive encapsulates the authorization logic and can be reused within the application.
+
+On the other hand a `hasAccess` value is evaluated within the `ngOnInit` method, so a template won't be redrawn if the value changes. That's why I wouldn't use the directive in the layout (like the navbar). At the same time it's still useful on the <a href="#profile-template">profile component template</a>.
 
 ```
 import { Directive, OnInit, TemplateRef, ViewContainerRef, Input } from '@angular/core';
@@ -255,6 +266,8 @@ export class UserRoleDirective implements OnInit {
 <a href="#projectstructure">Back to top</a>
 
 ### User directive
+
+The user directive is similar to the <a href="#user-role-directive">UserRoleDirective</a>. It includes a template for authorized users only. You can see the `*appUser` directive in action at the <a href="#profile-template">profile component template</a>.
 
 ```
 import { Directive, OnInit, TemplateRef, ViewContainerRef, Input } from '@angular/core';
@@ -352,6 +365,7 @@ export class User {
 ```
 <a href="#projectstructure">Back to top</a>
 
+<a name="profile-template"></a>
 ### Profile component template
 
 ```

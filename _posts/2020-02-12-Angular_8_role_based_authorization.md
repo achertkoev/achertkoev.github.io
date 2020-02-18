@@ -8,6 +8,10 @@ In this post I'd like to show you an example of how you can implement role based
 
 The code is available on GitHub at https://github.com/FSou1/angular-8-role-based-authorization-sample.
 
+Demo in action:
+
+![angular-8-rba-authorization](/images/post/angular 8 - rba authorization.gif)
+
 Here is the result:
 
 <iframe width="740" height="530" src="https://stackblitz.com/edit/angular-8-role-based-authorization-sample?embed=1&file=src/app/services/auth.service.ts" frameborder="0" class="center-image"></iframe>
@@ -80,7 +84,6 @@ export const routes: Routes = [
     { path: 'dashboard', component: DashboardComponent }
 ];
 ```
-
 <a href="#projectstructure">Back to top</a>
 
 ### Admin module
@@ -103,6 +106,7 @@ import { routes } from './admin-routing.module';
 })
 export class AdminModule { }
 ```
+<a href="#projectstructure">Back to top</a>
 
 ### App component template
 
@@ -156,6 +160,7 @@ export class AdminModule { }
   </p>
 </div>
 ```
+<a href="#projectstructure">Back to top</a>
 
 ### App component
 
@@ -192,6 +197,7 @@ export class AppComponent implements OnInit {
   }
 }
 ```
+<a href="#projectstructure">Back to top</a>
 
 ### User role directive
 
@@ -234,6 +240,7 @@ export class UserRoleDirective implements OnInit {
     }
 }
 ```
+<a href="#projectstructure">Back to top</a>
 
 ### User directive
 
@@ -260,6 +267,7 @@ export class UserDirective implements OnInit {
     }
 }
 ```
+<a href="#projectstructure">Back to top</a>
 
 ### Login component template
 
@@ -276,6 +284,7 @@ export class UserDirective implements OnInit {
   class="btn btn-outline-danger" 
   (click)="login(Role.Admin)">Login as Admin</button>
 ```
+<a href="#projectstructure">Back to top</a>
 
 ### Login component
 
@@ -308,6 +317,7 @@ export class LoginComponent implements OnInit {
   }
 }
 ```
+<a href="#projectstructure">Back to top</a>
 
 ### Role model
 
@@ -317,6 +327,7 @@ export enum Role {
   Admin = 2
 }
 ```
+<a href="#projectstructure">Back to top</a>
 
 ### User model
 
@@ -327,6 +338,7 @@ export class User {
   Role: Role;
 }
 ```
+<a href="#projectstructure">Back to top</a>
 
 ### Profile component template
 
@@ -343,6 +355,7 @@ export class User {
   Content for admin users only (e.g. enable/disable user)!
 </div>
 ```
+<a href="#projectstructure">Back to top</a>
 
 ### Profile component
 
@@ -364,6 +377,7 @@ export class ProfileComponent implements OnInit {
   }
 }
 ```
+<a href="#projectstructure">Back to top</a>
 
 ### Auth service
 
@@ -393,6 +407,7 @@ export class AuthService {
     }
 }
 ```
+<a href="#projectstructure">Back to top</a>
 
 ### Auth guard
 
@@ -439,6 +454,7 @@ export class AuthGuard implements CanActivate, CanLoad {
     }
 }
 ```
+<a href="#projectstructure">Back to top</a>
 
 ### App routing module
 
@@ -501,6 +517,7 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 ```
+<a href="#projectstructure">Back to top</a>
 
 ### App module
 
@@ -541,3 +558,9 @@ import { AuthService } from './services/auth.service';
 })
 export class AppModule { }
 ```
+<a href="#projectstructure">Back to top</a>
+
+Reference:
+
+* [Stackblitz - sample](https://stackblitz.com/edit/angular-8-role-based-authorization-sample)
+* [GitHub - source code](https://github.com/FSou1/angular-8-role-based-authorization-sample)

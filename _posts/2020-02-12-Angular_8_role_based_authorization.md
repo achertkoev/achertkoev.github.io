@@ -212,6 +212,8 @@ The user role directive is a structural directive that conditionally includes a 
 * A user is authorized
 * A user has at least one of the allowed roles
 
+Conditions are evaluated by using the <a href="#authservice">AuthService</a>.
+
 Allowed roles are passed by using the `appUserRole` setter, for example: `*appUserRole="[ Role.Admin ]"`.
 
 A good thing is that the directive encapsulates the authorization logic and can be reused within the application.
@@ -309,6 +311,8 @@ The login component template contains two buttons: login as user or as admin. It
 
 ### Login component
 
+The login component uses the <a href="#authservice">AuthService</a> to set a user with a specific role. Then the user is navigated to the home page by using the [@angular/router](https://angular.io/api/router).
+
 ```
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -335,6 +339,8 @@ export class LoginComponent {
 
 ### Role model
 
+The role model contains an enum that defines the roles that are supported by the application.
+
 ```
 export enum Role {
   User = 1,
@@ -345,11 +351,13 @@ export enum Role {
 
 ### User model
 
+The user model contains a user class declaration. The `role` property is the only required for the demo needs.
+
 ```
 import { Role } from './role';
 
 export class User {
-  Role: Role;
+  role: Role;
 }
 ```
 <a href="#projectstructure">Back to top</a>
@@ -394,6 +402,7 @@ export class ProfileComponent implements OnInit {
 ```
 <a href="#projectstructure">Back to top</a>
 
+<a name="authservice"></a>
 ### Auth service
 
 ```

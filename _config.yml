@@ -22,7 +22,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://fsou1.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 permalink: /:title/
 
-twitter_username: maxim_zhukov_dev
+twitter_username: maximzhukov_dev
 github_username: fsou1
 rss: rss
 

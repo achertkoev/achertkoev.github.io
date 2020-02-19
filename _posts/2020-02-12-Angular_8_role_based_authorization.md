@@ -41,14 +41,14 @@ Bellow are the main project files that contain the application logic:
          * dashboard
             * dashboard.component.html
             * dashboard.component.ts
-         * admin-routing.module.ts
-         * admin.module.ts
+         * [admin-routing.module.ts](#admin-routing-module)
+         * [admin.module.ts](#admin-module)
       * app
-         * app.component.html
-         * app.component.ts
+         * [app.component.html](#app-component-template)
+         * [app.component.ts](#app-component)
       * directives
-         * user-role.directive.ts
-         * user.directive.ts
+         * [user-role.directive.ts](#user-role-directive)
+         * [user.directive.ts](#user-directive)
       * error
          * not-found
             * not-found.component.html
@@ -57,23 +57,24 @@ Bellow are the main project files that contain the application logic:
          * home.component.html
          * home.component.ts
       * login
-         * login.component.html
-         * login.component.ts
+         * [login.component.html](#login-component-template)
+         * [login.component.ts](#login-component)
       * models
-         * role.ts
-         * user.ts
+         * [role.ts](#role-model)
+         * [user.ts](#user-model)
       * profile
-         * profile.component.html
-         * profile.component.ts
+         * [profile.component.html](#profile-template)
+         * [profile.component.ts](#profile-component)
       * services
-         * auth.service.ts
-      * app-routing.guard.ts
-      * app-routing.module.ts
+         * [auth.service.ts](#authservice)
+      * [app-routing.guard.ts](#auth-guard)
+      * [app-routing.module.ts](#app-routing-module)
       * [app.module.ts](#app-module)
    * index.html
 * package.json
 * tsconfig.json
 
+<a name="admin-routing-module"></a>
 ### Admin routing module
 
 The module contains admin routes and mapped components. The module itself is [lazy loaded](https://angular.io/guide/lazy-loading-ngmodules) and managed as a part of the [AppRoutingModule](#app-routing-module) (by passing the [AuthGuard](#auth-guard) to the `canActivate` and the `canLoad` properties).
@@ -112,6 +113,7 @@ export class AdminModule { }
 ```
 [Back to top](#projectstructure)
 
+<a name="app-component-template"></a>
 ### App component template
 
 The app component template is the root component template of the application. It contains the main nav bar which changes based on the user. 
@@ -172,6 +174,7 @@ The router-outlet directive acts as a placeholder that the app (Angular) dynamic
 ```
 [Back to top](#projectstructure)
 
+<a name="app-component"></a>
 ### App component
 
 The app component is the root component of the application. It contains the `isAuthorized` and the `isAdmin` getters which are called inside the template. The `logout` method is used to sign out the currently authorized user and redirect him to the login page.
@@ -262,6 +265,7 @@ export class UserRoleDirective implements OnInit {
 ```
 [Back to top](#projectstructure)
 
+<a name="user-directive"></a>
 ### User directive
 
 The user directive is similar to the [UserRoleDirective](#user-role-directive). It includes a template for authorized users only. You can see the `*appUser` directive in action at the [profile component template](#profile-template).
@@ -291,6 +295,7 @@ export class UserDirective implements OnInit {
 ```
 [Back to top](#projectstructure)
 
+<a name="login-component-template"></a>
 ### Login component template
 
 The login component template contains two buttons: login as user or as admin. It sets a user and redirects to the '/' url when a button is clicked.
@@ -310,6 +315,7 @@ The login component template contains two buttons: login as user or as admin. It
 ```
 [Back to top](#projectstructure)
 
+<a name="login-component"></a>
 ### Login component
 
 The login component uses the [AuthService](#authservice) to set a user with a specific role. Then the user is navigated to the home page by using the [@angular/router](https://angular.io/api/router).
@@ -338,6 +344,7 @@ export class LoginComponent {
 ```
 [Back to top](#projectstructure)
 
+<a name="role-model"></a>
 ### Role model
 
 The role model contains an enum that defines the roles that are supported by the application.
@@ -350,6 +357,7 @@ export enum Role {
 ```
 [Back to top](#projectstructure)
 
+<a name="user-model"></a>
 ### User model
 
 The user model contains a user class declaration. The `role` property is the only required for the demo needs.
@@ -383,6 +391,7 @@ The profile component template uses the `*appUser` and the `*appUserRole` struct
 ```
 [Back to top](#projectstructure)
 
+<a name="profile-component"></a>
 ### Profile component
 
 The profile component may not contain a single property. 

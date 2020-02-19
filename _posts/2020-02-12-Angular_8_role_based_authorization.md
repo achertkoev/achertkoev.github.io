@@ -17,7 +17,7 @@ In this post I'd like to show you an example of how you can implement role based
 
 Demo in action:
 
-![angular-8-rba-authorization](/images/post/angular 8 - rba authorization.gif)
+![angular-8-rba-authorization](https://github.com/FSou1/fsou1.github.io/blob/master/images/post/angular%208%20-%20rba%20authorization.gif?raw=true)
 
 Here is the result:
 

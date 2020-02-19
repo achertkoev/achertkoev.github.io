@@ -639,7 +639,7 @@ export class AppModule { }
 
 ## If you want to support me
 
-Follow me on Twitter or GitHub if you want me to continue and to be notified when I write a new blog post.
+Follow me on Twitter or GitHub if you want me to continue.
 * Twitter: [https://twitter.com/maximzhukov_dev](https://twitter.com/maximzhukov_dev)
 * GitHub: [https://github.com/FSou1](https://github.com/FSou1)
 

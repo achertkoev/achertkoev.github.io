@@ -69,7 +69,7 @@ Bellow are the main project files that contain the application logic:
          * auth.service.ts
       * app-routing.guard.ts
       * app-routing.module.ts
-      * app.module.ts
+      * [app.module.ts](#app-module)
    * index.html
 * package.json
 * tsconfig.json
@@ -572,6 +572,7 @@ export class AppRoutingModule { }
 ```
 <a href="#projectstructure">Back to top</a>
 
+<a name="app-module"></a>
 ### App module
 
 The app module is the root module for the application and declares the list of available components and routes.
@@ -618,3 +619,4 @@ Reference:
 
 * [Stackblitz - sample](https://stackblitz.com/edit/angular-8-role-based-authorization-sample)
 * [GitHub - source code](https://github.com/FSou1/angular-8-role-based-authorization-sample)
+* [Jason Watmore's Blog - Angular 8 - RBA Tutorial with Example](https://jasonwatmore.com/post/2019/08/06/angular-8-role-based-authorization-tutorial-with-example)

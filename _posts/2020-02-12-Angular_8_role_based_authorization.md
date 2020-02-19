@@ -574,10 +574,11 @@ export class AppRoutingModule { }
 
 ### App module
 
+The app module is the root module for the application and declares the list of available components and routes.
+
 ```
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app/app.component';
 import { HomeComponent } from './home/home.component';

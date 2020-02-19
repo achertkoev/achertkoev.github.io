@@ -6,7 +6,14 @@ tags: Angular8 TypeScript
 
 In this post I'd like to show you an example of how you can implement role based authorization / access control front end using Angular 8.
 
-The code is available on GitHub at [https://github.com/FSou1/angular-8-role-based-authorization-sample](https://github.com/FSou1/angular-8-role-based-authorization-sample).
+## TL;DR
+
+* [Stackblitz - sample](https://stackblitz.com/edit/angular-8-role-based-authorization-sample)
+* [GitHub - source code](https://github.com/FSou1/angular-8-role-based-authorization-sample)
+* [User role directive](#user-role-directive)
+* [Auth guard](#auth-guard)
+
+## Demo
 
 Demo in action:
 

@@ -88,6 +88,7 @@ export const routes: Routes = [
 ```
 <a href="#projectstructure">Back to top</a>
 
+<a name="admin-module"></a>
 ### Admin module
 
 The admin module is the root module for admin workspace and declares the list of available components and routes.
@@ -443,6 +444,18 @@ export class AuthService {
 
 <a name="auth-guard"></a>
 ### Auth guard
+
+The auth guard is an angular route guard that's used to restrict users from accessing secured routes or modules. 
+
+It's done by implementing the `canActivate` method (and the `CanActivate` interface) which decides if a specific route can be activated by the current user. 
+
+The `canLoad` method (and the `CanLoad` interface) is used to decide whether to load components of a specific module.
+
+The auth guard uses the <a href="#authservice">AuthService</a> to ensure the current user is authorized. Otherwise access is denied (by returning `false`) and the user is redirected to the login page.
+
+To check if a user has a specific role we can use the `data` property of the requested route (e.g. `route.data.roles as Role[]`).
+
+As you could see further the auth guard is used in the <a href="#app-routing-module">AppRoutingModule</a> to protect the profile page and the dashboard page (which is part of the <a href="#admin-module">AdminModule</a>).
 
 ```
 import { CanActivate, Router, ActivatedRouteSnapshot, CanLoad, Route } from '@angular/router';

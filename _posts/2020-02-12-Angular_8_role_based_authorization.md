@@ -505,6 +505,12 @@ export class AuthGuard implements CanActivate, CanLoad {
 <a name="app-routing-module"></a>
 ### App routing module
 
+The module contains root routes and mapped components so the Angular Router knows which component to display based on the current URL. 
+
+The home and login pages are available for all users. The profile page is secured by the <a href="#auth-guard">AuthGuard</a> and is available for authorized users only. The admin module routes and components are lazy loaded and available for admin users only.
+
+For more information on Angular Routing and Navigation see [https://angular.io/guide/router](https://angular.io/guide/router).
+
 ```
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';

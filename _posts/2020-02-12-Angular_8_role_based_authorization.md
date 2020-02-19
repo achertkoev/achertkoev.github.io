@@ -631,8 +631,15 @@ export class AppModule { }
 ```
 [Back to top](#projectstructure)
 
-Reference:
+## Reference:
 
 * [Stackblitz - sample](https://stackblitz.com/edit/angular-8-role-based-authorization-sample)
 * [GitHub - source code](https://github.com/FSou1/angular-8-role-based-authorization-sample)
 * [Jason Watmore's Blog - Angular 8 - RBA Tutorial with Example](https://jasonwatmore.com/post/2019/08/06/angular-8-role-based-authorization-tutorial-with-example)
+
+## If you want to support me
+
+Follow me on Twitter or GitHub if you want me to continue and to be notified when I write a new blog post.
+* Twitter: [https://twitter.com/maximzhukov_dev](https://twitter.com/maximzhukov_dev)
+* GitHub: [https://github.com/FSou1](https://github.com/FSou1)
+

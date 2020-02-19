@@ -76,7 +76,7 @@ Bellow are the main project files that contain the application logic:
 
 ### Admin routing module
 
-The module contains admin routes and mapped components. The module itself is [lazy loaded](https://angular.io/guide/lazy-loading-ngmodules) and managed as a part of the <a href="#app-routing-module">AppRoutingModule</a> (by passing the <a href="#auth-guard">AuthGuard</a> to the `canActivate` and the `canLoad` properties).
+The module contains admin routes and mapped components. The module itself is [lazy loaded](https://angular.io/guide/lazy-loading-ngmodules) and managed as a part of the [AppRoutingModule](#app-routing-module) (by passing the [AuthGuard](#auth-guard) to the `canActivate` and the `canLoad` properties).
 
 ```
 import { Routes } from '@angular/router';
@@ -86,7 +86,7 @@ export const routes: Routes = [
     { path: 'dashboard', component: DashboardComponent }
 ];
 ```
-<a href="#projectstructure">Back to top</a>
+[Back to top](#projectstructure)
 
 <a name="admin-module"></a>
 ### Admin module
@@ -110,7 +110,7 @@ import { routes } from './admin-routing.module';
 })
 export class AdminModule { }
 ```
-<a href="#projectstructure">Back to top</a>
+[Back to top](#projectstructure)
 
 ### App component template
 
@@ -170,7 +170,7 @@ The router-outlet directive acts as a placeholder that the app (Angular) dynamic
   </p>
 </div>
 ```
-<a href="#projectstructure">Back to top</a>
+[Back to top](#projectstructure)
 
 ### App component
 
@@ -204,7 +204,7 @@ export class AppComponent {
   }
 }
 ```
-<a href="#projectstructure">Back to top</a>
+[Back to top](#projectstructure)
 
 <a name="user-role-directive"></a>
 ### User role directive
@@ -213,13 +213,13 @@ The user role directive is a structural directive that conditionally includes a 
 * A user is authorized
 * A user has at least one of the allowed roles
 
-Conditions are evaluated by using the <a href="#authservice">AuthService</a>.
+Conditions are evaluated by using the [AuthService](#authservice).
 
 Allowed roles are passed by using the `appUserRole` setter, for example: `*appUserRole="[ Role.Admin ]"`.
 
 A good thing is that the directive encapsulates the authorization logic and can be reused within the application.
 
-On the other hand a `hasAccess` value is evaluated within the `ngOnInit` method, so a template won't be redrawn if the value changes. That's why I wouldn't use the directive in the layout (like the navbar). At the same time it's still useful on the <a href="#profile-template">profile component template</a>.
+On the other hand a `hasAccess` value is evaluated within the `ngOnInit` method, so a template won't be redrawn if the value changes. That's why I wouldn't use the directive in the layout (like the navbar). At the same time it's still useful on the [profile component template](#profile-template).
 
 ```
 import { Directive, OnInit, TemplateRef, ViewContainerRef, Input } from '@angular/core';
@@ -260,11 +260,11 @@ export class UserRoleDirective implements OnInit {
     }
 }
 ```
-<a href="#projectstructure">Back to top</a>
+[Back to top](#projectstructure)
 
 ### User directive
 
-The user directive is similar to the <a href="#user-role-directive">UserRoleDirective</a>. It includes a template for authorized users only. You can see the `*appUser` directive in action at the <a href="#profile-template">profile component template</a>.
+The user directive is similar to the [UserRoleDirective](#user-role-directive). It includes a template for authorized users only. You can see the `*appUser` directive in action at the [profile component template](#profile-template).
 
 ```
 import { Directive, OnInit, TemplateRef, ViewContainerRef, Input } from '@angular/core';
@@ -289,7 +289,7 @@ export class UserDirective implements OnInit {
     }
 }
 ```
-<a href="#projectstructure">Back to top</a>
+[Back to top](#projectstructure)
 
 ### Login component template
 
@@ -308,11 +308,11 @@ The login component template contains two buttons: login as user or as admin. It
   class="btn btn-outline-danger" 
   (click)="login(Role.Admin)">Login as Admin</button>
 ```
-<a href="#projectstructure">Back to top</a>
+[Back to top](#projectstructure)
 
 ### Login component
 
-The login component uses the <a href="#authservice">AuthService</a> to set a user with a specific role. Then the user is navigated to the home page by using the [@angular/router](https://angular.io/api/router).
+The login component uses the [AuthService](#authservice) to set a user with a specific role. Then the user is navigated to the home page by using the [@angular/router](https://angular.io/api/router).
 
 ```
 import { Component, OnInit } from '@angular/core';
@@ -336,7 +336,7 @@ export class LoginComponent {
   }
 }
 ```
-<a href="#projectstructure">Back to top</a>
+[Back to top](#projectstructure)
 
 ### Role model
 
@@ -348,7 +348,7 @@ export enum Role {
   Admin = 2
 }
 ```
-<a href="#projectstructure">Back to top</a>
+[Back to top](#projectstructure)
 
 ### User model
 
@@ -361,7 +361,7 @@ export class User {
   role: Role;
 }
 ```
-<a href="#projectstructure">Back to top</a>
+[Back to top](#projectstructure)
 
 <a name="profile-template"></a>
 ### Profile component template
@@ -381,7 +381,7 @@ The profile component template uses the `*appUser` and the `*appUserRole` struct
   Content for admin users only (e.g. enable/disable user)!
 </div>
 ```
-<a href="#projectstructure">Back to top</a>
+[Back to top](#projectstructure)
 
 ### Profile component
 
@@ -402,7 +402,7 @@ export class ProfileComponent {
   Role = Role;
 }
 ```
-<a href="#projectstructure">Back to top</a>
+[Back to top](#projectstructure)
 
 <a name="authservice"></a>
 ### Auth service
@@ -440,7 +440,7 @@ export class AuthService {
     }
 }
 ```
-<a href="#projectstructure">Back to top</a>
+[Back to top](#projectstructure)
 
 <a name="auth-guard"></a>
 ### Auth guard
@@ -451,11 +451,11 @@ It's done by implementing the `canActivate` method (and the `CanActivate` interf
 
 The `canLoad` method (and the `CanLoad` interface) is used to decide whether to load components of a specific module.
 
-The auth guard uses the <a href="#authservice">AuthService</a> to ensure the current user is authorized. Otherwise access is denied (by returning `false`) and the user is redirected to the login page.
+The auth guard uses the [AuthService](#authservice) to ensure the current user is authorized. Otherwise access is denied (by returning `false`) and the user is redirected to the login page.
 
 To check if a user has a specific role we can use the `data` property of the requested route (e.g. `route.data.roles as Role[]`).
 
-As you could see further the auth guard is used in the <a href="#app-routing-module">AppRoutingModule</a> to protect the profile page and the dashboard page (which is part of the <a href="#admin-module">AdminModule</a>).
+As you could see further the auth guard is used in the [AppRoutingModule](#app-routing-module) to protect the profile page and the dashboard page (which is part of the [AdminModule](#admin-module)).
 
 ```
 import { CanActivate, Router, ActivatedRouteSnapshot, CanLoad, Route } from '@angular/router';
@@ -500,14 +500,14 @@ export class AuthGuard implements CanActivate, CanLoad {
     }
 }
 ```
-<a href="#projectstructure">Back to top</a>
+[Back to top](#projectstructure)
 
 <a name="app-routing-module"></a>
 ### App routing module
 
 The module contains root routes and mapped components so the Angular Router knows which component to display based on the current URL. 
 
-The home and login pages are available for all users. The profile page is secured by the <a href="#auth-guard">AuthGuard</a> and is available for authorized users only. The admin module routes and components are lazy loaded and available for admin users only.
+The home and login pages are available for all users. The profile page is secured by the [AuthGuard](#auth-guard) and is available for authorized users only. The admin module routes and components are lazy loaded and available for admin users only.
 
 For more information on Angular Routing and Navigation see [https://angular.io/guide/router](https://angular.io/guide/router).
 
@@ -570,7 +570,7 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 ```
-<a href="#projectstructure">Back to top</a>
+[Back to top](#projectstructure)
 
 <a name="app-module"></a>
 ### App module
@@ -613,7 +613,7 @@ import { AuthService } from './services/auth.service';
 })
 export class AppModule { }
 ```
-<a href="#projectstructure">Back to top</a>
+[Back to top](#projectstructure)
 
 Reference:
 

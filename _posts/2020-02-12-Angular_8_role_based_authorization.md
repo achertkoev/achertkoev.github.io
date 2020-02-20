@@ -273,7 +273,7 @@ export class UserRoleDirective implements OnInit {
 <a name="user-directive"></a>
 ### User directive
 
-The user directive is similar to the [UserRoleDirective](#user-role-directive). It includes a template for authorized users only. You can see the `*appUser` directive in action at the [profile component template](#profile-template).
+The user directive is like the [UserRoleDirective](#user-role-directive). It includes a template for authorized users only. You can see the `*appUser` directive in action at the [profile component template](#profile-template).
 
 ```
 import { Directive, OnInit, TemplateRef, ViewContainerRef, Input } from '@angular/core';
@@ -303,7 +303,7 @@ export class UserDirective implements OnInit {
 <a name="login-component-template"></a>
 ### Login component template
 
-The login component template contains two buttons: login as a user or as an admin. It sets a user and redirects to the '/' url when a button is clicked.
+The login component template contains two buttons: login as a user or as an admin. It sets a user and redirects to the '/' URL when a button is clicked.
 
 ```
 <div class="alert alert-success" role="alert">

@@ -4,7 +4,7 @@ title: Angular 8 - Role-based authorization with sample
 tags: Angular8 TypeScript
 ---
 
-In this post I'd like to show you an example of how you can implement role based authorization / access control front end using Angular 8.
+In this post, I'd like to show you an example of how you can implement role-based authorization/access control front end using Angular 8.
 
 ## TL;DR
 
@@ -40,7 +40,7 @@ NOTE: You can also run the app directly using the Angular CLI command `ng serve 
 
 <a name="projectstructure"></a>
 
-Bellow are the main project files that contain the application logic:
+Below are the main project files that contain the application logic:
 
 * src
    * app
@@ -99,7 +99,7 @@ export const routes: Routes = [
 <a name="admin-module"></a>
 ### Admin module
 
-The admin module is the root module for admin workspace and declares the list of available components and routes.
+The admin module is the root module for the admin workspace and declares the list of available components and routes.
 
 ```
 import { NgModule } from '@angular/core';
@@ -125,9 +125,9 @@ export class AdminModule { }
 
 The app component template is the root component template of the application. It contains the main nav bar which changes based on the user. 
 
-The profile and the logout links are only visible for authorized users (by using the `isAuthorized` getter). The dashboard link is only displayed for admins (by using the `isAdmin` getter). The login link is only accesible by anonymous users.
+The profile and the logout links are only visible for authorized users (by using the `isAuthorized` getter). The dashboard link is only displayed for admins (by using the `isAdmin` getter). The login link is only accessible by anonymous users.
 
-The router-outlet directive acts as a placeholder that the app (Angular) dynamically fills based on the current url (router state). [Read more](https://angular.io/guide/router).
+The router-outlet directive acts as a placeholder that the app (Angular) dynamically fills based on the current URL (router state). [Read more](https://angular.io/guide/router).
 
 ```
 <header class="navbar navbar-expand navbar-dark bg-dark">
@@ -229,7 +229,7 @@ Allowed roles are passed by using the `appUserRole` setter, for example: `*appUs
 
 A good thing is that the directive encapsulates the authorization logic and can be reused within the application.
 
-On the other hand a `hasAccess` value is evaluated within the `ngOnInit` method, so a template won't be redrawn if the value changes. That's why I wouldn't use the directive in the layout (like the navbar). At the same time it's still useful on the [profile component template](#profile-template).
+On the other hand, a `hasAccess` value is evaluated within the `ngOnInit` method, so a template won't be redrawn if the value changes. That's why I wouldn't use the directive in the layout (like the navbar). At the same time, it's still useful on the [profile component template](#profile-template).
 
 ```
 import { Directive, OnInit, TemplateRef, ViewContainerRef, Input } from '@angular/core';
@@ -305,7 +305,7 @@ export class UserDirective implements OnInit {
 <a name="login-component-template"></a>
 ### Login component template
 
-The login component template contains two buttons: login as user or as admin. It sets a user and redirects to the '/' url when a button is clicked.
+The login component template contains two buttons: login as a user or as an admin. It sets a user and redirects to the '/' url when a button is clicked.
 
 ```
 <div class="alert alert-success" role="alert">
@@ -367,7 +367,7 @@ export enum Role {
 <a name="user-model"></a>
 ### User model
 
-The user model contains a user class declaration. The `role` property is the only required for the demo needs.
+The user model contains a user class declaration. The `role` property is the only thing required for the demo needs.
 
 ```
 import { Role } from './role';
@@ -403,7 +403,7 @@ The profile component template uses the `*appUser` and the `*appUserRole` struct
 
 The profile component may not contain a single property. 
 
-NOTE: The property `Role` is used within the template and helps to avoid [magic strings](https://en.wikipedia.org/wiki/Magic_string). Otherwise the admin value should be presented as a string (`*appUserRole="[ 'Admin' ]"`) or a number (`*appUserRole="[ 1 ]"`).
+NOTE: The property `Role` is used within the template and helps to avoid [magic strings](https://en.wikipedia.org/wiki/Magic_string). Otherwise, the admin value should be presented as a string (`*appUserRole="[ 'Admin' ]"`) or a number (`*appUserRole="[ 1 ]"`).
 
 ```
 import { Component, OnInit } from '@angular/core';
@@ -642,4 +642,3 @@ export class AppModule { }
 Follow me on Twitter or GitHub if you want me to continue.
 * Twitter: [https://twitter.com/maximzhukov_dev](https://twitter.com/maximzhukov_dev)
 * GitHub: [https://github.com/FSou1](https://github.com/FSou1)
-

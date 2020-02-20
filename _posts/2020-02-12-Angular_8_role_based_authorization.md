@@ -426,7 +426,7 @@ The authentication service is used to manage the user information (the private `
 It's specifically made as simple as possible to address the demo needs:
 * The `login(role: Role)` method sets a user with a specific role
 * The `isAuthorized()` and the `hasRole(role: Role)` methods encapsulate the authorization logic
-* The `logout()` methods resets a user
+* The `logout()` method resets a user
 
 ```
 import { Injectable } from '@angular/core';

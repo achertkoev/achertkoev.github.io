@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Angular 8 - Role-based authorization with sample
+title: Angular 8 - Role-based authorization tutorial
 tags: Angular8 TypeScript
 ---
 

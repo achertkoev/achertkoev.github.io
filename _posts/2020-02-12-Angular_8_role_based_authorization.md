@@ -465,7 +465,7 @@ It's done by implementing the `canActivate` method (and the `CanActivate` interf
 
 The `canLoad` method (and the `CanLoad` interface) is used to decide whether to load components of a specific module.
 
-The auth guard uses the [AuthService](#authservice) to ensure the current user is authorized. Otherwise access is denied (by returning `false`) and the user is redirected to the login page.
+The auth guard uses the [AuthService](#authservice) to ensure the current user is authorized. Otherwise, access is denied (by returning `false`) and the user is redirected to the login page.
 
 To check if a user has a specific role we can use the `data` property of the requested route (e.g. `route.data.roles as Role[]`).
 

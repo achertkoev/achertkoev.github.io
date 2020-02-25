@@ -623,6 +623,10 @@ export class AppModule { }
 ```
 [Back to top](#projectstructure)
 
+## Comments
+
+Discuss this post on [Hacker News](https://news.ycombinator.com/item?id=19280049), [/r/programming](https://old.reddit.com/r/programming/comments/aw4ig7/is_c_a_lowlevel_language/?sort=top), [/r/dotnet](https://old.reddit.com/r/dotnet/comments/aw4ilf/is_c_a_lowlevel_language/?sort=top) or [/r/csharp](https://old.reddit.com/r/csharp/comments/aw4ij6/is_c_a_lowlevel_language/?sort=top)
+
 ## Reference:
 
 * [Stackblitz - sample](https://stackblitz.com/edit/angular-8-role-based-authorization-sample)

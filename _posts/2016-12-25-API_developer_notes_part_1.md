@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Заметки ASP.NET Web API/Backend разработчика (часть 1)
-tags: ASP.NET OWIN IIS MSSQL NHibernate 
+tags: ASP.NET OWIN IIS MSSQL NHibernate
+redirect_from: "/API_developer_notes_part_1/"
 ---
 
 В сегодняшней небольшой заметке хотел бы поделиться некоторыми вещами, с которыми столкнулся за последнее время и о которых бы не хотелось забыть.

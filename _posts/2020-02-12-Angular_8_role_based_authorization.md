@@ -2,6 +2,7 @@
 layout: post
 title: Angular 8 - Role-based authorization tutorial
 tags: Angular8 TypeScript
+redirect_from: "/Angular_8_role_based_authorization/"
 ---
 
 In this post, I'd like to show you an example of how you can implement role-based authorization/access control front end using Angular 8.
@@ -15,7 +16,7 @@ In this post, I'd like to show you an example of how you can implement role-base
 
 ## Demo in action
 
-![angular-8-rba-authorization](https://github.com/FSou1/fsou1.github.io/blob/master/images/post/angular%208%20-%20rba%20authorization.gif?raw=true)
+![angular-8-rba-authorization](/images/post/angular%208%20-%20rba%20authorization.gif)
 
 Here is the result:
 
@@ -84,7 +85,7 @@ Below are the main project files that contain the application logic:
 
 The module contains admin routes and mapped components. The module itself is [lazy loaded](https://angular.io/guide/lazy-loading-ngmodules) and managed as a part of the [AppRoutingModule](#app-routing-module) (by passing the [AuthGuard](#auth-guard) to the `canActivate` and the `canLoad` properties).
 
-```
+```typescript
 import { Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
@@ -99,7 +100,7 @@ export const routes: Routes = [
 
 The admin module is the root module for the admin workspace and declares the list of available components and routes.
 
-```
+```typescript
 import { NgModule } from '@angular/core';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouterModule } from '@angular/router';
@@ -127,7 +128,7 @@ The profile and the logout links are only visible for authorized users (by using
 
 The router-outlet directive acts as a placeholder that the app (Angular) dynamically fills based on the current URL (router state). [Read more](https://angular.io/guide/router).
 
-```
+```html
 <header class="navbar navbar-expand navbar-dark bg-dark">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
@@ -166,16 +167,6 @@ The router-outlet directive acts as a placeholder that the app (Angular) dynamic
     <router-outlet></router-outlet>
   </div>
 </div>
-
-<div class="text-center">
-  <p>
-    <a href="https://twitter.com/maximzhukov_dev" target="_blank">@maximzhukov_dev</a>, 2020
-  </p>
-
-  <p>
-    <a href="https://fsou1.github.io/Angular_8_role_based_authorization/" target="_top">Angular 8 - Role-based authorization with sample</a>
-  </p>
-</div>
 ```
 [Back to top](#projectstructure)
 
@@ -184,7 +175,7 @@ The router-outlet directive acts as a placeholder that the app (Angular) dynamic
 
 The app component is the root component of the application. It contains the `isAuthorized` and the `isAdmin` getters which are called inside the template. The `logout` method is used to sign out the currently authorized user and redirect him to the login page.
 
-```
+```typescript
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Role } from '../models/role';
@@ -229,8 +220,9 @@ A good thing is that the directive encapsulates the authorization logic and can 
 
 On the other hand, a `hasAccess` value is evaluated within the `ngOnInit` method, so a template won't be redrawn if the value changes. That's why I wouldn't use the directive in the layout (like the navbar). At the same time, it's still useful on the [profile component template](#profile-template).
 
-```
-import { Directive, OnInit, TemplateRef, ViewContainerRef, Input } from '@angular/core';
+```typescript
+import { Directive, OnInit, Input } from '@angular/core';
+import { TemplateRef, ViewContainerRef } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { Role } from '../models/role';
 
@@ -275,8 +267,9 @@ export class UserRoleDirective implements OnInit {
 
 The user directive is like the [UserRoleDirective](#user-role-directive). It includes a template for authorized users only. You can see the `*appUser` directive in action at the [profile component template](#profile-template).
 
-```
-import { Directive, OnInit, TemplateRef, ViewContainerRef, Input } from '@angular/core';
+```typescript
+import { Directive, OnInit, Input } from '@angular/core';
+import { TemplateRef, ViewContainerRef } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 
 @Directive({ selector: '[appUser]'})
@@ -305,7 +298,7 @@ export class UserDirective implements OnInit {
 
 The login component template contains two buttons: login as a user or as an admin. It sets a user and redirects to the '/' URL when a button is clicked.
 
-```
+```html
 <div class="alert alert-success" role="alert">
   Login component!
 </div>
@@ -325,7 +318,7 @@ The login component template contains two buttons: login as a user or as an admi
 
 The login component uses the [AuthService](#authservice) to set a user with a specific role. Then the user is navigated to the home page by using the [@angular/router](https://angular.io/api/router).
 
-```
+```typescript
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Role } from '../models/role';
@@ -354,7 +347,7 @@ export class LoginComponent {
 
 The role model contains an enum that defines the roles that are supported by the application.
 
-```
+```typescript
 export enum Role {
   User = 1,
   Admin = 2
@@ -367,7 +360,7 @@ export enum Role {
 
 The user model contains a user class declaration. The `role` property is the only thing required for the demo needs.
 
-```
+```typescript
 import { Role } from './role';
 
 export class User {
@@ -381,7 +374,7 @@ export class User {
 
 The profile component template uses the `*appUser` and the `*appUserRole` structural directives to control access to specific blocks.
 
-```
+```html
 <div class="alert alert-success" role="alert">
   Profile component!
 </div>
@@ -403,7 +396,7 @@ The profile component may not contain a single property.
 
 NOTE: The property `Role` is used within the template and helps to avoid [magic strings](https://en.wikipedia.org/wiki/Magic_string). Otherwise, the admin value should be presented as a string (`*appUserRole="[ 'Admin' ]"`) or a number (`*appUserRole="[ 1 ]"`).
 
-```
+```typescript
 import { Component, OnInit } from '@angular/core';
 import { Role } from '../models/role';
 
@@ -428,7 +421,7 @@ It's specifically made as simple as possible to address the demo needs:
 * The `isAuthorized()` and the `hasRole(role: Role)` methods encapsulate the authorization logic
 * The `logout()` method resets a user
 
-```
+```typescript
 import { Injectable } from '@angular/core';
 import { User } from '../models/user';
 import { Role } from '../models/role';
@@ -471,8 +464,9 @@ To check if a user has a specific role we can use the `data` property of the req
 
 As you could see further the auth guard is used in the [AppRoutingModule](#app-routing-module) to protect the profile page and the dashboard page (which is part of the [AdminModule](#admin-module)).
 
-```
-import { CanActivate, Router, ActivatedRouteSnapshot, CanLoad, Route } from '@angular/router';
+```typescript
+import { CanActivate, CanLoad } from '@angular/router';
+import { Router, ActivatedRouteSnapshot, Route } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { AuthService } from './services/auth.service';
@@ -525,7 +519,7 @@ The home and login pages are available for all users. The profile page is secure
 
 For more information on Angular Routing and Navigation see [https://angular.io/guide/router](https://angular.io/guide/router).
 
-```
+```typescript
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
@@ -591,7 +585,7 @@ export class AppRoutingModule { }
 
 The app module is the root module for the application and declares the list of available components and routes.
 
-```
+```typescript
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -634,9 +628,3 @@ export class AppModule { }
 * [Stackblitz - sample](https://stackblitz.com/edit/angular-8-role-based-authorization-sample)
 * [GitHub - source code](https://github.com/FSou1/angular-8-role-based-authorization-sample)
 * [Jason Watmore's Blog - Angular 8 - RBA Tutorial with Example](https://jasonwatmore.com/post/2019/08/06/angular-8-role-based-authorization-tutorial-with-example)
-
-## If you want to support me
-
-Follow me on Twitter or GitHub if you want me to continue.
-* Twitter: [https://twitter.com/maximzhukov_dev](https://twitter.com/maximzhukov_dev)
-* GitHub: [https://github.com/FSou1](https://github.com/FSou1)

@@ -2,6 +2,7 @@
 layout: post
 title: Debugging .NET Core CLR afterword
 tags: .NET Core
+redirect_from: "/Net_core_debug/"
 ---
 
 Some time ago I decided to sort out internal details of .NET Core CLR and today I'd like to share with you the most surprising things that I found during this simple investigation.

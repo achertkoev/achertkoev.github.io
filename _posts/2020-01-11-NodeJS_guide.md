@@ -2,6 +2,7 @@
 layout: post
 title: NodeJS general guide
 tags: JavaScript NodeJS
+redirect_from: "/NodeJS_guide/"
 ---
 
 This post is a collection of notes related to general overview and guides of Nodejs.

@@ -2,6 +2,7 @@
 layout: post
 title: Отличия string и String
 tags: .NET C#
+redirect_from: "/String_and_string_difference_in_C-_and_NET/"
 ---
 
 Буквально сегодня был сбит с толку подобным вопросом, поэтому решил собрать воедино информацию о различиях ключевых слов и соответствующих им по умолчанию типов.

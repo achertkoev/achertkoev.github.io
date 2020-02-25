@@ -2,6 +2,7 @@
 layout: post
 title: Azure Monitor- возможности и ограничения
 tags: Azure Cloud
+redirect_from: "/Azure_monitor_capabilities_and_constrains/"
 ---
 
 Сегодня хотелось бы с вами поделиться заметкой, которая появилась в результате моего небольшого research на тему ключевых особенностей Azure Monitor.

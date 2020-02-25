@@ -1,48 +1,48 @@
-# Welcome to Jekyll!
+# Permalinks
 #
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
 
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: Just another developer
-author: Maxim Zhukov
-email: maxim.zhukov.dev@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Full stack development in details: .NET, Azure, JavaScript, SQL, Design, performance.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://fsou1.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-permalink: /:title/
+# Setup
+title:               'Just another developer'
+tagline:             'Full stack development in details'
+description:         'Full stack development in details: .NET, Azure, JavaScript, SQL, Design, performance.'
+url:                 'https://fsou1.github.io/'
+baseurl:             ''
+paginate:            10
 
-twitter_username: maximzhukov_dev
-github_username: fsou1
-rss: rss
+# About/contact
+author:
+  name:              Maxim Zhukov
+  email:             maxim.zhukov.dev@gmail.com
 
-paginate: 10
-paginate_path: /page:num/
+# For the social list
+social_list:
+  twitter:           https://twitter.com/maximzhukov_dev
+  stackoverflow:     https://stackoverflow.com/users/2524304/maxim-zhukov
+  github:            https://github.com/FSou1
+  linkedin:          https://www.linkedin.com/in/maxim-zhukov-0648a8b5
 
-  
-# Build settings
-markdown: kramdown
-theme: minima
+# For the Jekyll SEO plugin https://github.com/jekyll/jekyll-seo-tag#usage
+social:
+  name: Maxim Zhukov
+  links:
+    - https://twitter.com/maximzhukov_dev
+    - https://stackoverflow.com/users/2524304/maxim-zhukov
+    - https://github.com/FSou1
+    - https://www.linkedin.com/in/maxim-zhukov-0648a8b5
+
+# For the Jekyll SEO plugin https://github.com/jekyll/jekyll-seo-tag#usage
+twitter:
+  username: maximzhukov_dev
+
+# Custom vars
+version:             1.0.0
+
+exclude: [README.md, LICENSE.md]
+
 plugins:
-  - jekyll-feed
-  - jekyll-paginate
   - jekyll-sitemap
-  
-# Exclude from processing.
-# Exclude these files from your production _site
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - LICENSE
-  - README.md
-  - CNAME
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-redirect-from

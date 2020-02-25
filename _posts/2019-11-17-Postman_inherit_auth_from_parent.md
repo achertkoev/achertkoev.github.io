@@ -2,6 +2,7 @@
 layout: post
 title: How to use single auth method for every request in a Postman collection
 tags: Postman
+redirect_from: "/Postman_inherit_auth_from_parent/"
 ---
 
 If you are just like me tired of messing with authorization header for every request in a collection then you're welcome for a very helpful solution.

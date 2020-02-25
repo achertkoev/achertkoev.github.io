@@ -2,6 +2,7 @@
 layout: post
 title: SignalR Core- how to start creating a currency broadcaster sample
 tags: .NET SignalR Core
+redirect_from: "/SignalR_core_how_to/"
 ---
 
 Today I'd like to take a look at a new version of SignalR package (to be honest, it's official name is `Microsoft.AspNetCore.Signalr`) and implement a currency broadcaster sample. 
@@ -194,7 +195,7 @@ And a layout:
 <table class="table table-bordered table-striped" v-if="currencies">
     <tr>
         <th></th>
-        <th v-for="(value, key) in currencies">{{ key.toUpperCase() }}</th>
+        <th v-for="(value, key) in currencies">{ key.toUpperCase() }</th>
     </tr>
 
     <tr>

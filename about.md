@@ -4,61 +4,63 @@ title: About
 permalink: /about/
 ---
 
-You can contact with me using services in the footer of this site.
+<div style="text-align: center">
+  <img src="https://images.youracclaim.com/size/340x340/images/649069f9-27f1-4d2b-92bc-c674bc67bd02/azure-solutions-architect-expert-600x600.png" width="128" height="128">
+</div>
 
-- [LinkedIn profile](https://www.linkedin.com/in/maxim-zhukov-0648a8b5/)
-- [Upwork profile](https://www.upwork.com/o/profiles/users/_~01d0b9aa6cc56b8f51/)
+<p class="message">I'm a Full Stack Developer (.NET) and <a href="https://www.youracclaim.com/badges/64b5a7a0-ff44-4794-b415-e2312e31c814">Microsoft Certified</a> Azure Architect. 10+ years of experience in solution design and performance optimizations.</p>
 
 ## Work experience
 
 ### [EPAM Systems](http://epam.com/) - Lead Software Engineer (6/2017 - Present)
 
-I am working on an automated high-load e-billing solution developed primary for law firms to automate their billing cycles.
+#### Houston, TX
 
-**Technologies**: ASP.NET Web API, Azure Cloud-Native Apps, Azure Service Bus, Azure Service Fabric, Azure Storage Services, SQL Azure, Azure Cosmos DB, Application Insights, API Management, Swagger;
+12/2019 - Present: I'm working as a full stack developer for one of the largest oil and gas companies.
+
+_Technologies_: Angular 8, Ngrx, ASP.NET Web API, Azure Cloud-Native Apps, SQL Azure, App Insights, Swagger;
+
+#### Minsk, Belarus
+
+6/2017 - 12/2019: I was working on developing an automated [high-load e-billing solution](https://www.youtube.com/watch?v=wZjD-uRqF5I) created primary for law firms to automate their billing cycles. The platforms allows to manage (validate, submit, track) invoices in a set of billing formats (eSF, [LEDES](https://en.wikipedia.org/wiki/Legal_Electronic_Data_Exchange_Standard)).
+
+_Technologies_: ASP.NET Web API, Azure Cloud-Native Apps, Azure Service Bus, Azure Service Fabric, Azure Storage Services, SQL Azure, Azure Cosmos DB, App Insights, API Management, Swagger;
 
 ### [DoktorAtWork](https://doktornarabote.ru/) - Lead .NET Developer (9/2016 - 6/2017)
 
-I was working on developing [Telemedicine](http://telemedicine.doktornarabote.ru/) project.
+#### Moscow, Russia
 
-- Main API (providing access to partners, provision of services for assisting communication with doctors from the social network, calculating costs of services rendered and remuneration of doctors, transactions between correspondent accounts);
-- Affiliate API (providing access to patients, i.e. the company`s mobile application users, interaction with the main platform using a developed library).
+I was working on developing a telemedicine platform which connects doctors and patients via a set of APIs and VoIP telephony. The platforms allows to search for remote doctors, make appointments, communicate via chat/audio/video, pay for services, access to partners.
 
-**Technologies**: ASP.NET Web API, Quartz.NET, Topshelf, RabbitMQ, MSSQL, NHibernate, TeamCity, Swagger
+_Technologies_: ASP.NET Web API, Quartz.NET, Topshelf, RabbitMQ, MSSQL, NHibernate, TeamCity, Swagger
 
 ### [Europlan](https://europlan.ru/) - Full Stack Developer (9/2013 - 9/2016)
 
-I was working on developing and supporting company's business processes automation software:
-- Problem assets department
-- Bank customer service department
-- Department of affiliate programs
+#### Moscow, Russia
 
-**Technologies**: .NET, ASP.NET MVC, SignalR, RabbitMQ, MSSQL, Dapper, EntityFramework, AngularJS
+I was working on developing and supporting company's business processes automation software. While working in this company I received knowledge in problem assets and bank customer service business domains.
+
+_Technologies_: .NET, ASP.NET MVC, SignalR, RabbitMQ, MSSQL, Dapper, EntityFramework, AngularJS
 
 ### [the State Air Navigation Research Institute](http://www.atminst.ru/) - .NET Software Developer (10/2008 - 8/2012)
 
+#### Moscow, Russia
+
 I was working on developing automated information system for accounting, security analysis and certification airport's radio navigational devices in national registry.
 
-**Technologies**: ASP.NET WebForms, MSSQL, jQuery
-
-## Summary 
-
-1. 10+ years of experience in the IT field as a Developer
-2. Very attentive to details and believes in the ‘KISS principle’, preferring simple tools and learning principles instead of frameworks
-3. My core skills include but not limited to C#, ASP.NET MVC, ASP.NET Web API
-4. Experienced in designing solution & software architecture
-5. Experienced in developing highload projects and performance optimizations
+_Technologies_: ASP.NET WebForms, MSSQL, jQuery
 
 ## Skills and Awards
 
-1. Programming Languages: C#, JavaScript
-2. Cloud services: Azure Cloud-Native Apps (App Services, Service Bus, Service Fabric, Storage Services, SQL Azure, Cosmos DB, Application Insights, API Management)
-3. Frameworks: .NET Framework, ASP.NET MVC/Web API, Angular JS, VueJS
-4. ORMs: Dapper, Entity Framework, NHibernate, Linq2Sql
-5. Database Engines: MS SQL (T-SQL), CosmosDB, PostgreSQL
-6. Other Front-end Tools: Node.js, Gulp, Karma, Mocha, jQuery, Bootstrap JS, underscore.js
-7. Other Back-end Tools: SignalR, Quartz.NET, Topshelf, RabbitMQ, ServiceBus
-8. Version Control Systems: Git, TFS
+1. Specialties: SDLC, Solutions Architecture and Design, Microsoft Azure, Web Services, Backend Development, Frontend Development, Database Design, Finance, Investments
+2. Programming Languages: C#, JavaScript, TypeScript
+3. Cloud services: Azure Cloud-Native Apps (App Services, Service Bus, Service Fabric, Storage Services, SQL Azure, Cosmos DB, Application Insights, API Management)
+4. Frameworks: .NET Core, ASP.NET MVC/Web API, AngularJS, Angular 2+, Vue.js
+5. ORMs: Dapper, Entity Framework, NHibernate, Linq2Sql
+6. Database Engines: MS SQL (T-SQL), CosmosDB, PostgreSQL, MongoDB
+7. Other Front-end Tools: Node.js, Gulp, Karma, Mocha, jQuery, Bootstrap JS, underscore.js
+8. Other Back-end Tools: SignalR, Quartz.NET, Topshelf, RabbitMQ, ServiceBus, Swagger
+9. Version Control Systems: Git, TFS
 
 ## Projects
 
@@ -67,10 +69,10 @@ I was working on developing automated information system for accounting, securit
 
 ## Posts and Articles
 
-1. [En: General Object Initiating Function by the Example of $injector.instantiate Implementation in angularjs](https://www.codeproject.com/Articles/1190556/General-Object-Initiating-Function-by-the-Example)
+1. [En: General Object Initiating Function by the Example of \$injector.instantiate Implementation in angularjs](https://www.codeproject.com/Articles/1190556/General-Object-Initiating-Function-by-the-Example)
 2. [En: Single IoC Container in the HTTP-request: Web API vs. OWIN Middleware](http://codingsight.com/using-single-ioc-container-http-request-web-api-vs-owin-middleware/)
 3. [Ru: История оптимизации одного IoC контейнера](https://habrahabr.ru/post/331584/)
-4. [Ru: Универсальная функция создания объектов на примере реализации $injector.instantiate в angularjs](https://habrahabr.ru/post/330214/)
+4. [Ru: Универсальная функция создания объектов на примере реализации \$injector.instantiate в angularjs](https://habrahabr.ru/post/330214/)
 5. [Ru: Boxing и unboxing — что быстрее?](https://habrahabr.ru/post/328052/)
 6. [Ru: Опыт использования MassTransit 3.0](https://habrahabr.ru/post/314080/)
 7. [Ru: Использование единого IoC Container'a в рамках HTTP-запроса между Web API и OWIN Middleware](https://habrahabr.ru/post/311256/)
@@ -79,4 +81,4 @@ I was working on developing automated information system for accounting, securit
 
 ## Education
 
-Bachelor’s Degree in Information Technology, Moscow State Technical University of Civil Aviation, 2011
+Master of Science Degree in Information Technology, Moscow State Technical University of Civil Aviation, 2011

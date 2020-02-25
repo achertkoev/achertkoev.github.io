@@ -2,6 +2,7 @@
 layout: post
 title: Customer analysis solution architecture with Azure
 tags: .NET Azure Architecture
+redirect_from: "/Customers_analysis_with_azure/"
 ---
 
 I have recently been asked to design a solution architecture to analyze store customers. The key feature of the solution is to recognize human emotions and provide reports based on collected data.

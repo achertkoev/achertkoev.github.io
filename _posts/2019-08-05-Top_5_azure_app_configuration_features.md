@@ -2,6 +2,7 @@
 layout: post
 title: Top 5 Azure App Configuration Features!
 tags: .NET Azure Architecture
+redirect_from: "/Top_5_azure_app_configuration_features/"
 ---
 
 Hey folks. Even though App Configuration is still in preview mode, I completely agree he is a bit of a hidden gem. So by the end of this post, I'd like you to know his top 5 most impressive features. Let's get started.

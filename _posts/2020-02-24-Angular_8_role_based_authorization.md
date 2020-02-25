@@ -625,7 +625,7 @@ export class AppModule { }
 
 ## Comments
 
-Discuss this post on [Hacker News](https://news.ycombinator.com/item?id=19280049), [/r/programming](https://old.reddit.com/r/programming/comments/aw4ig7/is_c_a_lowlevel_language/?sort=top), [/r/dotnet](https://old.reddit.com/r/dotnet/comments/aw4ilf/is_c_a_lowlevel_language/?sort=top) or [/r/csharp](https://old.reddit.com/r/csharp/comments/aw4ij6/is_c_a_lowlevel_language/?sort=top)
+Discuss this post on [Hacker News](https://news.ycombinator.com/item?id=22410458), [/r/programming](https://www.reddit.com/r/programming/comments/f930ok/angular_8_rolebased_authorization_tutorial/), [/r/angular](https://www.reddit.com/r/angular/comments/f936pd/angular_8_rolebased_authorization_tutorial/) or [/r/frontend](https://www.reddit.com/r/Frontend/comments/f93700/angular_8_rolebased_authorization_tutorial/)
 
 ## Reference:
 

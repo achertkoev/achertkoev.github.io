@@ -205,6 +205,27 @@ In this case you'll end up with the following output:
 
 > Note: You can get the same value by multiple keys but not vice versa
 
+### Const
+
+Const enums are completely removed during compilation. Const enum mebers are inlined:
+
+**TypeScript**:
+```typescript
+const enum Directions { Up, Down, Left, Right }
+let directions = [ 
+    Directions.Up, 
+    Directions.Down, 
+    Directions.Left, 
+    Directions.Right
+];
+```
+
+**JavaScript**:
+```javascript
+"use strict";
+let directions = [0 /* Up */, 1 /* Down */, 2 /* Left */, 3 /* Right */];
+```
+
 ## String
 
 String enums allow you to specify `string` values but the output is a bit different:

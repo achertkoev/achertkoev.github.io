@@ -10,6 +10,7 @@ This post is a collection of the available TypeScript types, examples of their u
 **Update history**:
 * 13 Feb 2020 - Added `void` type (thx to [AngularBeginner](https://www.reddit.com/r/typescript/comments/f33on2/just_blogged_typescript_types_cheat_sheet/fhgvczq?utm_source=share&utm_medium=web2x));
 * 13 Feb 2020 - Added `unknown` type (thx to [andra_nl](https://www.reddit.com/r/typescript/comments/f33on2/just_blogged_typescript_types_cheat_sheet/fhgsax6?utm_source=share&utm_medium=web2x));
+* 8 Mar 2020 - Added the const enum section;
 
 # Boolean
 

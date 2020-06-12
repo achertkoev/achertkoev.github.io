@@ -51,3 +51,7 @@ Bellow is a summary of the Learning How to Learn course, instructors Barbara Oak
 * Try to work on a most important and most disliked task first
 
 ![learning-how-to-learn](/images/post/learning-how-to-learn-4.png)
+
+## Reference
+
+* [Learning How to Learn: Powerful mental tools to help you master tough subjects](https://www.coursera.org/learn/learning-how-to-learn)

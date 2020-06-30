@@ -18,7 +18,7 @@ permalink: /about/
 
 12/2019 - Present: I'm working as a full stack developer for one of the largest oil and gas companies.
 
-_Technologies_: Angular 8, Ngrx, ASP.NET Web API, Azure Cloud-Native Apps, SQL Azure, App Insights, Swagger;
+_Technologies_: .NET, ASP.NET Web API, Azure Cloud-Native Apps, Entity Framework, SQL Azure, App Insights, Swagger, TypeScript, Angular 8, Angular Material UI, RxJS, ESLint;
 
 #### Minsk, Belarus
 
@@ -58,14 +58,17 @@ _Technologies_: ASP.NET WebForms, MSSQL, jQuery
 4. Frameworks: .NET Core, ASP.NET MVC/Web API, AngularJS, Angular 2+, Vue.js
 5. ORMs: Dapper, Entity Framework, NHibernate, Linq2Sql
 6. Database Engines: MS SQL (T-SQL), CosmosDB, PostgreSQL, MongoDB
-7. Other Front-end Tools: Node.js, Gulp, Karma, Mocha, jQuery, Bootstrap JS, underscore.js
+7. Other Front-end Tools: Node.js, RxJS, Ngrx, Jest, Chrome APIs, Gulp, Karma, Mocha, jQuery, Bootstrap JS, underscore.js
 8. Other Back-end Tools: SignalR, Quartz.NET, Topshelf, RabbitMQ, ServiceBus, Swagger
 9. Version Control Systems: Git, TFS
 
 ## Projects
 
-1. [FsContainer](https://github.com/FSou1/FsContainer), - open source IoC container
-2. [FsMapper](https://github.com/FSou1/FsMapper), - open source mapper
+1. [Typescript algorithms](https://github.com/FSou1/typescript-algorithms), - a constantly growing repository with algorithm and data structures implemented with TypeScript
+2. [WebDetox](https://chrome.google.com/webstore/detail/webdetox/jglmleifkehhcmheadecpeoohaagakio?hl=en) - a chrome extension to control noise and toxic topics on the web
+3. [find-focused-element](https://github.com/FSou1/find-focused-element) - a small npm package to retrieve the focused HTML element
+4. [FsContainer](https://github.com/FSou1/FsContainer), - a naive .NET IoC container
+5. [FsMapper](https://github.com/FSou1/FsMapper), - a naive .NET mapper
 
 ## Posts and Articles
 

@@ -10,6 +10,15 @@ permalink: /about/
 
 <p class="message">I'm a Full Stack Developer (.NET) and <a href="https://www.youracclaim.com/badges/64b5a7a0-ff44-4794-b415-e2312e31c814">Microsoft Certified</a> Azure Architect. 10+ years of experience in solution design and performance optimizations.</p>
 
+## Projects
+
+1. 🌟 [QuickReply](https://chrome.google.com/webstore/detail/quickreply/enngmhjfhandgjeccahinpmjfmllklki), - simplifies your copy/paste experience in Chrome ([ProductHunt](https://www.producthunt.com/posts/quickreply))
+2. 🔖 [Typescript algorithms](https://github.com/FSou1/typescript-algorithms), - a constantly growing repository with algorithm and data structures implemented with TypeScript
+3. [WebDetox](https://chrome.google.com/webstore/detail/webdetox/jglmleifkehhcmheadecpeoohaagakio?hl=en) - a chrome extension to control noise and toxic topics on the web
+4. [find-focused-element](https://github.com/FSou1/find-focused-element) - a small npm package to retrieve the focused HTML element
+5. [FsContainer](https://github.com/FSou1/FsContainer), - a naive .NET IoC container
+6. [FsMapper](https://github.com/FSou1/FsMapper), - a naive .NET mapper
+
 ## Work experience
 
 ### [EPAM Systems](http://epam.com/) - Lead Software Engineer (6/2017 - Present)
@@ -61,14 +70,6 @@ _Technologies_: ASP.NET WebForms, MSSQL, jQuery
 7. Other Front-end Tools: Node.js, RxJS, Ngrx, Jest, Chrome APIs, Gulp, Karma, Mocha, jQuery, Bootstrap JS, underscore.js
 8. Other Back-end Tools: SignalR, Quartz.NET, Topshelf, RabbitMQ, ServiceBus, Swagger
 9. Version Control Systems: Git, TFS
-
-## Projects
-
-1. [Typescript algorithms](https://github.com/FSou1/typescript-algorithms), - a constantly growing repository with algorithm and data structures implemented with TypeScript
-2. [WebDetox](https://chrome.google.com/webstore/detail/webdetox/jglmleifkehhcmheadecpeoohaagakio?hl=en) - a chrome extension to control noise and toxic topics on the web
-3. [find-focused-element](https://github.com/FSou1/find-focused-element) - a small npm package to retrieve the focused HTML element
-4. [FsContainer](https://github.com/FSou1/FsContainer), - a naive .NET IoC container
-5. [FsMapper](https://github.com/FSou1/FsMapper), - a naive .NET mapper
 
 ## Posts and Articles
 

@@ -8,6 +8,6 @@ Hey folks, if you have practiced code kata then you know how fun and challenging
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/07zX85Ad0i4" frameborder="0" class="center-image" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-Programming Challenge «Your order, please»: https://www.codewars.com/kata/55c45be3b2079eccff00010f
+Programming Challenge «Your order, please»: [https://www.codewars.com/kata/55c45be3b2079eccff00010f](https://www.codewars.com/kata/55c45be3b2079eccff00010f)
 
-Source code: https://gist.github.com/FSou1/df6459a34eed280c09c907be4a39dc89
+Source code: [https://gist.github.com/FSou1/df6459a34eed280c09c907be4a39dc89](https://gist.github.com/FSou1/df6459a34eed280c09c907be4a39dc89)

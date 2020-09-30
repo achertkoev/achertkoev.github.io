@@ -22,7 +22,7 @@
 .social-list a:hover svg {
   transform: translateY(-1px) scale(1.2, 1.2);
 }
-.icon>svg {
+.icon>svg, .icon>img {
   display: inline-block;
   width: 20px;
   height: 20px;

@@ -18,7 +18,7 @@ author:
 
 # For the social list
 social_list:
-  twitter:           https://twitter.com/maximzhukov_dev
+  youtube:           https://www.youtube.com/channel/UCz6AZvABoICHPpi43y-Hd5g
   stackoverflow:     https://stackoverflow.com/users/2524304/maxim-zhukov
   github:            https://github.com/FSou1
   linkedin:          https://www.linkedin.com/in/maxim-zhukov-0648a8b5
@@ -27,6 +27,7 @@ social_list:
 social:
   name: Maxim Zhukov
   links:
+    - https://www.youtube.com/channel/UCz6AZvABoICHPpi43y-Hd5g
     - https://twitter.com/maximzhukov_dev
     - https://stackoverflow.com/users/2524304/maxim-zhukov
     - https://github.com/FSou1

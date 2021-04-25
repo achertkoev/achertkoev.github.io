@@ -10,7 +10,7 @@ If you haven't read the latest [Technology Radar Volume 24](https://www.thoughtw
 
 🔸[AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/home.html) \- a framework for defining cloud infrastructure in code;
 
-🔸 [bit.dev](https://bit.dev/) \- a collaborative way to build and reuse components;
+🔸[bit.dev](https://bit.dev/) \- a collaborative way to build and reuse components;
 
 🔸[esbuild](https://github.com/evanw/esbuild) \- an extremely fast JS bundler and minifier (is it really 10-100x faster?);
 

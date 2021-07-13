@@ -55,7 +55,7 @@ In the `webpack.config.js` we find a configuration section that defines the list
       loader: require.resolve('css-loader'),
       options: {
         modules: {
-					exportLocalsConvention: 'camelCaseOnly',
+          exportLocalsConvention: 'camelCaseOnly',
           localIdentName: "[hash:base64:5]",
         }
       }

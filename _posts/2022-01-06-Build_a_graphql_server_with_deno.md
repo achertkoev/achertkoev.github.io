@@ -18,12 +18,3 @@ Watch on youtube: https://youtu.be/BS0tq9dtr7Y
 * https://deno.land/x/gql@1.1.0
 * https://deno.land/x/mongo@v0.29.0
 * https://www.mongodb.com/atlas/database
-
-Join the Discord: https://discord.gg/EnbnaP7x
-
-Follow Me Online Here:
-* GitHub: https://github.com/FSou1
-* LinkedIn: https://www.linkedin.com/in/maxim-zhukov-0648a8b5/
-* Telegram: https://t.me/seasoneddev
-
-#deno #graphql #mongo

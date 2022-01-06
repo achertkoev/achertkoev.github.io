@@ -6,9 +6,7 @@ tags: Deno GraphQL MongoDB
 
 Build a GraphQL Server with Deno and MongoDB Atlas tutorial. Learn how to setup a GraphQL Server from scratch using Deno, gql and graphql_tools. I also show you to setup http server, and deno_mongo for connecting to a MongoDB instance.
 
-Watch on youtube: https://youtu.be/BS0tq9dtr7Y
-
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/BS0tq9dtr7Y/0.jpg)](https://youtu.be/BS0tq9dtr7Y)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BS0tq9dtr7Y" frameborder="0" class="center-image" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Workflow
 

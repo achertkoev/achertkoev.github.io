@@ -12,12 +12,11 @@ permalink: /about/
 
 ## Projects
 
-1. 🌟 [QuickReply](https://chrome.google.com/webstore/detail/quickreply/enngmhjfhandgjeccahinpmjfmllklki), - simplifies your copy/paste experience in Chrome ([ProductHunt](https://www.producthunt.com/posts/quickreply))
-2. 🔖 [Typescript algorithms](https://github.com/FSou1/typescript-algorithms), - a constantly growing repository with algorithm and data structures implemented with TypeScript
-3. [WebDetox](https://chrome.google.com/webstore/detail/webdetox/jglmleifkehhcmheadecpeoohaagakio?hl=en) - a chrome extension to control noise and toxic topics on the web
-4. [find-focused-element](https://github.com/FSou1/find-focused-element) - a small npm package to retrieve the focused HTML element
-5. [FsContainer](https://github.com/FSou1/FsContainer), - a naive .NET IoC container
-6. [FsMapper](https://github.com/FSou1/FsMapper), - a naive .NET mapper
+- 📝 [Blog](https://fsou1.github.io/) - .NET, Azure, JavaScript, SQL, Design, performance
+- ▶️ [Youtube/SeasonedDev](https://www.youtube.com/SeasonedDev) - a youtube channel with programming things
+- 🎁 [GitHub/SeasonedDev](https://github.com/FSou1/SeasonedDev) - a repository that contains artifacts for the youtube channel
+- 🇺🇸 [Telegram/SeasonedDev](https://t.me/seasoneddev) - a telegram channel with programming things
+- 🇺🇸 [C# 1001 notes](https://t.me/csharp_1001_notes) - a telegram channel with C# and .NET note
 
 ## Work experience
 
@@ -59,17 +58,18 @@ I was working on developing automated information system for accounting, securit
 
 _Technologies_: ASP.NET WebForms, MSSQL, jQuery
 
-## Skills and Awards
+## Skills
 
 1. Specialties: SDLC, Solutions Architecture and Design, Microsoft Azure, Web Services, Backend Development, Frontend Development, Database Design, Finance, Investments
 2. Programming Languages: C#, JavaScript, TypeScript
 3. Cloud services: Azure Cloud-Native Apps (App Services, Service Bus, Service Fabric, Storage Services, SQL Azure, Cosmos DB, Application Insights, API Management)
-4. Frameworks: .NET Core, ASP.NET MVC/Web API, AngularJS, Angular 2+, Vue.js
+4. Frameworks: .NET Core, ASP.NET MVC/Web API, React, Angular, Vue.js
 5. ORMs: Dapper, Entity Framework, NHibernate, Linq2Sql
-6. Database Engines: MS SQL (T-SQL), CosmosDB, PostgreSQL, MongoDB
-7. Other Front-end Tools: Node.js, RxJS, Ngrx, Jest, Chrome APIs, Gulp, Karma, Mocha, jQuery, Bootstrap JS, underscore.js
-8. Other Back-end Tools: SignalR, Quartz.NET, Topshelf, RabbitMQ, ServiceBus, Swagger
-9. Version Control Systems: Git, TFS
+6. APIs: REST, GraphQL, OData, gRPC
+7. Database Engines: MS SQL (T-SQL), CosmosDB, PostgreSQL, MongoDB
+8. Other Front-end Tools: Node.js, Next.js, RxJS, Ngrx, Jest, Chrome APIs, Gulp, Karma, Mocha, jQuery, Bootstrap JS, underscore.js
+9. Other Back-end Tools: SignalR, Quartz.NET, Topshelf, RabbitMQ, ServiceBus, Swagger
+10. Version Control Systems: Git, TFS
 
 ## Posts and Articles
 

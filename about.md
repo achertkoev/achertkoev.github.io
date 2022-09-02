@@ -12,6 +12,7 @@ permalink: /about/
 
 ## Projects
 
+- 🎲 [Discord/Board Game Deals](https://discord.gg/dgNNechKrQ) - a discord server for everyone who loves board games and nice deals
 - 📝 [Blog](https://fsou1.github.io/) - .NET, Azure, JavaScript, SQL, Design, performance
 - ▶️ [Youtube/SeasonedDev](https://www.youtube.com/SeasonedDev) - a youtube channel with programming things
 - 🎁 [GitHub/SeasonedDev](https://github.com/FSou1/SeasonedDev) - a repository that contains artifacts for the youtube channel

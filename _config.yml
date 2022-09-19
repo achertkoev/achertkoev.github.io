@@ -6,7 +6,7 @@ permalink:           pretty
 # Setup
 title:               'Just another developer'
 tagline:             'Back-end development in details'
-description:         'Back-end development in details: .NET, Azure, JavaScript, SQL, Design, performance.'
+description:         'Back-end development in details: .NET, SQL, Design, performance.'
 url:                 'https://achertkoev.github.io/'
 baseurl:             ''
 paginate:            10

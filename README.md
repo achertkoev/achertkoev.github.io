@@ -1,3 +1,3 @@
-# Maxim Zhukov Blog
+# Albert Chertkoev Blog
 
-See [https://fsou1.github.io](https://fsou1.github.io)
+See [https://achertkoev.github.io](https://achertkoev.github.io)

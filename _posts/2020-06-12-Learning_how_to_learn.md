@@ -4,7 +4,8 @@ title: Learning How to Learn - summary
 tags: Learning Summary
 ---
 
-Below is a summary of the Learning How to Learn course, instructors Barbara Oakley and Terrence Sejnowski. The entire course is available at the [Coursera](https://www.coursera.org/learn/learning-how-to-learn) and takes about 15 hours.
+Below is a summary of the Learning How to Learn course, instructors Barbara Oakley and Terrence Sejnowski.
+The entire course is available at the [Coursera](https://www.coursera.org/learn/learning-how-to-learn) and takes about 15 hours.
 
 ## Focused versus Diffuse Thinking
 * Metaphors provide powerful techniques for learning

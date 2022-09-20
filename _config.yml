@@ -7,7 +7,7 @@ permalink:           pretty
 title:               'Just another developer'
 tagline:             'Back-end development in details'
 description:         'Back-end development in details: .NET, SQL, Design, performance.'
-url:                 'https://achertkoev.github.io/'
+url:                 'https://achertkoev.github.io'
 baseurl:             ''
 paginate:            10
 
@@ -18,26 +18,23 @@ author:
 
 # For the social list
 social_list:
-  youtube:           https://achertkoev.github.io
-  stackoverflow:     https://achertkoev.github.io
-  github:            https://achertkoev.github.io
-  linkedin:          https://achertkoev.github.io
-  discord:           https://achertkoev.github.io
-  telegram:          https://achertkoev.github.io
+ # youtube:          https://achertkoev.github.io
+ # stackoverflow:    https://achertkoev.github.io
+  github:            https://github.io/achertkoev
+  linkedin:          https://www.linkedin.com/in/achertkoev
+  telegram:          https://t.me/achertkoev
 
 # For the Jekyll SEO plugin https://github.com/jekyll/jekyll-seo-tag#usage
 social:
   name: Albert Chertkoev
   links:
-    - https://achertkoev.github.io
-    - https://achertkoev.github.io
-    - https://achertkoev.github.io
-    - https://achertkoev.github.io
-    - https://achertkoev.github.io
+    - https://github.io/achertkoev
+    - https://www.linkedin.com/in/achertkoev
+    - https://t.me/achertkoev
 
-# For the Jekyll SEO plugin https://github.com/jekyll/jekyll-seo-tag#usage
-twitter:
-  username: achertkoev
+## For the Jekyll SEO plugin https://github.com/jekyll/jekyll-seo-tag#usage
+#twitter:
+#  username: achertkoev
 
 # Custom vars
 version:             1.0.0

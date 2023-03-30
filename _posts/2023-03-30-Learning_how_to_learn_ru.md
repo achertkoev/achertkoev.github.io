@@ -1,18 +1,18 @@
 ---
 layout: post
 title: Учимся учиться - резюме
-tags: Резюме обучения
+tags: учимся учиться
 ---
 
 Ниже приводится краткое изложение курса Learning How to Learn (учимся учиться), преподаватели Барбара Окли и Терренс Сейновски.
-Весь курс доступен на [Coursera] (https://www.coursera.org/learn/learning-how-to-learn) и длится около 15 часов.
+Весь курс доступен на [Coursera](https://www.coursera.org/learn/learning-how-to-learn) и длится около 15 часов.
 
 ## Сосредоточенное и рассеянное мышление
 * Метафоры обеспечивают мощные методы обучения
 * Сфокусированный и рассеянный режимы (расслабься, позволь своему разуму работать в рассеянном режиме, а затем в фокусированном режиме.)
 * Изучение чего-то сложного **требует времени**
 
-## Procrastination, Memory, Sleep
+## Прокрастинация, Память, Сон
 * Use Pomodoro technique to avoid procrastination, useful for focusing (agree, it is much easier to focus on something, I've started to use this [site](https://tomato-timer.com/) on a regular basis)
 * Practice makes permanent- neurons become linked together through **repeated use**
 * Long term memory & working memory
@@ -22,7 +22,7 @@ tags: Резюме обучения
   * erases the less important parts of memories
   * strengthens areas that you need or want to remember
 * Learning by doing, by active engagement and not passive listening
-* Smart != success; **passion + persistence = success**
+* Умный != успех; **страсть + настойчивость = успех**
 
 ![learning-how-to-learn](/images/post/learning-how-to-learn-1.png)
 
@@ -53,6 +53,6 @@ tags: Резюме обучения
 
 ![learning-how-to-learn](/images/post/learning-how-to-learn-4.png)
 
-## Reference
+## Ссылки
 
 * [Learning How to Learn: Powerful mental tools to help you master tough subjects](https://www.coursera.org/learn/learning-how-to-learn)

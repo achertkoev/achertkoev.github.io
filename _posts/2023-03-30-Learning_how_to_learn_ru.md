@@ -13,21 +13,20 @@ tags: учимся учиться
 * Изучение чего-то сложного **требует времени**
 
 ## Прокрастинация, Память, Сон
-* Use Pomodoro technique to avoid procrastination, useful for focusing (agree, it is much easier to focus on something, I've started to use this [site](https://tomato-timer.com/) on a regular basis)
-* Practice makes permanent- neurons become linked together through **repeated use**
-* Long term memory & working memory
-* **Spaced repetition**- repeat what you're trying to retain over a number of days, the chance to remember will be higher
-* Sleep:
-  * cleans toxic products in your brain
-  * erases the less important parts of memories
-  * strengthens areas that you need or want to remember
-* Learning by doing, by active engagement and not passive listening
+* Используйте технику Pomodoro, чтобы не прокрастинировать
+* Практика делает постоянным - нейроны становятся связанными между собой через повторное использование благодаря практике, что делает **повторение** более эффективным.
+* **Интервальное повторение**- повторяйте то, что вы пытаетесь запомнить в течение нескольких дней, шанс запомнить будет выше.
+* Сон:
+  * очищает мозг от токсичных продуктов
+  * стирает менее важные части воспоминаний
+  * укрепляет области, которые вам нужны или вы хотите запомнить
+* Обучение на практике, путем активного участия, а не пассивного слушания
 * Умный != успех; **страсть + настойчивость = успех**
 
 ![learning-how-to-learn](/images/post/learning-how-to-learn-1.png)
 
-## Chunking
-* **focus** on something you're learning
+## Чанкинг
+* **фокус** на том, что вы изучаете
 * **understand** the basic idea (understanding is like a glue to build and connect chunks)
 * the first time you actually understand = the first time you can actually do it yourself
 * learning = chunks (**how** to do something) + context (**when** to/not to use it)

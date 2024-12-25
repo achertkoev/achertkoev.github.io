@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About
+title: Альберт Черткоев / Резюме
 permalink: /about/
 ---
 
@@ -8,9 +8,19 @@ permalink: /about/
   <img src="https://images.youracclaim.com/size/340x340/images/649069f9-27f1-4d2b-92bc-c674bc67bd02/azure-solutions-architect-expert-600x600.png" width="128" height="128">
 </div>
 
-<p class="message">I'm a Back-end Developer (.NET) and <a href="https://www.youracclaim.com/badges/64b5a7a0-ff44-4794-b415-e2312e31c814">Microsoft Certified</a> Azure Architect. 10+ years of experience in solution design and performance optimizations.</p>
+<p class="message">Привет! Меня зовут Альберт Черткоев, я back-end разработчик с более чем 10-летним опытом работы в сфере .NET-разработки. 
+С 2013 года я профессионально занимаюсь разработкой на платформе Microsoft .NET.
+Фокусируюсь на архитектуре и проектировании распределенных систем, реализованных с помощью ASP.NET Core, которые могут работать как в облаке, так и локально, а также на внутренних механизмах .NET, таких как Управление памятью / Сборка мусора, многопоточность, асинхронное программирование и производительность.</p>
 
 
-## Education
+## Образование
 
-Master of Science Degree in Information Technology, Moscow State Technical University of Civil Aviation, 2011
+<p>Высшее образование</p>
+<p>Северо-Кавказский горно-металлургический институт (СКГМИ)</p>
+<ul>
+<li>Период обучения: 2010 - 2014</li>
+<li>Факультет: Информационных технологий</li>
+<li>Направление: Автоматизированные системы управления (АСУ)</li>
+<li>Квалификация: Бакалавр</li>
+<li>Тема дипломной работы: "Разработка программного обеспечения для автоматизации составления расписания занятий в высших учебных заведениях"</li>
+</ul>

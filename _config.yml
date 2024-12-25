@@ -6,7 +6,7 @@ permalink:           pretty
 # Setup
 title:               'Альберт Черткоев'
 tagline:             'Back-end разработка'
-description:         'Блок о back-end разработке: .NET, SQL, Проектирование, Производительность.
+description:         'Блок о back-end разработке: .NET, SQL, Проектирование, Производительность.'
 url:                 'https://achertkoev.github.io'
 baseurl:             ''
 paginate:            10

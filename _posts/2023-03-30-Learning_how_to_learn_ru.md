@@ -25,30 +25,31 @@ tags: учимся учиться
 
 ![learning-how-to-learn](/images/post/learning-how-to-learn-1.png)
 
-## Чанкинг
-* **фокус** на том, что вы изучаете
-* **understand** the basic idea (understanding is like a glue to build and connect chunks)
-* the first time you actually understand = the first time you can actually do it yourself
-* learning = chunks (**how** to do something) + context (**when** to/not to use it)
+## Разбиение на части (Chunking):
+* **Сосредоточьтесь** на том, что вы изучаете
+* **Поймите** основную идею (понимание как клей, который помогает создавать и соединять части)
+* Первый раз, когда вы действительно поняли = первый раз, когда вы можете сделать это самостоятельно
+* Обучение = части (как что-то делать) + контекст (когда использовать, а когда нет)
+
 
 ![learning-how-to-learn](/images/post/learning-how-to-learn-2.png)
 
-## Illusions of competence
-* **Recall** is the best learning technique (instead of passive readings)
-* Minimize highlights- try to understand the main idea first and then highlight
-* Notes and helpful words are great- add them
-* Tests yourself= recall
-* Interleaving is a great way to master a new subject (jump between different problems/situations, use different techniques/strategies)
+## Иллюзии компетентности
+* Воспроизведение по памяти - лучшая техника обучения (вместо пассивного чтения)
+* Меньше подчёркивайте - сначала постарайтесь понять главную мысль, а потом выделяйте
+* Заметки и вспомогательные слова - отлично, добавляйте их
+* Проверяйте себя = воспроизводите по памяти
+* Чередование - отличный способ освоить новый предмет (переключайтесь между разными задачами/ситуациями, используйте разные техники/стратегии)
 
 ![learning-how-to-learn](/images/post/learning-how-to-learn-3.png)
 
-## Focused learning
-* Once a week write a brief weekly list of key tasks in a planner journal
-* Daily "to do" list- frees working memory for problem-solving
-* Make them as small as a pomodoro chunk
-* Interleave (just between different topics)
-* Planning your quitting time is as important as planning your working time
-* Try to work on the most important and most disliked task first
+## Сфокусированное обучение
+* Раз в неделю записывайте краткий список основных задач в ежедневник
+* Ежедневный список дел - освобождает рабочую память для решения задач
+* Разбивайте задачи на небольшие части размером с "помидор" (метод Pomodoro)
+* Чередуйте разные темы
+* Планировать время окончания работы так же важно, как и планировать рабочее время
+* Старайтесь начинать с самой важной и самой нелюбимой задачи
 
 ![learning-how-to-learn](/images/post/learning-how-to-learn-4.png)
 

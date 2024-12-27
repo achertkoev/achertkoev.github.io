@@ -5,8 +5,7 @@ permalink: /about/
 ---
 
 <div style="text-align: center">
-    <img src="./images/Im.jpg" width="100" height="128">
-
+    <img style="border: 1px groove;" src="/images/Im.jpg" width="125" height="150">
 </div>
 
 <p class="message">Привет! Меня зовут Альберт Черткоев, я back-end разработчик с более чем 10-летним опытом работы в сфере .NET-разработки. 

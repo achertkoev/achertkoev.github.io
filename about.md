@@ -11,7 +11,7 @@ permalink: /about/
 
 Фокусируюсь на архитектуре и проектировании распределенных систем, реализованных с помощью [ASP.NET Core], которые могут работать как в облаке, так и локально, а также на внутренних механизмах .NET, таких как: управление памятью/сборка мусора, многопоточность, асинхронное программирование и производительность.
 
-## Разработка программного обеспечения
+## **Разработка программного обеспечения**
 
 **Любимые языки**: C#, Markdown
 
@@ -74,7 +74,7 @@ C#, .NET Framework, ASP.NET MVC, .NET Core, ASP.NET Core, EF Core, SignalR, MS S
 C#, Visual Basic, ASP.NET, Microsoft SQL, SQLite, HTML, JavaScript,
 JQuery, Kendo UI, [TFVC]
 
-## Образование
+## **Образование**
 
 **Высшее образование**
 
@@ -99,6 +99,6 @@ JQuery, Kendo UI, [TFVC]
 
 [Expasys Questionnaire Studio Pro]: https://expasys.ru/solutions/expasys-questionnaire-studio-pro
 
-[TFVC]: (https://learn.microsoft.com/en-us/azure/devops/repos/tfvc/what-is-tfvc?view=azure-devops)
+[TFVC]: https://learn.microsoft.com/en-us/azure/devops/repos/tfvc/what-is-tfvc?view=azure-devops
 
-[Северо-Кавказский горно-металлургический институт (СКГМИ)]: (https://www.skgmi-gtu.ru/){:target="_blank"} 
+[Северо-Кавказский горно-металлургический институт (СКГМИ)]: https://www.skgmi-gtu.ru/
